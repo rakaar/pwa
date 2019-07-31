@@ -1,23 +1,14 @@
 import React from 'react';
-
+import { TextInput, Button } from 'react-materialize';
 export default function SignIn() {
   return (
-    <div id='SignIn-modal'>
-      <div className='input-field col s6'>
-        <input id='UserName' type='text' className='validate' />
-        <label for='UserName'>UserName</label>
-      </div>
-      <div className='input-field col s6'>
-        <input id='password' type='password' className='validate' />
-        <label for='password'>Password</label>
-      </div>
-      <button
-        className='btn waves-effect waves-light col s6'
-        type='submit'
-        name='action'
-      >
-        Sign In
-      </button>
+    <div>
+      <h4>Sign In</h4>
+      <TextInput label='Username' />
+      <TextInput label='Password' password />
+      <Button style={{ marginRight: '5px' }} large>
+        Sign Up
+      </Button>
     </div>
   );
 }
