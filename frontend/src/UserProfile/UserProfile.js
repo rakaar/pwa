@@ -8,11 +8,14 @@ export default function UserProfile() {
         className='user-image'
         src='https://homepages.cae.wisc.edu/~ece533/images/airplane.png'
       />
-      <h3>Raghavendra</h3>
-      <h5>XYZ enthusiast, developer, advocate, doctor and engineer</h5>
-      <div>
-        <p>facebook</p>
-        <i class='fa fa-facebook-square' aria-hidden='false' />
+      <h2>Raghavendra</h2>
+      <h3>XYZ enthusiast, developer, advocate, doctor and engineer</h3>
+      <div className='icons'>
+        <i class='fa fa-facebook-square fa-3x' aria-hidden='false' />
+        <i class='fa fa-twitter-square fa-3x' aria-hidden='false' />
+        <i class='fa fa-linkedin-square fa-3x' aria-hidden='false' />
+        <i class='fa fa-medium fa-3x' aria-hidden='false' />
+        <i class='fa fa-github-square fa-3x' aria-hidden='false' />
       </div>
     </div>
   );
