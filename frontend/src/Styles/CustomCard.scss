@@ -1,30 +1,23 @@
-.article-image {
-  float: left;
-  width: 30%;
-  height: 90%;
-  padding: 4px;
-  border-radius: 25px;
-}
+@import './index.scss';
 
-.card-in-homepage {
-  text-align: center;
-  margin-left: 30%;
+@import '~bulma/sass/elements/box.sass';
+
+.box {
   margin-top: 10%;
-}
-
-.card {
+  margin-left: 30%;
+  margin-right: 30%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  width: 60%;
-  overflow: auto;
-  border-radius: 25px;
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+.top-article-image {
+  width: 150%;
+  margin-right: 4%;
 }
 
-.container {
-  padding: 2px 16px;
-  float: right;
+.top-article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

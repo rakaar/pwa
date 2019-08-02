@@ -10,6 +10,10 @@ export default function UserProfile() {
       />
       <h3>Raghavendra</h3>
       <h5>XYZ enthusiast, developer, advocate, doctor and engineer</h5>
+      <div>
+        <p>facebook</p>
+        <i class='fa fa-facebook-square' aria-hidden='false' />
+      </div>
     </div>
   );
 }

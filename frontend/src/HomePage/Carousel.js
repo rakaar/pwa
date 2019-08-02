@@ -4,11 +4,11 @@ import CustomCard from './CustomCard';
 import '../Styles/CustomCarousel.scss';
 
 export default function CustomCarousel() {
+  var slideIndex = 0;
+
   useEffect(() => {
     showSlides();
   });
-
-  var slideIndex = 0;
 
   function showSlides() {
     var i;
@@ -31,21 +31,24 @@ export default function CustomCarousel() {
 
   return (
     <div>
-      <div className='slideshow-container'>
-        <div className='mySlides fade'>
+      <div class='slideshow-container'>
+        <div class='mySlides fade'>
           <CustomCard />
         </div>
-        <div className='mySlides fade'>
+
+        <div class='mySlides fade'>
           <CustomCard />
         </div>
-        <div className='mySlides fade'>
+
+        <div class='mySlides fade'>
           <CustomCard />
         </div>
       </div>
+      <br />
       <div className='the-dots'>
-        <span className='dot' />
-        <span className='dot' />
-        <span className='dot' />
+        <span class='dot' />
+        <span class='dot' />
+        <span class='dot' />
       </div>
     </div>
   );
