@@ -7,7 +7,7 @@ export default function SignIn() {
       <TextInput label='Username' />
       <TextInput label='Password' password />
       <Button style={{ marginRight: '5px' }} large>
-        Sign Up
+        Sign In
       </Button>
     </div>
   );
