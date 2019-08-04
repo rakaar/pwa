@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import ArticlesCarousel from './HomePage/Carousel';
+import HomePage from './HomePage/HomePage';
 import UserProfile from './UserProfile/UserProfile';
 
 function App() {
   return (
     <Router>
       <div>
-        <Route exact path='/' component={ArticlesCarousel} />
+        <Route exact path='/' component={HomePage} />
         <Route path='/user/:id' component={UserProfile} />
       </div>
     </Router>
