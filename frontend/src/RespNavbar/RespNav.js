@@ -32,7 +32,7 @@ export default function RespNav() {
   });
 
   return (
-    <div>
+    <div className="res-nav">
       <nav class='navbar' role='navigation' aria-label='main navigation'>
         <div className='navbar-brand'>
           <h2>IIT Tech Ambit</h2>

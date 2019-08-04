@@ -1,52 +1,32 @@
 import React from 'react';
-import ReactModal from 'react-modal';
-import AuthTabs from './AuthTabs';
+import SignModal from './SignModal'
 
 import '../Styles/AuthModal.scss';
 
-const customStyles = {
-  content: {
-    marginTop: '4%',
-    marginBotton: '4%'
-  }
-};
-
 class ExampleApp extends React.Component {
+
   constructor() {
-    super();
+    super()
     this.state = {
-      showModal: false
-    };
-
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
+      showmodals: false
+    }
   }
 
-  handleOpenModal() {
-    this.setState({ showModal: true });
-  }
-
-  handleCloseModal() {
-    this.setState({ showModal: false });
+  handleSignModal = () => {
+    this.setState({
+      showmodals: true
+    })
   }
 
   render() {
     return (
       <div>
-        <h5 onClick={this.handleOpenModal}>Auth</h5>
-        <ReactModal
-          isOpen={this.state.showModal}
-          contentLabel='Minimal Modal Example'
-          style={customStyles}
-        >
-          <AuthTabs />
+        <h5 onClick={this.handleSignModal}>Log In</h5>
+        <SignModal />
+        {
+          this.state.showmodals ? <SignModal/> : <></>
+        }
 
-          <i
-            class='fa fa-times fa-3x'
-            aria-hidden='false'
-            onClick={this.handleCloseModal}
-          />
-        </ReactModal>
       </div>
     );
   }

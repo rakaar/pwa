@@ -1,0 +1,43 @@
+
+.login-wrap{
+    position: relative;
+    left:25%;
+}
+
+.signup-wrap{
+    position: relative;
+    left:25%;
+    transform: translateY(100%);
+}
+
+
+.signin-form{
+    margin: 30px 0;
+    width: 50%;
+}
+
+.input{
+    box-sizing: border-box !important;
+    outline: none !important;
+    border: 0px solid #f6f6f6 !important;
+    border-radius: 4px !important;
+    background:#f6f6f6 !important;
+}
+
+.field{
+    margin-top: 1.5em;
+}
+
+.btn-custom{
+    border: 0;
+    margin-top: 1.2em;
+    font-size: 1.2em !important;
+    border-radius: 16px !important;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.input:focus{
+    outline: none !important;
+    border: none !important;
+}

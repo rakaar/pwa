@@ -1,3 +1,7 @@
 .close-button {
-  float: right;
+  position: absolute;
+  top:0;
+  right:0;
+  padding: 10px 15px;
+  box-sizing: border-box;
 }
