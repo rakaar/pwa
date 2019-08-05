@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactModal from 'react-modal';
-import AuthTabs from './AuthTabs';
 
-import '../Styles/AuthModal.scss';
+import '../Styles/TagsModal.scss';
+
+const ArticleTags = [
+  'sample tag',
+  'sample tag',
+  'sample tag',
+  'sample tag',
+  'sample tag'
+];
 
 const customStyles = {
   content: {
@@ -33,14 +40,17 @@ class ExampleApp extends React.Component {
   render() {
     return (
       <div>
-        <h5 onClick={this.handleOpenModal}>Auth</h5>
+        <h5 onClick={this.handleOpenModal}>Tags</h5>
         <ReactModal
           isOpen={this.state.showModal}
           contentLabel='Minimal Modal Example'
           style={customStyles}
         >
-          <AuthTabs />
-
+          {ArticleTags.map(item => (
+            <div className='tags'>
+              <span className='tag is-large is-info is-rounded'>{item}</span>
+            </div>
+          ))}
           <i
             class='fa fa-times fa-3x'
             aria-hidden='false'

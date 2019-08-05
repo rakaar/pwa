@@ -1,6 +1,10 @@
 import React from 'react';
 import AuthModal from '../Auth/AuthModal';
+import TagsModal from '../Tags/TagsModal';
+import UserDropdown from '../Auth/UserDropdown';
 import '../Styles/RespNav.scss';
+
+const loggedIn = false;
 
 export default function RespNav() {
   document.addEventListener('DOMContentLoaded', () => {
@@ -48,10 +52,14 @@ export default function RespNav() {
 
         <div id='navbarBasicExample' class='navbar-menu'>
           <div className='navbar-end'>
-            <div className='navbar-item'>Tags</div>
-            <div className='navbar-item'>Issues</div>
             <div className='navbar-item'>
-              <AuthModal />
+              <TagsModal />
+            </div>
+            <div className='navbar-item'>
+              <h5>Issues</h5>
+            </div>
+            <div className='navbar-item'>
+              {loggedIn ? <UserDropdown /> : <AuthModal />}
             </div>
           </div>
         </div>
