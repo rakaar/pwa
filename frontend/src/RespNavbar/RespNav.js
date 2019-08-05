@@ -1,4 +1,5 @@
 import React from 'react';
+import AuthModal from '../Auth/AuthModal';
 import '../Styles/RespNav.scss';
 
 export default function RespNav() {
@@ -49,7 +50,9 @@ export default function RespNav() {
           <div className='navbar-end'>
             <div className='navbar-item'>Tags</div>
             <div className='navbar-item'>Issues</div>
-            <div className='navbar-item'>MODAL</div>
+            <div className='navbar-item'>
+              <AuthModal />
+            </div>
           </div>
         </div>
       </nav>
