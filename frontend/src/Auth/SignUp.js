@@ -1,21 +1,22 @@
 import React from 'react';
+import '../Styles/SignIn.scss'
 
 export default function SignUp() {
   return (
-    <div>
+    <div className="login-wrap signup-form">
       <div class='field'>
-        <label class='label'>UserName</label>
+        <label class='label'>Username</label>
         <div class='control'>
           <input class='input is-rounded' type='text' placeholder='Username' />
         </div>
       </div>
       <div class='field'>
-        <label class='label'>Email Address</label>
+        <label class='label'>Email</label>
         <div class='control'>
           <input
             class='input is-rounded'
             type='email'
-            placeholder='example@service.com'
+            placeholder='yourname@xyz.in'
           />
         </div>
       </div>
@@ -35,11 +36,11 @@ export default function SignUp() {
           <input
             class='input is-rounded'
             type='password'
-            placeholder='COnfirm Password'
+            placeholder='Confirm Password'
           />
         </div>
       </div>
-      <a class='button is-info is-rounded'>Sign Up</a>
+      <a class='button is-info is-rounded btn-custom'>Sign Up</a>
     </div>
   );
 }

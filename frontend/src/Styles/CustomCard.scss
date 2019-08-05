@@ -2,21 +2,43 @@
 
 @import '~bulma/sass/elements/box.sass';
 
+*{
+  box-sizing: border-box !important;
+}
 .box {
-  margin-top: 10%;
-  margin-left: 30%;
-  margin-right: 30%;
+  width:100%;
+  padding:0 !important;
   transition: 400ms ease-in;
 }
 
-.top-article-image {
-  width: 150%;
-  margin-right: 4%;
+.top-article{
+  overflow: hidden;
 }
 
-.top-article {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.top-article-image {
+  height:600px;
+}
+
+.top-article-meta {
+  padding:4em 3em;
+  box-sizing: border-box;
+  position: absolute;
+  background:#fff;
+  bottom:0;
+  height:100%;
+  right:0;
+  width:50%;
+}
+
+.top-article-meta h3{
+  font-weight: 700;
+  font-size: 2.6em;
+  text-align: left;
+}
+
+.top-article-meta h4{
+  padding:3em 0;
+  font-weight: 400;
+  color:#999;
+  font-size: 1em;
 }

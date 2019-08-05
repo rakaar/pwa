@@ -35,7 +35,7 @@ export default function CustomCarousel() {
         <div class='mySlides fade'>
           <CustomCard />
         </div>
-
+        
         <div class='mySlides fade'>
           <CustomCard />
         </div>

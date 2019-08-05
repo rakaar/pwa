@@ -8,21 +8,18 @@ export class SignModal extends Component {
     state = {
         showSignInForm: true
     }
-   
-    showSignIn = () => {
-        this.setState({ showSignInForm: true })
-    }
 
     showSignUp = () => {
-        this.setState({ showSignInForm: false })
+        this.setState({ showSignInForm: !this.state.showSignInForm })
     }
     
     render() {
         return (
             <div this className="modal-wrapper">
-                <h2 onClick={this.showSignIn} className="modal-title" > Sign In </h2>
-                <h4 onClick={this.showSignUp} className="modal-toggle"> or <a href="#"> Sign Up</a></h4>
-    
+                <h2 className="modal-title" > {this.state.showSignInForm ? 'Sign In' : 'Sign Up'} </h2>
+                <h4 onClick={this.showSignUp} className="modal-toggle"> or <a href="#"> {this.state.showSignInForm ? 'Sign Up' : 'Sign In'} </a></h4>
+
+                <i class="fa-times fa fa-2x modal-close-btn" onClick={this.props.closeModal}></i>
              { (this.state.showSignInForm) ? <SignIn /> : <SignUp />}
                 
             </div>

@@ -18,11 +18,17 @@ class ExampleApp extends React.Component {
     })
   }
 
+  closeModalF = () => {
+    this.setState({
+      showmodals: false 
+    })
+  }
+
   render() {
     return (
       <div>
-        <h5 onClick={this.handleSignModal}>Log In</h5>
-        <SignModal />
+        <h5 className="log-in-btn" onClick={this.handleSignModal}>Log In</h5>
+        
         {
           this.state.showmodals ? <SignModal/> : <></>
         }
