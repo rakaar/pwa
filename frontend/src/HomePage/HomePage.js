@@ -9,6 +9,8 @@ export default function HomePage() {
       <RespNav />
       <CustomCarousel />
       <FeaturedArticle />
+      <FeaturedArticle />
+      <FeaturedArticle />
     </div>
   );
 }

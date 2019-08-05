@@ -4,16 +4,39 @@
 
 .box {
   transition: 0.3s;
+  border-radius: 0;
+  border: 0;
+  background: #fafafa;
+  box-shadow: none;
+  margin-bottom: 1px;
 }
 
 .featured-article {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  padding: 0.5em;
 }
 
 .featured-article-image {
-  width: 140%;
-  margin: 2%;
+  float:left;
+  color: #2196F3;
+  max-width: 68px;
+  font-size: 3.2em;
+  font-weight: 800;
+}
+
+.featured-article-content{
+  margin: 0 6em;
+  padding: 0.5em 0;
+  a{
+    font-weight: 600 !important;
+    font-size: 2em;
+    color: #333;
+    line-height: 30px;
+  }
+  h4{
+    line-height: 0;
+    font-weight: 700;
+    font-size: 1em;
+    padding:0.2em 0;
+    color:#888;
+  }
 }
