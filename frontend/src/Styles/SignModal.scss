@@ -1,0 +1,38 @@
+.modal-wrapper{
+    height: auto;
+    width:75vw;
+    overflow: hidden;
+    z-index: 999;
+    background: #fff;
+    padding: 3em 5em 5em 5em;
+    box-sizing: border-box;
+    border-radius: 6px;
+    position: absolute;
+    top:-5em;
+    transform: translateY(30%);
+    right:0;
+    box-shadow: 1px 1px 18px 1px #eee;
+}
+
+.modal-close-btn{
+    position: absolute;
+    right: 0;
+    top:0;
+    padding: 1em;
+}
+
+.modal-title{
+    margin-top:1em;
+    font-weight: 700;
+    font-size: 3em;
+    display: inline-block;
+    position: relative;
+    left:25%;
+    cursor: pointer;
+}
+.modal-toggle{
+    display: inline;
+    position: relative;
+    left:25%;
+    cursor: pointer;
+}

@@ -1,0 +1,42 @@
+@import './index.scss';
+
+@import '~bulma/sass/elements/box.sass';
+
+.box {
+  transition: 0.3s;
+  border-radius: 0;
+  border: 0;
+  background: #fafafa;
+  box-shadow: none;
+  margin-bottom: 1px;
+}
+
+.featured-article {
+  padding: 0.5em;
+}
+
+.featured-article-image {
+  float:left;
+  color: #2196F3;
+  max-width: 68px;
+  font-size: 3.2em;
+  font-weight: 800;
+}
+
+.featured-article-content{
+  margin: 0 6em;
+  padding: 0.5em 0;
+  a{
+    font-weight: 600 !important;
+    font-size: 2em;
+    color: #333;
+    line-height: 30px;
+  }
+  h4{
+    line-height: 0;
+    font-weight: 700;
+    font-size: 1em;
+    padding:0.2em 0;
+    color:#888;
+  }
+}
