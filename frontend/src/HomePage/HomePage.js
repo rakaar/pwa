@@ -3,6 +3,7 @@ import CustomCarousel from './CustomCarousel';
 import FeaturedArticle from './FeaturedArticles';
 import RespNav from '../RespNavbar/RespNav';
 import MonthlyIssue from './MonthlyIssue'
+import '../Styles/Homepage.scss'
 
 export default function HomePage() {
   return (
@@ -11,6 +12,9 @@ export default function HomePage() {
       <CustomCarousel />
       <div className="grid-v">
         <div className="left-gw">
+          <span className="section-title">
+            Popular Posts
+          </span>
           <FeaturedArticle />
           <FeaturedArticle />
           <FeaturedArticle />

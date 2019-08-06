@@ -6,7 +6,9 @@ export default function FeaturedArticles() {
   return (
     <div className='box'>
       <div className='featured-article'>
-
+        <div className="tags-custom">
+          BLOCKCHAIN
+        </div>
         <div className='featured-article-image'>
           <img src="https://images.pexels.com/photos/825258/pexels-photo-825258.jpeg?cs=srgb&dl=circuit-board-circuits-components-825258.jpg&fm=jpg"></img>
         </div>
