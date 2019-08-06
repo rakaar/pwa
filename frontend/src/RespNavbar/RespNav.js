@@ -4,7 +4,7 @@ import TagsModal from '../Tags/TagsModal';
 import UserDropdown from '../Auth/UserDropdown';
 import '../Styles/RespNav.scss';
 
-const loggedIn = false;
+const loggedIn = true;
 
 export default function RespNav() {
   document.addEventListener('DOMContentLoaded', () => {
@@ -32,7 +32,7 @@ export default function RespNav() {
   });
 
   return (
-    <div className="res-nav">
+    <div className='res-nav'>
       <nav class='navbar' role='navigation' aria-label='main navigation'>
         <div className='navbar-brand'>
           <h2>IIT Tech Ambit</h2>
