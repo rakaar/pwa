@@ -19,31 +19,37 @@
 }
 
 .featured-article-image {
-  float:right;
+  float: right;
   height: 200px;
   overflow: hidden;
-  background: #333;
   font-weight: 800;
 }
 
-.featured-article-content{
+.featured-article-content {
   position: relative;
-  top:0.5em;
+  top: 0.5em;
   padding: 0.8em 0.8em;
-  a{
+  a {
     font-weight: 600 !important;
     font-size: 1.4em;
     color: #333;
     line-height: 30px;
   }
-  a:hover{
+  a:hover {
     text-decoration: underline;
   }
-  h4{
+  h4 {
     line-height: 0;
     font-weight: 600;
     font-size: 0.9em;
-    padding:0.2em 0;
-    color:#888;
+    padding: 0.2em 0;
+    color: #888;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .featured-article-image {
+    margin-bottom: -30%;
   }
 }
