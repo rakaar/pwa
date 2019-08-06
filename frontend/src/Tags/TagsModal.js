@@ -13,12 +13,12 @@ const ArticleTags = [
 
 const customStyles = {
   content: {
-    marginTop: '4%',
-    marginBotton: '4%'
+    marginTop: '5%',
+    marginBottom: '20%'
   }
 };
 
-class ExampleApp extends React.Component {
+class TagsModal extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -46,13 +46,14 @@ class ExampleApp extends React.Component {
           contentLabel='Minimal Modal Example'
           style={customStyles}
         >
-          {ArticleTags.map(item => (
-            <div className='tags'>
+          <h1 className='tags-title'>Tags</h1>
+          <div className='tags'>
+            {ArticleTags.map(item => (
               <span className='tag is-large is-info is-rounded'>{item}</span>
-            </div>
-          ))}
+            ))}
+          </div>
           <i
-            class='fa fa-times fa-3x'
+            class='fa fa-times fa-3x close-tags-modal'
             aria-hidden='false'
             onClick={this.handleCloseModal}
           />
@@ -62,4 +63,4 @@ class ExampleApp extends React.Component {
   }
 }
 
-export default ExampleApp;
+export default TagsModal;
