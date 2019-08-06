@@ -2,43 +2,63 @@
 
 @import '~bulma/sass/elements/box.sass';
 
-*{
+* {
   box-sizing: border-box !important;
 }
 .box {
-  width:100%;
-  padding:0 !important;
+  width: 100%;
+  padding: 0 !important;
   transition: 400ms ease-in;
 }
 
-.top-article{
+.top-article {
   overflow: hidden;
 }
 
 .top-article-image {
-  height:600px;
+  height: 600px;
 }
 
 .top-article-meta {
-  padding:4em 3em;
+  padding: 4em 3em;
   box-sizing: border-box;
   position: absolute;
-  background:#fff;
-  bottom:0;
-  height:100%;
-  right:0;
-  width:50%;
+  background: #fff;
+  bottom: 0;
+  height: 100%;
+  right: 0;
+  width: 50%;
 }
 
-.top-article-meta h3{
+.top-article-meta h3 {
   font-weight: 700;
   font-size: 2.6em;
   text-align: left;
 }
 
-.top-article-meta h4{
-  padding:3em 0;
+.top-article-meta h4 {
+  padding: 3em 0;
   font-weight: 400;
-  color:#999;
+  color: #999;
   font-size: 1em;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .top-article-image {
+    img {
+      width: 100%;
+      position: relative;
+      left: 5%;
+    }
+  }
+
+  .top-article-meta {
+    position: relative;
+    top: 1px;
+    margin-top: -120%;
+    overflow: hidden;
+    width: 100%;
+    margin-left: 15px;
+  }
 }
