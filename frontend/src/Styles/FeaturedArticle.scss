@@ -1,0 +1,19 @@
+@import './index.scss';
+
+@import '~bulma/sass/elements/box.sass';
+
+.box {
+  transition: 0.3s;
+}
+
+.featured-article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.featured-article-image {
+  width: 140%;
+  margin: 2%;
+}
