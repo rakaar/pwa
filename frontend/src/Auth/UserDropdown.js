@@ -16,10 +16,11 @@ export default function UserDropDown() {
       <div class='dropdown'>
         <div class='dropdown-trigger'>
           <button
-            class='button'
+            class='button user-btn'
             aria-haspopup='true'
             aria-controls='dropdown-menu3'
           >
+
             <span>Raghav </span>
             <i class='fa fa-angle-double-down' aria-hidden='true' />
           </button>
@@ -34,8 +35,8 @@ export default function UserDropDown() {
               Settings
             </a>
             <hr class='dropdown-divider' />
-            <a href='#' class='dropdown-item'>
-              LogOut
+            <a href='#' class='dropdown-item signout-alert'>
+              Logout
             </a>
           </div>
         </div>

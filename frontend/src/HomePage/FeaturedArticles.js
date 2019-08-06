@@ -7,12 +7,14 @@ export default function FeaturedArticles() {
     <div className='box'>
       <div className='featured-article'>
 
-        <div className='featured-article-image'>#1</div>
+        <div className='featured-article-image'>
+          <img src="https://images.pexels.com/photos/825258/pexels-photo-825258.jpeg?cs=srgb&dl=circuit-board-circuits-components-825258.jpg&fm=jpg"></img>
+        </div>
 
         <div className='featured-article-content'>
           <a href="#">Innovation: A walkthrough inventing your own solution</a>
           <h4>
-            Jul 28, 2019
+            Ajay Yadav  |  Jul 28, 2019
           </h4>
         </div>
         
