@@ -2,6 +2,7 @@ import React from 'react';
 import CustomCarousel from './CustomCarousel';
 import FeaturedArticle from './FeaturedArticles';
 import RespNav from '../RespNavbar/RespNav';
+import MonthlyIssue from './MonthlyIssue'
 
 export default function HomePage() {
   return (
@@ -15,7 +16,7 @@ export default function HomePage() {
           <FeaturedArticle />
         </div>
         <div className="right-gw">
-          <h2>Sidebar</h2>
+          <MonthlyIssue />
         </div>
       </div>
       <style jsx>
