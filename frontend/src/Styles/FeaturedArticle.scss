@@ -15,6 +15,7 @@
   height: max-content;
   padding: 0 0 0.8em 0;
   border-radius: 10px;
+  margin: 0 1em 0 0;
   background: #eee;
 }
 
@@ -51,5 +52,11 @@
   /* For mobile phones: */
   .featured-article-image {
     margin-bottom: -30%;
+  }
+  .featured-article {
+    margin: 0;
+  }
+  .featured-article-image {
+    height: 300px;
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import CustomCarousel from './CustomCarousel';
 import FeaturedArticle from './FeaturedArticles';
 import RespNav from '../RespNavbar/RespNav';
+import MonthlyIssue from './MonthlyIssue';
 
 import '../Styles/HomePage.scss';
 
@@ -17,7 +18,7 @@ export default function HomePage() {
           <FeaturedArticle />
         </div>
         <div className='right-gw'>
-          <h2>This month's issue</h2>
+          <MonthlyIssue />
         </div>
       </div>
     </div>
