@@ -8,8 +8,10 @@ export default function UserDropdown() {
   useEffect(() => {
     demoId = document.getElementById('demo');
 
-    window.addEventListener('click', () => {
-      // write logic that clicked anywhere expect on the demoId, the className is changed
+    window.addEventListener('click', event => {
+      if (event.target.tagName !== 'H5') {
+        demoId.className = demoId.className.replace(' w3-show', '');
+      }
     });
   }, []);
 
