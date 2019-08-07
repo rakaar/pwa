@@ -4,49 +4,35 @@
 
 @import '~bulma/sass/form/tools.sass';
 
-i {
-  margin-left: 1%;
-}
-
-.user-btn {
-  font-weight: 600;
-  border: 2px solid #bfdfff;
-  background: transparent;
-  color: #2196f3;
-  padding-bottom: 1.8em;
-  i {
-    padding: 0 0.4em;
-    font-weight: 500;
+.current-user{
+  padding: 0.4em 1em;
+  font-size: 1em;
+  background: #ddd;
+  border-radius: 10px;
+  letter-spacing: 0.6px;
+  opacity: 0.9;
+  &:hover{
+    opacity: 1;
   }
 }
 
-.user-btn:hover {
-  background: #bfdfff;
-  border: 2px solid #bfdfff;
-  color: #2196f3;
-}
-
-.user-btn:focus,
-.user-btn:active,
-.user-btn:target {
-  outline: none;
-  border: 2px solid transparent;
-}
-
-.dropdown-content {
-  background: #fefefe;
-  width: max-content;
-  padding: 0;
-  margin: 0;
-  font-weight: 600;
-  .dropdown-item {
-    padding: 0.6em 2.4em 0.8em 1.8em;
-  }
-  .signout-alert {
-    color: #f44336;
-  }
-  .dropdown-divider {
-    padding: 0;
+#demo{
+  background: #fff;
+  border-radius: 10px;
+  .w3-button{
+    background: #fff;
+    padding: 0.6em 1em;
     margin: 0;
+    &:first-child{
+      border-radius: 10px 10px 0 0;
+    }
+    &:last-child{
+      border-radius: 0 0 10px 10px;
+    }
+    &:hover{
+      background: #f6f6f6 !important;
+    }
   }
 }
+
+

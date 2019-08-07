@@ -23,8 +23,8 @@ export default function UserDropdown() {
 
   return (
     <div>
-      <div className='w3-dropdown-click'>
-        <h5 onClick={handleDropdown}>Raghavendra</h5>
+      <div>
+        <h5 className="current-user" onClick={handleDropdown}>Raghav ▶ </h5>
         <div
           id='demo'
           className='w3-dropdown-content w3-bar-block w3-card-4 w3-animate-zoom'

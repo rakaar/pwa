@@ -4,7 +4,7 @@ import TagsModal from '../Tags/TagsModal';
 import UserDropdown from '../Auth/UserDropdown';
 import '../Styles/RespNav.scss';
 
-const loggedIn = false;
+const loggedIn = true;
 
 export default function RespNav() {
   document.addEventListener('DOMContentLoaded', () => {
