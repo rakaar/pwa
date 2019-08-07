@@ -14,7 +14,7 @@ const ArticleTags = [
 const customStyles = {
   content: {
     marginTop: '5%',
-    marginBottom: '20%'
+    marginBottom: '80%'
   }
 };
 
