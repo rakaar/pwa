@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropicUploader from './ImageUploader';
-import ChangeUsername from './ChangeUsername';
+import EditComp from './EditComp';
 import '../Styles/UserSettings/Settings.scss';
 import '../App.css';
 
@@ -16,33 +16,29 @@ export default function Settings() {
       <div className='image-uploader'>
         <PropicUploader />
       </div>
-      <ChangeUsername title='Username' handleLogo='' defaultContent='raghav' />
-      <ChangeUsername
+      <EditComp title='Username' handleLogo='' defaultContent='raghav' />
+      <EditComp
         title='Bio'
         handleLogo=''
         defaultContent='lorem ipsum so and so andos so long'
       />
-      <ChangeUsername
-        title='Email'
-        handleLogo=''
-        defaultContent='raghav@gmail.com'
-      />
-      <ChangeUsername
+      <EditComp title='Email' handleLogo='' defaultContent='raghav@gmail.com' />
+      <EditComp
         title='Facebook Handle'
         handleLogo={fb}
         defaultContent='ragh.kau.3'
       />
-      <ChangeUsername
+      <EditComp
         title='Twitter Handle'
         handleLogo={twitter}
         defaultContent='ragh.kau.3'
       />
-      <ChangeUsername
+      <EditComp
         title='Medium Handle'
         handleLogo={medium}
         defaultContent='ragh.kau.3'
       />
-      <ChangeUsername
+      <EditComp
         title='Github Handle'
         handleLogo={github}
         defaultContent='ragh.kau.3'

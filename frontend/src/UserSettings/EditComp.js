@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../Styles/UserSettings/ChangeUsername.scss';
+import '../Styles/UserSettings/EditComp.scss';
 
-export default function ChangeUsername(props) {
+export default function EditComp(props) {
   function moveCursorToEnd(el) {
     if (typeof el.selectionStart == 'number') {
       el.selectionStart = el.selectionEnd = el.value.length;
