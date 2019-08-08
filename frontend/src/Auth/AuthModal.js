@@ -27,7 +27,7 @@ class AuthModal extends React.Component {
     return (
       <div>
         <h5 className='log-in-btn' onClick={this.handleSignModal}>
-          Log In
+          Sign In
         </h5>
 
         {this.state.showmodals ? (
