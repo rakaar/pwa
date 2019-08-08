@@ -10,8 +10,8 @@ export default function UserDropdown() {
 
     window.addEventListener('click', event => {
       if (event.target.tagName !== 'H5') {
-        console.log('removed Dropdown by clikcing out');
-        demoId.className = demoId.className.replace(' w3-show', '');
+        if (demoId.className.includes('w3-show'))
+          demoId.className = demoId.className.replace(' w3-show', '');
       }
     });
   }, []);
@@ -27,7 +27,9 @@ export default function UserDropdown() {
   return (
     <div>
       <div>
-        <h5 className="current-user" onClick={handleDropdown}>Raghav ▶ </h5>
+        <h5 className='current-user' onClick={handleDropdown}>
+          Raghav ▶{' '}
+        </h5>
         <div
           id='demo'
           className='w3-dropdown-content w3-bar-block w3-card-4 w3-animate-zoom'
