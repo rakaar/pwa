@@ -41,6 +41,7 @@ export default function ChangeUsername(props) {
           <b onClick={handleEdit}>EDIT</b>
         </a>
       )}
+      {props.handleLogo}
       <input
         className='settings-input'
         type='text'
