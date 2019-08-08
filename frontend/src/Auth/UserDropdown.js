@@ -10,6 +10,7 @@ export default function UserDropdown() {
 
     window.addEventListener('click', event => {
       if (event.target.tagName !== 'H5') {
+        console.log('removed Dropdown by clikcing out');
         demoId.className = demoId.className.replace(' w3-show', '');
       }
     });
