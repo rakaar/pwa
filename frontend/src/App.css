@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+html{
+  background: #f9f9f9;
+}
+
+body{
+  width:75%;
+  position: relative;
+  left:50%;
+  transform:translateX(-50%); 
+}

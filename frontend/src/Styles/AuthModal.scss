@@ -1,0 +1,22 @@
+.close-button {
+  position: absolute;
+  top:0;
+  right:0;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+
+.log-in-btn{
+  text-transform: uppercase;
+  padding: 0;
+  background: transparent;
+  font-weight: 500;
+  font-size: 1em;
+  color:#2196F3; 
+  border-bottom: 2px solid transparent;
+  transition: all ease-in 200ms;
+}
+
+.log-in-btn:hover{
+  border-bottom: 2px solid #2196F3;
+}
