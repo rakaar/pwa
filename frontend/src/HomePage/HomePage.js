@@ -10,6 +10,7 @@ export default function HomePage() {
     <div>
       <RespNav />
       <CustomCarousel />
+      
       <div className="grid-v">
         <div className="left-gw">
           <span className="section-title">
