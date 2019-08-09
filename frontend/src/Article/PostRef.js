@@ -39,8 +39,6 @@ export class PostRef extends React.Component {
             }
             .m-wrap {
               text-align: center;
-              grid-column: 1/ 2 span;
-              background: #fff;
               height: 200px;
               width: 70%;
               position: relative;

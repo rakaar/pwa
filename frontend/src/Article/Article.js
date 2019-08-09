@@ -11,6 +11,7 @@ const Post = props => {
       <style jsx>
         {`
           .main-w {
+            background:transparent;
           }
         `}
       </style>

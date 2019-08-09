@@ -28,17 +28,18 @@ export default function EditComp(props) {
   };
 
   return (
-    <div>
+    <div className="editcomp-w">
       <h1>
         <b>{props.title}</b>
       </h1>
+
       {autoFocusVal ? (
         <a className='button  is-success'>
           <b onClick={handleSave}>Save</b>
         </a>
       ) : (
         <a className='button is-outlined is-active'>
-          <b onClick={handleEdit}>EDIT</b>
+          <b onClick={handleEdit}>Edit</b>
         </a>
       )}
       {props.handleLogo}

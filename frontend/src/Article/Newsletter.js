@@ -12,30 +12,30 @@ export class Newsletter extends React.Component {
   render() {
     if (!this.state.subscribed)
       return (
-        <div className='m-wrap'>
-          <span className='title'>
+        <div className='mo-wrap'>
+          <span className='title-nl'>
             let's <b> get in touch</b>
           </span>
-          <span className='info'>every post delivered to your mailbox</span>
+          <span className='info-nl'>every post delivered to your mailbox</span>
           <input type='email' placeholder='Your Email' />
           <br />
           <button onClick={this.setSubscribed}>subscribe</button>
           <br />
-          <span className='terms-w'>
+          <span className='terms-w-nl'>
             We won't spam you.
             <br />
             You can unsubscribe anytime.
           </span>
           <style jsx>
             {`
-              .terms-w {
+              .terms-w-nl {
                 display: block;
                 margin-top: 20px;
                 font-size: 0.8em;
                 color: #bbdefb;
                 line-height: 20px;
               }
-              .title b {
+              .title-nl b {
                 font-weight: 800;
               }
               button {
@@ -67,7 +67,7 @@ export class Newsletter extends React.Component {
                 text-transform: uppercase;
                 letter-spacing: 2px;
               }
-              .info {
+              .info-nl {
                 display: block;
                 text-transform: uppercase;
                 font-weight: 700;
@@ -76,19 +76,18 @@ export class Newsletter extends React.Component {
                 margin-top: 12px;
                 opacity: 0.7;
               }
-              .title {
+              .title-nl {
                 text-transform: uppercase;
                 font-size: 2em;
                 color: #fff;
                 display: block;
                 margin-top: 40px;
               }
-              .m-wrap {
+              .mo-wrap {
                 margin-top: 80px;
                 text-align: center;
-                grid-column: 1/ 2 span;
                 background: #2196f3;
-                width: 50%;
+                width: 80%;
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
@@ -101,18 +100,18 @@ export class Newsletter extends React.Component {
       );
     else
       return (
-        <div className='main-w'>
-          <span className='title'>
+        <div className='main-w-nls'>
+          <span className='title-nls'>
             <b>🎉</b>
           </span>
-          <span className='info'>You have been successfully subscribed.</span>
+          <span className='info-nls'>You have been successfully subscribed.</span>
 
           <style jsx>
             {`
-              .title b {
+              .title-nls b {
                 font-weight: 800;
               }
-              .info {
+              .info-nls {
                 display: block;
                 text-transform: uppercase;
                 font-weight: 700;
@@ -121,18 +120,17 @@ export class Newsletter extends React.Component {
                 margin-top: 12px;
                 opacity: 0.7;
               }
-              .title {
+              .title-nls {
                 text-transform: uppercase;
                 font-size: 2em;
                 color: #fff;
                 display: block;
               }
-              .main-w {
+              .main-w-nls {
                 margin-top: 80px;
                 text-align: center;
-                grid-column: 1/ 2 span;
                 background: #2196f3;
-                width: 50%;
+                width: 80%;
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
