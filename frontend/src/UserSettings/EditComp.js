@@ -28,7 +28,7 @@ export default function EditComp(props) {
   };
 
   return (
-    <div className="editcomp-w">
+    <div className='editcomp-w'>
       <h1>
         <b>{props.title}</b>
       </h1>
@@ -42,13 +42,15 @@ export default function EditComp(props) {
           <b onClick={handleEdit}>Edit</b>
         </a>
       )}
-      {props.handleLogo}
-      <input
-        className='settings-input'
-        type='text'
-        defaultValue={props.defaultContent}
-        readOnly={!autoFocusVal}
-      />
+      <div className='mobile-view-flex'>
+        {props.handleLogo}
+        <input
+          className='settings-input'
+          type='text'
+          defaultValue={props.defaultContent}
+          readOnly={!autoFocusVal}
+        />
+      </div>
     </div>
   );
 }
