@@ -1,0 +1,25 @@
+.saved-a-w {
+    background: #f6f6f6;
+    border-radius: 10px;
+    padding: 1em;
+    cursor: default;
+    border:1px solid #888;
+    &:hover{
+        border: 1px solid #555;
+        background: #eee;
+    }
+    .saved-t{
+        color: #222;
+        font-size: 1.3em;
+        display: block;
+        font-weight: 500;
+        line-height: 1em;
+    }
+    .saved-i{
+        position: relative;
+        top: 0.5em;
+        font-weight: 400;
+        color: #666;
+        letter-spacing: 0.5px;
+    }
+}

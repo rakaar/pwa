@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Styles/UserProfile.scss';
+import SavedArticle from './SavedArticle'
 
 export default function UserProfile() {
   return (
@@ -31,7 +32,10 @@ export default function UserProfile() {
     <div className="saved-cards-w">
       <h2> Saved Articles </h2>
       <div className="saved-cards-g">
-        
+        <SavedArticle />
+        <SavedArticle />
+        <SavedArticle />
+        <SavedArticle />
       </div>
     </div>
 
