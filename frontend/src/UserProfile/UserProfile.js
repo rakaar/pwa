@@ -14,10 +14,10 @@ export default function UserProfile() {
             src='https://homepages.cae.wisc.edu/~ece533/images/airplane.png'
           />
           <div className='name-r'>
-            <h2>John Doe</h2>
-            <a href='#' className='edit-profile'>
+            <h2 className='username'>John Doe</h2>
+            {/* <a href='#' className='edit-profile'>
               Edit
-            </a>
+            </a> */}
             <br />
             <h3>Web Developer, Designer, Machine Learning Enthusiast </h3>
 
@@ -31,9 +31,9 @@ export default function UserProfile() {
           </div>
         </div>
       </div>
-
-      <SavedTags />
-
+      <div className='saved-tags'>
+        <SavedTags />
+      </div>
       <div className='saved-cards-w'>
         <h2> Saved Articles </h2>
         <div className='saved-cards-g'>

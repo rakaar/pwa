@@ -13,7 +13,7 @@ const ArticleTags = [
 export default function SavedTag() {
   return (
     <div>
-      <h1>SavedTags</h1>
+      <h1 className='saved-tags-title'>Saved Tags</h1>
       <div class='field is-grouped is-grouped-multiline'>
         {ArticleTags.map(item => {
           return (
