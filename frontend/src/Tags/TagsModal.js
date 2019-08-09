@@ -37,6 +37,10 @@ class TagsModal extends React.Component {
     this.setState({ showModal: false });
   }
 
+  selectTags = event => {
+    event.target.className += ' is-success';
+  };
+
   render() {
     return (
       <div>
@@ -49,7 +53,12 @@ class TagsModal extends React.Component {
           <h1 className='tags-title'>Tags</h1>
           <div className='tags'>
             {ArticleTags.map(item => (
-              <span className='tag is-large is-info is-rounded'>{item}</span>
+              <span
+                className='tag is-large is-rounded'
+                onClick={this.selectTags}
+              >
+                {item}
+              </span>
             ))}
           </div>
           <i

@@ -1,0 +1,16 @@
+@import '../index.scss';
+
+.button {
+  display: inline;
+  float: right;
+}
+
+input {
+  border: 0;
+  background: #f9f9f9;
+  font-size: 2em;
+}
+
+input:focus {
+  outline: none;
+}
