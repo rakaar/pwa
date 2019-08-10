@@ -11,8 +11,8 @@ function App() {
   return (
     <Router>
       <div>
-        <Route exact path='/' component={HomePage} />
         <Route path='/' component={RespNav} />
+        <Route exact path='/' component={HomePage} />
         <Route path='/user/:id' component={UserProfile} />
         <Route path='/article/:id' component={Article} />
         <Route path='/settings/:id' component={Settings} />

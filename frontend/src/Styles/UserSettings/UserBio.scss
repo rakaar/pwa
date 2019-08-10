@@ -1,0 +1,27 @@
+textarea {
+  border: 0;
+  background: #f9f9f9;
+  outline: none;
+  color: black;
+  background: transparent;
+  font-size: 1.4em;
+  position: relative;
+  top: -10px;
+}
+
+.bio-title {
+  //   color: #4a4a4a;
+  font-size: 1.8em;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+
+  body {
+    max-width: 100%;
+  }
+  textarea {
+    max-width: 100%;
+  }
+}

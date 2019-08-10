@@ -1,26 +1,8 @@
 import React from 'react';
 
 export class SinglePost extends React.Component {
-  state = {
-    isLoading: true,
-    title: '',
-    content: '',
-    author: '',
-    error: false
-  };
 
   render() {
-    const {
-      id,
-      error,
-      isLoading,
-      title,
-      author,
-      date,
-      content,
-      viewCount
-    } = this.state;
-    if (1)
       return (
         <div className='post-w'>
           <h1> Making MERN stack apps </h1>
@@ -38,17 +20,14 @@ export class SinglePost extends React.Component {
           <style jsx>
             {`
               .post-w {
-                position: relative;
                 padding: 2em 0;
-                margin-left: 15vw;
-                width: 70%;
                 font-family: Open Sans;
-                background: #fff;
+                background: transparent;
+                text-align:left;
               }
               h1 {
                 color: #363636;
-                font-size: 3em;
-                background: #fff;
+                font-size: 3.2em;
                 font-weight: 800;
               }
               .info-w {
@@ -60,7 +39,7 @@ export class SinglePost extends React.Component {
               }
 
               .content {
-                margin-top: 40px;
+                margin-top: 1em;
                 padding-top: 30px;
                 border-top: 4px solid #f6f6f6;
               }
@@ -68,28 +47,7 @@ export class SinglePost extends React.Component {
           </style>
         </div>
       );
-    else if (error)
-      return (
-        <div className='error-w'>
-          {' '}
-          An Unexpected Error occured
-          <style jsx>
-            {`
-              .error-w {
-                font-family: Open Sans;
-                padding: 2em 0;
-                width: 70%;
-                margin-left: 15vw;
-                background: #eee;
-                text-align: center;
-                font-size: 2em;
-                font-weight: 700;
-                color: #565656;
-              }
-            `}
-          </style>
-        </div>
-      );
+    
   }
 }
 

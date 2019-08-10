@@ -17,16 +17,16 @@ export class Reactionsbar extends React.Component {
 
   render() {
     return (
-      <div className='main-w'>
+      <div className='main-w-rb'>
         <span className='title'>Did you like this post?</span>
 
         <div className='reactions-w'>
-          <button>😄</button>
+          <button className="rcb">😄</button>
           <br />
           <span> 19 </span>
         </div>
         <div className='reactions-w'>
-          <button>😞</button>
+          <button className="rcb">😞</button>
           <br />
           <span> 11 </span>
         </div>
@@ -42,10 +42,10 @@ export class Reactionsbar extends React.Component {
               font-weight: 800;
               font-size: 1.2em;
             }
-            button {
+            .rcb {
               cursor: pointer;
               border: 0;
-              background: #fff;
+              background: transparent;
               margin: 10px 0 0 0;
               padding: 0.5em 1em;
               font-size: 2em;
@@ -56,12 +56,12 @@ export class Reactionsbar extends React.Component {
               transform: translateY(2px) scale(1);
               transform-origin: center;
             }
-            button:hover {
+            .rcb:hover {
               transform: translateY(-3px) scale(1.1);
             }
-            button:focus,
-            button:target,
-            button:active {
+            .rcb:focus,
+            .rcb:target,
+            .rcb:active {
               outline: none;
             }
             .title {
@@ -70,14 +70,13 @@ export class Reactionsbar extends React.Component {
               font-weight: 800;
               color: #445;
             }
-            .main-w {
+            .main-w-rb {
               padding: 2em 0;
               text-align: center;
               position: relative;
               left: 50%;
               transform: translateX(-50%);
               width: 100%;
-              background: #fff;
               border: 3px solid #4ca9e3;
               border-radius: 10px;
               margin-bottom: 70px;
