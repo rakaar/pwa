@@ -35,7 +35,7 @@ export default function RespNav() {
     <div className='res-nav'>
       <nav class='navbar' role='navigation' aria-label='main navigation'>
         <div className='navbar-brand'>
-          <a href='/'>
+          <a href='/' style={{color: 'black'}}>
             <h2>IIT Tech Ambit</h2>
           </a>
         
