@@ -35,8 +35,10 @@ export default function RespNav() {
     <div className='res-nav'>
       <nav class='navbar' role='navigation' aria-label='main navigation'>
         <div className='navbar-brand'>
-          <h2>IIT Tech Ambit</h2>
-
+          <a href='/'>
+            <h2>IIT Tech Ambit</h2>
+          </a>
+        
           <a
             role='button'
             class='navbar-burger burger'
