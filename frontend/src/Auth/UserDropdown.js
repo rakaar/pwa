@@ -36,7 +36,7 @@ export default function UserDropdown() {
         >
           <h6 className='w3-bar-item w3-button'>Profile</h6>
           <h6 className='w3-bar-item w3-button'>Settings</h6>
-          <h6 className='w3-bar-item w3-button'>LogOut</h6>
+          <h6 className='w3-bar-item w3-button'>Log Out</h6>
         </div>
       </div>
     </div>
