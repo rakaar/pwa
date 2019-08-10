@@ -21,6 +21,7 @@ export default function CustomCard() {
             passages, and more recently with desktop publishing software like
             Aldus PageMaker including versions of Lorem Ipsum
           </h4>
+          <a className="read-more-btn" href="#"> Read More ➡</a>
         </div>
       </div>
     </div>
