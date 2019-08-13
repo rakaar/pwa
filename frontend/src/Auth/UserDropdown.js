@@ -14,7 +14,7 @@ export default function UserDropdown() {
           demoId.className = demoId.className.replace(' w3-show', '');
       }
     });
-  }, []);
+  });
 
   const handleDropdown = () => {
     if (demoId.className.indexOf('w3-show') == -1) {

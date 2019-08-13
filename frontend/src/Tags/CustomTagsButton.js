@@ -26,9 +26,9 @@ class CustomTagsButton extends React.Component {
   render() {
     return (
       <div>
-        <h5 className='log-in-btn' onClick={this.handleTagsModal}>
+        <h4 className='log-in-btn' onClick={this.handleTagsModal}>
           Tags
-        </h5>
+        </h4>
 
         {this.state.showmodals ? (
           <CustomTagsModal closeClicked={this.closeModal} />

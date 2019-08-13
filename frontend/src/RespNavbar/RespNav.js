@@ -6,7 +6,7 @@ import UserDropdown from '../Auth/UserDropdown';
 import { Link } from 'react-router-dom';
 import '../Styles/RespNav.scss';
 
-const loggedIn = false;
+const loggedIn = true;
 
 export default function RespNav() {
   document.addEventListener('DOMContentLoaded', () => {
@@ -61,8 +61,8 @@ export default function RespNav() {
               <CustomTagsButton />
             </div>
             <div className='navbar-item'>
-              <h5>
-                <Link to='/issues'>Issues</Link>
+              <h5 className='issues-btn'>
+                <Link to='/issues'>ISSUES</Link>
               </h5>
             </div>
             <div className='navbar-item'>
