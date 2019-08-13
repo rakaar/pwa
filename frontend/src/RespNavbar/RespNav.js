@@ -2,6 +2,7 @@ import React from 'react';
 import AuthModal from '../Auth/AuthModal';
 import TagsModal from '../Tags/TagsModal';
 import UserDropdown from '../Auth/UserDropdown';
+import { Link } from 'react-router-dom';
 import '../Styles/RespNav.scss';
 
 const loggedIn = true;
@@ -35,10 +36,10 @@ export default function RespNav() {
     <div className='res-nav'>
       <nav class='navbar' role='navigation' aria-label='main navigation'>
         <div className='navbar-brand'>
-          <a href='/' style={{color: 'black'}}>
+          <a href='/' style={{ color: 'black' }}>
             <h2>IIT Tech Ambit</h2>
           </a>
-        
+
           <a
             role='button'
             class='navbar-burger burger'
@@ -58,7 +59,9 @@ export default function RespNav() {
               <TagsModal />
             </div>
             <div className='navbar-item'>
-              <h5>Issues</h5>
+              <h5>
+                <Link to='/issues'>Issues</Link>
+              </h5>
             </div>
             <div className='navbar-item'>
               {loggedIn ? <UserDropdown /> : <AuthModal />}

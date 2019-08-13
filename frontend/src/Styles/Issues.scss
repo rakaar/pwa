@@ -1,0 +1,9 @@
+.issues-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.issue-item {
+  padding: 20px;
+  text-align: center;
+}

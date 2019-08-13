@@ -3,6 +3,7 @@ import ReactModal from 'react-modal';
 
 import '../Styles/TagsModal.scss';
 
+// gets all tags from '/getAll'
 const ArticleTags = [
   'sample tag',
   'sample tag',
