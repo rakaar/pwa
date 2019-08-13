@@ -21,14 +21,29 @@ export class Reactionsbar extends React.Component {
         <span className='title'>Did you like this post?</span>
 
         <div className='reactions-w'>
-          <button className="rcb">😄</button>
+          <button className="rcb">😡</button>
           <br />
-          <span> 19 </span>
+          <span> 3 </span>
         </div>
         <div className='reactions-w'>
           <button className="rcb">😞</button>
           <br />
+          <span> 8 </span>
+        </div>
+        <div className='reactions-w'>
+          <button className="rcb">😐</button>
+          <br />
+          <span> 10 </span>
+        </div>
+        <div className='reactions-w'>
+          <button className="rcb">😊</button>
+          <br />
           <span> 11 </span>
+        </div>
+        <div className='reactions-w'>
+          <button className="rcb">😍</button>
+          <br />
+          <span> 10 </span>
         </div>
         <style jsx>
           {`
