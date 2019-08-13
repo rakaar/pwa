@@ -1,11 +1,12 @@
 import React from 'react';
 import AuthModal from '../Auth/AuthModal';
-import TagsModal from '../Tags/TagsModal';
+// import TagsModal from '../Tags/TagsModal';
+import CustomTagsButton from '../Tags/CustomTagsButton';
 import UserDropdown from '../Auth/UserDropdown';
 import { Link } from 'react-router-dom';
 import '../Styles/RespNav.scss';
 
-const loggedIn = true;
+const loggedIn = false;
 
 export default function RespNav() {
   document.addEventListener('DOMContentLoaded', () => {
@@ -56,7 +57,8 @@ export default function RespNav() {
         <div id='navbarBasicExample' class='navbar-menu'>
           <div className='navbar-end'>
             <div className='navbar-item'>
-              <TagsModal />
+              {/* <TagsModal /> */}
+              <CustomTagsButton />
             </div>
             <div className='navbar-item'>
               <h5>
