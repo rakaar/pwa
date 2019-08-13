@@ -3,11 +3,11 @@ import React from 'react';
 import '../Styles/SavedTags.scss';
 
 const ArticleTags = [
-  'sample tag',
-  'sample tag',
-  'sample tag',
-  'sample tag',
-  'sample tag'
+  'blockchain',
+  'ai',
+  'crypto',
+  'innovation',
+  'science'
 ];
 
 export default function SavedTag() {
