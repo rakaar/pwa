@@ -55,9 +55,6 @@ class CustomTagsModal extends Component {
               onChange={this.handleSearch}
             />
           </div>
-          <div class='control'>
-            <a class='button is-info'>Search</a>
-          </div>
         </div>
 
         <i
@@ -69,7 +66,7 @@ class CustomTagsModal extends Component {
           <div className='tags'>
             {this.state.searchResults.map(item => (
               <span
-                className='tag is-large is-rounded'
+                className='tag is-large is-rounded is-primary'
                 onClick={this.selectTags}
               >
                 {ArticleTags[item]}
@@ -80,7 +77,7 @@ class CustomTagsModal extends Component {
           <div className='tags'>
             {ArticleTags.map(item => (
               <span
-                className='tag is-large is-rounded'
+                className='tag is-large is-rounded is-primary'
                 onClick={this.selectTags}
               >
                 {item}

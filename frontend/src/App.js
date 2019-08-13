@@ -6,6 +6,8 @@ import UserProfile from './UserProfile/UserProfile';
 import Article from './Article/Article';
 import Settings from './UserSettings/Settings';
 import Issues from './Issues/Issues';
+import ArticleByTag from './ArticlesByTag/ArticlesByTag';
+
 import './App.css';
 
 function App() {
@@ -14,10 +16,11 @@ function App() {
       <div>
         <Route path='/' component={RespNav} />
         <Route exact path='/' component={HomePage} />
-        <Route path='/user/:id' component={UserProfile} />
+        <Route path='/user' component={UserProfile} />
         <Route path='/article/:id' component={Article} />
-        <Route path='/settings/:id' component={Settings} />
+        <Route path='/settings' component={Settings} />
         <Route path='/issues' component={Issues} />
+        <Route path='/abt' component={ArticleByTag} />
       </div>
     </Router>
   );

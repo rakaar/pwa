@@ -2,7 +2,6 @@ import React from 'react';
 import CustomCarousel from './CustomCarousel';
 import FeaturedArticle from './FeaturedArticles';
 import MonthlyIssue from './MonthlyIssue';
-import RespNav from '../RespNavbar/RespNav';
 import '../Styles/HomePage.scss';
 
 export default function HomePage() {
