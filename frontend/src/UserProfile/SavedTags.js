@@ -20,7 +20,6 @@ export default function SavedTag() {
             <div class='control'>
               <div class='tags has-addons'>
                 <a class='tag is-link is-large is-rounded'>{item}</a>
-                <a class='tag is-delete is-large is-rounded' />
               </div>
             </div>
           );
