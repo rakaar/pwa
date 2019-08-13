@@ -28,7 +28,7 @@ export default function UserDropdown() {
     <div>
       <div>
         <h5 className='current-user' onClick={handleDropdown}>
-          Raghav ▶{' '}
+          Raghav{' '}
         </h5>
         <div
           id='demo'

@@ -6,6 +6,8 @@ import UserProfile from './UserProfile/UserProfile';
 import Article from './Article/Article';
 import Settings from './UserSettings/Settings';
 import Issues from './Issues/Issues';
+import ArticleByTag from './ArticlesByTag/ArticlesByTag';
+
 import './App.css';
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
         <Route path='/article/:id' component={Article} />
         <Route path='/settings/:id' component={Settings} />
         <Route path='/issues' component={Issues} />
+        <Route path='/abt' component={ArticleByTag} />
       </div>
     </Router>
   );
