@@ -1,15 +1,22 @@
 .container {
   position: relative;
-  width: 50%;
+  width: 100%;
+  
 }
 
 .image {
-  opacity: 1;
+  opacity: 0.7;
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   transition: 0.5s ease;
   backface-visibility: hidden;
+}
+
+h1 {
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 20px;
 }
 
 .middle {
@@ -20,13 +27,33 @@
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  text-align: center;
 }
 
 .container:hover .image {
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .container:hover .middle {
   opacity: 1;
 }
+
+.option-buttons {
+  padding: 20%;
+}
+
+.button {
+  margin: 5% !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .middle {
+    text-align: center;
+    padding: 15px;
+    position: absolute;
+  }
+  .button {
+    text-align: center;
+    margin-bottom: 5% !important
+  }
+}
+
