@@ -1,10 +1,12 @@
 import React from 'react';
 import AuthModal from '../Auth/AuthModal';
-import TagsModal from '../Tags/TagsModal';
+// import TagsModal from '../Tags/TagsModal';
+import CustomTagsButton from '../Tags/CustomTagsButton';
 import UserDropdown from '../Auth/UserDropdown';
+import { Link } from 'react-router-dom';
 import '../Styles/RespNav.scss';
 
-const loggedIn = true;
+const loggedIn = false;
 
 export default function RespNav() {
   document.addEventListener('DOMContentLoaded', () => {
@@ -35,10 +37,10 @@ export default function RespNav() {
     <div className='res-nav'>
       <nav class='navbar' role='navigation' aria-label='main navigation'>
         <div className='navbar-brand'>
-          <a href='/' style={{color: 'black'}}>
+          <a href='/' style={{ color: 'black' }}>
             <h2>IIT Tech Ambit</h2>
           </a>
-        
+
           <a
             role='button'
             class='navbar-burger burger'
@@ -55,10 +57,13 @@ export default function RespNav() {
         <div id='navbarBasicExample' class='navbar-menu'>
           <div className='navbar-end'>
             <div className='navbar-item'>
-              <TagsModal />
+              {/* <TagsModal /> */}
+              <CustomTagsButton />
             </div>
             <div className='navbar-item'>
-              <h5>Issues</h5>
+              <h5>
+                <Link to='/issues'>Issues</Link>
+              </h5>
             </div>
             <div className='navbar-item'>
               {loggedIn ? <UserDropdown /> : <AuthModal />}

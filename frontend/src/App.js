@@ -5,6 +5,7 @@ import RespNav from './RespNavbar/RespNav';
 import UserProfile from './UserProfile/UserProfile';
 import Article from './Article/Article';
 import Settings from './UserSettings/Settings';
+import Issues from './Issues/Issues';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path='/user/:id' component={UserProfile} />
         <Route path='/article/:id' component={Article} />
         <Route path='/settings/:id' component={Settings} />
+        <Route path='/issues' component={Issues} />
       </div>
     </Router>
   );

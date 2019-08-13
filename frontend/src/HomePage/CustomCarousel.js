@@ -15,7 +15,7 @@ export default function CustomCarousel() {
     var slides = document.getElementsByClassName('mySlides');
     var dots = document.getElementsByClassName('dot');
     for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = 'none';
+      if (slides[i] != undefined) slides[i].style.display = 'none';
     }
     slideIndex++;
     if (slideIndex > slides.length) {
@@ -24,8 +24,10 @@ export default function CustomCarousel() {
     for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(' active', '');
     }
-    slides[slideIndex - 1].style.display = 'block';
-    dots[slideIndex - 1].className += ' active';
+    if (slides[slideIndex - 1] != undefined)
+      slides[slideIndex - 1].style.display = 'block';
+    if (slides[slideIndex - 1] != undefined)
+      dots[slideIndex - 1].className += ' active';
     setTimeout(showSlides, 2000); // Change image every 2 seconds
   }
 
@@ -35,7 +37,7 @@ export default function CustomCarousel() {
         <div class='mySlides fade'>
           <CustomCard />
         </div>
-        
+
         <div class='mySlides fade'>
           <CustomCard />
         </div>
