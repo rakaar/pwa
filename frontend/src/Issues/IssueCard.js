@@ -11,6 +11,7 @@ export default function IssueCard() {
           class='image'
         />
         <div class='middle'>
+          <h1>January 2018</h1>
           <a class='button is-medium is-one-fifths is-outlined is-active'>
             See Issue
           </a>
