@@ -21,12 +21,18 @@ export default function Settings() {
       </div>
 
       <div className='grid-v-s'>
-        <EditComp title='Username' handleLogo='' defaultContent='raghav' />
+        <EditComp
+          title='Username'
+          handleLogo=''
+          defaultContent='raghav'
+          canEdit={false}
+        />
         <UserBio />
         <EditComp
           title='Email'
           handleLogo=''
           defaultContent='raghav@gmail.com'
+          canEdit={false}
         />
         <div>
           <h2 className='social-settings-t'>Social </h2>
@@ -34,21 +40,25 @@ export default function Settings() {
             title='Facebook Handle'
             handleLogo={fb}
             defaultContent='ragh.kau.3'
+            canEdit={true}
           />
           <EditComp
             title='Twitter Handle'
             handleLogo={twitter}
             defaultContent='ragh.kau.3'
+            canEdit={true}
           />
           <EditComp
             title='Medium Handle'
             handleLogo={medium}
             defaultContent='ragh.kau.3'
+            canEdit={true}
           />
           <EditComp
             title='Github Handle'
             handleLogo={github}
             defaultContent='ragh.kau.3'
+            canEdit={true}
           />
         </div>
       </div>
