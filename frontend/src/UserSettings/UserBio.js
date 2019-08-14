@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
+import FlashMassage from 'react-flash-message';
 
 import '../Styles/UserSettings/UserBio.scss';
 
 export default function UserBio() {
   const [bioEditable, SetBioEditable] = useState(true);
   const [rowsText, SetRowsText] = useState(2);
+  const [savedStatus, setSavedStatus] = useState(false);
 
   const handleEdit = () => SetBioEditable(false);
 
-  const handleSave = () => SetBioEditable(true);
+  const handleSave = () => {
+    SetBioEditable(true);
+    setSavedStatus(true);
+  };
+
+  const FlashMsg = (
+    <FlashMassage duration={850} persistOnHover={false}>
+      <p>Successfully Saved</p>
+    </FlashMassage>
+  );
 
   window.onload = () => {
     if (window.screen.width < 768) SetRowsText(6);
@@ -32,6 +43,7 @@ export default function UserBio() {
           <b onClick={handleEdit}>Edit</b>
         </a>
       )}
+      {savedStatus ? FlashMsg : ''}
     </div>
   );
 }

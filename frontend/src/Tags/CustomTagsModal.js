@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import Fuse from 'fuse.js';
 import '../Styles/SignModal.scss';
 
-const ArticleTags = ['wyyy', 'sample tag', 'sample tag', 'dzzz', 'zdd'];
+const ArticleTags = [
+  'wyyy',
+  'wyyy',
+  'wyyy',
+  'sample tag',
+  'sample tag',
+  'dzzz',
+  'zdd'
+];
 
 var options = {
   shouldSort: true,

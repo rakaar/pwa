@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import FlashMassage from 'react-flash-message';
+
 import '../Styles/UserSettings/EditComp.scss';
 
 export default function EditComp(props) {
+  const [savedStatus, setSavedStatus] = useState(false);
+  const [autoFocusVal, setAutoFocusVal] = useState(false);
+
   function moveCursorToEnd(el) {
     if (typeof el.selectionStart == 'number') {
       el.selectionStart = el.selectionEnd = el.value.length;
@@ -11,14 +16,22 @@ export default function EditComp(props) {
       range.collapse(false);
       range.select();
     }
+
+    document.getElementsByClassName('settings-input')[0].click();
   }
 
-  let inputTag = document.getElementsByTagName('input');
+  const FlashMsg = (
+    <FlashMassage duration={850} persistOnHover={false}>
+      <p>Successfully Saved</p>
+    </FlashMassage>
+  );
 
-  const [autoFocusVal, setAutoFocusVal] = useState(false);
+  let inputTag = document.getElementsByTagName('input');
+  console.log(inputTag);
 
   const handleSave = () => {
     setAutoFocusVal(false);
+    setSavedStatus(true);
   };
 
   const handleEdit = () => {
@@ -42,6 +55,7 @@ export default function EditComp(props) {
       <h1>
         <b>{props.title}</b>
       </h1>
+
       {props.canEdit ? SaveAndEdit : ''}
       <div className='mobile-view-flex'>
         {props.handleLogo}
@@ -52,6 +66,7 @@ export default function EditComp(props) {
           readOnly={!autoFocusVal}
         />
       </div>
+      {savedStatus ? FlashMsg : ''}
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropicUploader from './ImageUploader';
 import EditComp from './EditComp';
 import UserBio from './UserBio';
+
 import '../Styles/UserSettings/Settings.scss';
 import '../App.css';
 
@@ -16,6 +17,7 @@ export default function Settings() {
   return (
     <div className='settings-page'>
       <h1>Account Settings</h1>
+
       <div className='image-uploader'>
         <PropicUploader />
       </div>
@@ -27,13 +29,14 @@ export default function Settings() {
           defaultContent='raghav'
           canEdit={false}
         />
-        <UserBio />
         <EditComp
           title='Email'
           handleLogo=''
           defaultContent='raghav@gmail.com'
           canEdit={false}
         />
+        <UserBio />
+
         <div>
           <h2 className='social-settings-t'>Social </h2>
           <EditComp
