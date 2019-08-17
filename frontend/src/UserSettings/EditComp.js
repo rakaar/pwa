@@ -29,6 +29,7 @@ export default function EditComp(props) {
   let inputTag = document.getElementsByTagName('input');
 
   const handleSave = () => {
+    setAutoFocusVal(false);
     let msgType = 'error';
     if (msgType === 'error') {
       SetMsg('error');

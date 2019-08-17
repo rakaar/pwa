@@ -6,7 +6,7 @@ import UserDropdown from '../Auth/UserDropdown';
 import { Link } from 'react-router-dom';
 import '../Styles/RespNav.scss';
 
-const loggedIn = true;
+const loggedIn = false;
 
 export default function RespNav() {
   document.addEventListener('DOMContentLoaded', () => {
