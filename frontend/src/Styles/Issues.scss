@@ -1,0 +1,15 @@
+.issues-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+}
+.issue-item {
+  padding: 20px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .issues-container {
+    display: block
+  }
+}

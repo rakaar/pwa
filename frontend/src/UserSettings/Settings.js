@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropicUploader from './ImageUploader';
 import EditComp from './EditComp';
 import UserBio from './UserBio';
+
 import '../Styles/UserSettings/Settings.scss';
 import '../App.css';
 
@@ -16,39 +17,51 @@ export default function Settings() {
   return (
     <div className='settings-page'>
       <h1>Account Settings</h1>
+
       <div className='image-uploader'>
         <PropicUploader />
       </div>
 
       <div className='grid-v-s'>
-        <EditComp title='Username' handleLogo='' defaultContent='raghav' />
-        <UserBio />
+        <EditComp
+          title='Username'
+          handleLogo=''
+          defaultContent='raghav'
+          canEdit={false}
+        />
         <EditComp
           title='Email'
           handleLogo=''
           defaultContent='raghav@gmail.com'
+          canEdit={false}
         />
+        <UserBio />
+
         <div>
           <h2 className='social-settings-t'>Social </h2>
           <EditComp
             title='Facebook Handle'
             handleLogo={fb}
             defaultContent='ragh.kau.3'
+            canEdit={true}
           />
           <EditComp
             title='Twitter Handle'
             handleLogo={twitter}
             defaultContent='ragh.kau.3'
+            canEdit={true}
           />
           <EditComp
             title='Medium Handle'
             handleLogo={medium}
             defaultContent='ragh.kau.3'
+            canEdit={true}
           />
           <EditComp
             title='Github Handle'
             handleLogo={github}
             defaultContent='ragh.kau.3'
+            canEdit={true}
           />
         </div>
       </div>

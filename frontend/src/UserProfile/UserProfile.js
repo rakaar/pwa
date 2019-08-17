@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SavedArticle from './SavedArticle';
 import SavedTags from './SavedTags';
+import axios from 'axios';
 
 import '../Styles/UserProfile.scss';
 
+// useEffect(() => {
+//   axios
+//     .get('http://localhost:4000/user/1')
+//     .then(res => {})
+//     .catch(err => console.log(err));
+
+//   axios.get('http://localhost:4000/followedTags');
+// });
+
 export default function UserProfile() {
+  const [username, setUsername] = useState('');
+  const [fbHandle, SetfbHandle] = useState('');
+  const [twitterHandle, SetTwitterHandle] = useState('');
+  const [mediumHandle, SetMediumHandle] = useState('');
+  const [GHandle, SetGHandle] = useState('');
+  const [LinkedInHandle, SetLinkedInHandle] = useState('');
+  // image will be s orted later
+  const [bio, SetBio] = useState('');
+  // tags in hold
+
   return (
     <div>
       <div className='profile'>
@@ -34,6 +54,7 @@ export default function UserProfile() {
       <div className='saved-tags'>
         <SavedTags />
       </div>
+      
       <div className='saved-cards-w'>
         <h2> Saved Articles </h2>
         <div className='saved-cards-g'>

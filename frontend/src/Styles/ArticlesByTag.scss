@@ -1,0 +1,13 @@
+@import './index.scss';
+
+@import '~bulma/sass/elements/tag.sass';
+
+span {
+  margin: 1%;
+}
+
+.tags-abt {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

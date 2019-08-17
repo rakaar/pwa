@@ -5,10 +5,14 @@ import '../Styles/UserSettings/UserBio.scss';
 export default function UserBio() {
   const [bioEditable, SetBioEditable] = useState(true);
   const [rowsText, SetRowsText] = useState(2);
+  const [savedStatus, setSavedStatus] = useState(false);
 
   const handleEdit = () => SetBioEditable(false);
 
-  const handleSave = () => SetBioEditable(true);
+  const handleSave = () => {
+    SetBioEditable(true);
+    setSavedStatus(true);
+  };
 
   window.onload = () => {
     if (window.screen.width < 768) SetRowsText(6);

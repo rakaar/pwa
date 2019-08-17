@@ -21,4 +21,12 @@ h5 {
   flex-direction: row;
   flex-wrap: wrap;
   cursor: pointer;
+  width: 100%;
+  justify-content: center;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#search-tags {
+  margin-left: 40%;
 }
