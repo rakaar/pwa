@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import '../Styles/SignModal.scss';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import ForgotPassword from './ForgotPassword'
 
 class SignModal extends Component {
   state = {
-    showSignInForm: true
+    showSignInForm: true,
+    forgotPassword: false
   };
 
   showSignUp = () => {
@@ -14,7 +16,12 @@ class SignModal extends Component {
 
   closeModal = () => {
     this.props.closeClicked();
+    this.setState({ forgotPassword: false })
   };
+
+  forgotPassHandler = () => {
+    this.setState({ forgotPassword: true })
+  }
 
   render() {
     return (
@@ -33,7 +40,9 @@ class SignModal extends Component {
           class='fa-times fa fa-2x modal-close-btn'
           onClick={this.closeModal}
         />
-        {this.state.showSignInForm ? <SignIn /> : <SignUp />}
+        {this.state.forgotPassword ? <ForgotPassword /> : <></>}
+        {this.state.showSignInForm && !this.state.forgotPassword ? <SignIn forgotPass={this.forgotPassHandler} /> : <></> }
+        {!this.state.showSignInForm && !this.state.forgotPassword ? <SignUp /> : <></> }
       </div>
     );
   }

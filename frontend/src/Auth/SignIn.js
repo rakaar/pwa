@@ -3,10 +3,14 @@ import connectBackend from '../ConnectBackend/ConnectBackend';
 import config from '../Config';
 import '../Styles/SignIn.scss';
 
-export default function SignIn() {
+export default function SignIn(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const forgotPassHandle = () => {
+    // handle forgetPassword
+    props.forgotPass();
+  };
   const handleSignIn = async () => {
     let data = {
       email,
@@ -51,6 +55,10 @@ export default function SignIn() {
             />
           </div>
         </div>
+        <a className='fp-b' onClick={forgotPassHandle}>
+          {' '}
+          Forgot Password ?
+        </a>
         <a class='button is-info is-rounded btn-custom' onClick={handleSignIn}>
           Sign In
         </a>
