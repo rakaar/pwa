@@ -8,7 +8,7 @@ import '../Styles/RespNav.scss';
 
 const loggedIn = false;
 
-export default function RespNav() {
+export default function RespNav(props) {
   document.addEventListener('DOMContentLoaded', () => {
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(
@@ -58,7 +58,7 @@ export default function RespNav() {
           <div className='navbar-end'>
             <div className='navbar-item'>
               {/* <TagsModal /> */}
-              <CustomTagsButton />
+              <CustomTagsButton store={props.store} />
             </div>
             <div className='navbar-item'>
               <h5 className='issues-btn'>

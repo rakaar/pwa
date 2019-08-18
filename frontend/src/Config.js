@@ -1,5 +1,5 @@
-const baseurl = 'http://10.145.113.217:3000/';
-
+// const baseurl = 'http://10.145.113.217:3000/';
+const baseurl = 'http://1bf85109.ngrok.io/';
 const endpoints = {
   user: {
     getFollowedTags: 'user/followedTags',
@@ -7,7 +7,8 @@ const endpoints = {
     getPayment: 'user/get_payment',
     postPayment: 'user/payment',
     postInfoUpdate: 'user/update',
-    getUser: 'user'
+    getUser: 'user',
+    getSavedArticles: 'user/savedArticles'
   },
 
   auth: {
@@ -33,3 +34,10 @@ const endpoints = {
     getAll: 'issue/getAll'
   }
 };
+
+let config = {
+  baseurl,
+  endpoints
+};
+
+export default config;

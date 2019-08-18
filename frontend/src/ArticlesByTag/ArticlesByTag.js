@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import FeaturedArticles from '../HomePage/FeaturedArticles';
 
 import '../Styles/ArticlesByTag.scss';
@@ -20,7 +20,11 @@ const tags = [
   'sample tag'
 ];
 
-export default function ArticlesByTag() {
+export default function ArticlesByTag(props) {
+  useEffect(() => {
+    console.log(sessionStorage.getItem('taglist'));
+  });
+
   return (
     <div>
       <h1>Articles as per Your Selected Tags</h1>

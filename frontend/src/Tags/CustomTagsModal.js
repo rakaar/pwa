@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Fuse from 'fuse.js';
+import addTags from '../redux/actions';
 import '../Styles/SignModal.scss';
 
 const ArticleTags = [
@@ -50,6 +51,15 @@ class CustomTagsModal extends Component {
     event.target.className += ' is-success';
   };
 
+  getArticles = () => {
+    // console.log(this.props);
+    // this.props.store.dispatch(addTags('rest-1-2'));
+    // console.log(this.props.store.dispatch(addTags('rest-1-2')));
+    // console.log(this.props.store.dispatch(addTags('redsf')));
+    sessionStorage.setItem('taglist', JSON.stringify({ tags: ['123'] }));
+    this.props.history.push('/abt');
+  };
+
   render() {
     return (
       <div className='modal-wrapper'>
@@ -93,6 +103,9 @@ class CustomTagsModal extends Component {
             ))}
           </div>
         )}
+        <button onClick={this.getArticles}>
+          Get Articles by Selected Tags
+        </button>
       </div>
     );
   }

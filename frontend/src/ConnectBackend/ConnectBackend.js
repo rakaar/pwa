@@ -1,28 +1,28 @@
 import axios from 'axios';
-import baseurl from '../Config.js';
+import config from '../Config.js';
 
 function getData(endpoint, data) {
   axios
-    .get(`${baseurl}${endpoint}`, {
+    .get(config.baseurl + endpoint, {
       params: data
     })
     .then(res => {
       return res;
     })
     .catch(err => {
-      console.log(err);
+      console.log('err in getDAta is ', err);
       return 500;
     });
 }
 
 function postData(endpoint, data) {
   axios
-    .post(`${baseurl}${endpoint}`, data)
+    .post(config.baseurl + endpoint, data)
     .then(res => {
       return res;
     })
     .catch(err => {
-      console.log(err);
+      console.log('err in postData is ', err);
       return 500;
     });
 }

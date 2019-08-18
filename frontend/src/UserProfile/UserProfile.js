@@ -1,29 +1,47 @@
 import React, { useState, useEffect } from 'react';
 import SavedArticle from './SavedArticle';
 import SavedTags from './SavedTags';
-import axios from 'axios';
-
+import connectBackend from '../ConnectBackend/ConnectBackend';
+import config from '../Config';
 import '../Styles/UserProfile.scss';
-
-// useEffect(() => {
-//   axios
-//     .get('http://localhost:4000/user/1')
-//     .then(res => {})
-//     .catch(err => console.log(err));
-
-//   axios.get('http://localhost:4000/followedTags');
-// });
+import { setInterval } from 'core-js';
 
 export default function UserProfile() {
-  const [username, setUsername] = useState('');
-  const [fbHandle, SetfbHandle] = useState('');
-  const [twitterHandle, SetTwitterHandle] = useState('');
-  const [mediumHandle, SetMediumHandle] = useState('');
-  const [GHandle, SetGHandle] = useState('');
-  const [LinkedInHandle, SetLinkedInHandle] = useState('');
-  // image will be s orted later
-  const [bio, SetBio] = useState('');
-  // tags in hold
+  const [userData, setUserData] = useState({
+    username: '',
+    email: '',
+    fb_handle: '',
+    g_handle: '',
+    medium_handle: '',
+    twitter_handle: '',
+    linkedin_handle: '',
+    bio: ''
+  });
+  const [tags, SetTags] = useState([]);
+  const [savedArticles, setSavedArticles] = useState([]);
+
+  useEffect(() => {
+    let id = 1; // id we get from user login
+    let res = connectBackend.getData(config.endpoints.user.getFollowedTags, id);
+    SetTags(res.data);
+
+    let userRes = connectBackend.getData(config.endpoints.user.getUser, id);
+    setUserData({
+      username: userRes.data.username,
+      email: userRes.data.email,
+      fb_handle: userRes.data.fb_handle,
+      g_handle: userRes.data.g_handle,
+      medium_handle: userRes.data.medium_handle,
+      twitter_handle: userRes.data.twitter_handle,
+      linkedin_handle: userRes.data.linkedin_handle,
+      bio: userRes.data.bio
+    });
+
+    let savedArticlesRes = connectBackend.getData(
+      config.endpoints.user.getSavedArticles
+    );
+    setSavedArticles(savedArticlesRes.data);
+  });
 
   return (
     <div>
@@ -34,34 +52,48 @@ export default function UserProfile() {
             src='https://homepages.cae.wisc.edu/~ece533/images/airplane.png'
           />
           <div className='name-r'>
-            <h2 className='username'>John Doe</h2>
+            <h2 className='username'>{userData.username}</h2>
             {/* <a href='#' className='edit-profile'>
               Edit
             </a> */}
             <br />
-            <h3>Web Developer, Designer, Machine Learning Enthusiast </h3>
+            <h3>{userData.bio}</h3>
 
             <div className='icons'>
-              <i class='fa fa-facebook-square fa-3x' aria-hidden='false' />
-              <i class='fa fa-twitter-square fa-3x' aria-hidden='false' />
-              <i class='fa fa-linkedin-square fa-3x' aria-hidden='false' />
-              <i class='fa fa-medium fa-3x' aria-hidden='false' />
-              <i class='fa fa-github-square fa-3x' aria-hidden='false' />
+              <i
+                class='fa fa-facebook-square fa-3x'
+                aria-hidden='false'
+                href={'https://facebook.com/' + userData.fb_handle}
+              />
+              <i
+                class='fa fa-twitter-square fa-3x'
+                aria-hidden='false'
+                href={'https://twitter.com/' + userData.twitter_handle}
+              />
+              <i
+                class='fa fa-linkedin-square fa-3x'
+                aria-hidden='false'
+                href={'' + userData.linkedin_handle}
+              />
+              <i
+                class='fa fa-medium fa-3x'
+                aria-hidden='false'
+                href={'' + userData.medium_handle}
+              />
             </div>
           </div>
         </div>
       </div>
       <div className='saved-tags'>
-        <SavedTags />
+        <SavedTags tags={tags} />
       </div>
-      
+
       <div className='saved-cards-w'>
         <h2> Saved Articles </h2>
         <div className='saved-cards-g'>
-          <SavedArticle />
-          <SavedArticle />
-          <SavedArticle />
-          <SavedArticle />
+          {savedArticles.map(item => {
+            return <SavedArticle title={item.title} author={item.author} />;
+          })}
         </div>
       </div>
     </div>
