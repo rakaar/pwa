@@ -1,11 +1,27 @@
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
+
 import connectBackend from '../ConnectBackend/ConnectBackend';
 import config from '../Config';
 import '../Styles/SignIn.scss';
 
-export default function SignIn(props) {
+function SignIn(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  // Errors from backend response
+  const [loggedInAlreadyErr, SetIsLoggedInAleadyErr] = useState(false);
+  const [IsMailVerifiedErr, SetIsMailVerifiedErr] = useState(false);
+  const [IsNotMatchErr, SetIsNotMatchErr] = useState(false);
+
+  // Error Messages to be shown
+  const AlreadyLoggedInMsg = <h4 className='err-msg'>Already Logged In</h4>;
+  const MailNotVerifiedMsg = (
+    <h4 className='err-msg'>Please verify your email before first login</h4>
+  );
+  const NotMatchMsg = (
+    <h4 className='err-msg'>Email or password does not match</h4>
+  );
 
   const forgotPassHandle = () => {
     // handle forgetPassword
@@ -19,14 +35,15 @@ export default function SignIn(props) {
     let res = await connectBackend.postData(config.endpoints.postLogin, data);
     console.log('res from signin ', res);
 
-    if (res.message === 'Already Logged In') {
-      // show a snackbar telling already logged In
-    } else if (res.message === 'Please verify your email before first login') {
-      // show a snackbar check mail
-    } else if (res.message === 'email or password does not match.') {
-      // show that do not match
-    } else {
-      // successfully login
+    if (res.message === 'Already Logged In') SetIsLoggedInAleadyErr(true);
+    else if (res.message === 'Please verify your email before first login')
+      SetIsMailVerifiedErr(true);
+    else if (res.message === 'email or password does not match.')
+      SetIsNotMatchErr(true);
+    else {
+      console.log('successfully logged in'); //dbg st
+      props.history.push('/');
+      props.closeOnLogin();
     }
   };
 
@@ -55,6 +72,9 @@ export default function SignIn(props) {
             />
           </div>
         </div>
+        {loggedInAlreadyErr ? '' : AlreadyLoggedInMsg}
+        {IsMailVerifiedErr ? '' : MailNotVerifiedMsg}
+        {IsNotMatchErr ? '' : NotMatchMsg}
         <a className='fp-b' onClick={forgotPassHandle}>
           {' '}
           Forgot Password ?
@@ -66,3 +86,5 @@ export default function SignIn(props) {
     </div>
   );
 }
+
+export default withRouter(SignIn);

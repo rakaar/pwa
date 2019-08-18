@@ -1,5 +1,5 @@
 // const baseurl = 'http://10.145.113.217:3000/';
-const baseurl = 'http://1bf85109.ngrok.io/';
+const baseurl = 'http://10.145.192.195:3000/';
 const endpoints = {
   user: {
     getFollowedTags: 'user/followedTags',

@@ -4,8 +4,8 @@ import SignModal from './SignModal';
 import '../Styles/AuthModal.scss';
 
 class AuthModal extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showmodals: false
     };

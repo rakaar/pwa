@@ -23,6 +23,7 @@ export default function SignUp() {
   const [passErr, setPassErr] = useState(false);
   const [pwdLong, SetPwdLong] = useState(true);
 
+  // Error Messages to be displayed
   const passErrMsg = <h4 className='err-msg'>Passwords do not match</h4>;
   const nameErrMsg = (
     <h4 className='err-msg'>Username has already been taken</h4>
@@ -47,22 +48,23 @@ export default function SignUp() {
   };
 
   const handleSignUp = async () => {
+    let res;
     if (password !== cnfPassword) setPassErr(true);
     else if (!isMailValid(mail)) SetMailValid(false);
     else if (!isPasswordPerfect(password)) SetPwdLong(false);
     else {
-      let data = await {
+      let data = {
         username,
         password,
         email: mail
       };
-      console.log('data is ', data);
-      let res = await connectBackend.postData(
+
+      res = await connectBackend.postData(
         config.endpoints.auth.postSignUp,
         data
       );
-      console.log('res from signup ', res);
-      if (res.message === 'Username Already Taken') SetNameErr(true);
+      await console.log('res from signup ', res);
+      if ((await res.message) === 'Username Already Taken') SetNameErr(true);
       else if (res.message === 'Email Already Registered') SetMailErr(true);
       else {
         var x = document.getElementById('snackbar');
