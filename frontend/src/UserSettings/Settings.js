@@ -13,6 +13,7 @@ export default function Settings() {
   let github = <i class='fa fa-github-square fa-2x' aria-hidden='false' />;
 
   const [editStatus, setEditStatus] = useState(true);
+  const [changePass, setChangePass] = useState(false)
 
   return (
     <div className='settings-page'>
@@ -35,6 +36,20 @@ export default function Settings() {
           defaultContent='raghav@gmail.com'
           canEdit={false}
         />
+
+        <div className="cps-w"> <h3>Password </h3>
+          <a className="cp-l" onClick={setChangePass}>Change Password</a>
+          {
+            changePass ? <div className='cpf-w'>
+
+                <input className="cpi" type="password" placeholder="Old Password"></input>
+                <input className="cpi" type="password" placeholder="New Password"></input>
+                <input className="cpi" type="password" placeholder="Confirm New Password"></input>
+                <a className="cp-a"> Change Password </a>
+            </div> : <> </>
+          }
+        </div>
+
         <UserBio />
 
         <div>

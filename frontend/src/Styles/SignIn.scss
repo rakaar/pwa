@@ -1,3 +1,12 @@
+.fp-b{
+    position: relative;
+    top: 2em;
+    font-size: 1.1em;
+    color: #222 !important;
+    &:hover{
+        opacity: 0.9;
+    }
+}
 
 .login-wrap{
     position: relative;
@@ -32,6 +41,7 @@
     border-radius: 16px !important;
     text-transform: uppercase;
     font-weight: 600;
+    color: #fff !important;
 }
 
 .input:focus{
