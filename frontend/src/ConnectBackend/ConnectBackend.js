@@ -10,7 +10,7 @@ async function getData(endpoint, data) {
       return res;
     })
     .catch(err => {
-      console.log('err in getDAta is ', err);
+      console.log('err in getData is ', err);
       return 500;
     });
 }
