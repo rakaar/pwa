@@ -59,10 +59,9 @@ export default function SignUp() {
         email: mail
       };
 
-      res = await connectBackend.postData(
-        config.endpoints.auth.postSignUp,
+      res = await connectBackend.postData(config.endpoints.auth.postSignUp, {
         data
-      );
+      });
       await console.log('res from signup ', res);
       if ((await res.message) === 'Username Already Taken') SetNameErr(true);
       else if (res.message === 'Email Already Registered') SetMailErr(true);

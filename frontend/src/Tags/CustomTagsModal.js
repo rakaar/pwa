@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Fuse from 'fuse.js';
-import addTags from '../redux/actions';
+import { withRouter } from 'react-router-dom';
 import '../Styles/SignModal.scss';
 
 const ArticleTags = [
@@ -24,11 +24,12 @@ var options = {
 var fuse = new Fuse(ArticleTags, options);
 
 class CustomTagsModal extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       IsSearching: false,
-      searchResults: []
+      searchResults: [],
+      selectedTags: []
     };
 
     this.handleSearch = this.handleSearch.bind(this);
@@ -49,15 +50,18 @@ class CustomTagsModal extends Component {
 
   selectTags = event => {
     event.target.className += ' is-success';
+    let tempTags = this.state.selectedTags;
+    tempTags.push(event.target.innerText);
+    this.setState({ selectTags: tempTags });
   };
 
   getArticles = () => {
-    // console.log(this.props);
-    // this.props.store.dispatch(addTags('rest-1-2'));
-    // console.log(this.props.store.dispatch(addTags('rest-1-2')));
-    // console.log(this.props.store.dispatch(addTags('redsf')));
-    sessionStorage.setItem('taglist', JSON.stringify({ tags: ['123'] }));
+    sessionStorage.setItem(
+      'taglist',
+      JSON.stringify({ tags: this.state.selectedTags })
+    );
     this.props.history.push('/abt');
+    this.closeModal();
   };
 
   render() {
@@ -111,4 +115,4 @@ class CustomTagsModal extends Component {
   }
 }
 
-export default CustomTagsModal;
+export default withRouter(CustomTagsModal);

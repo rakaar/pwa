@@ -1,28 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import FeaturedArticles from '../HomePage/FeaturedArticles';
+
+import connectBackend from '../ConnectBackend/ConnectBackend';
+import config from '../Config';
 
 import '../Styles/ArticlesByTag.scss';
 
-const tags = [
-  'sample tag',
-  'sample tag',
-  'sample tag',
-  'sample tag',
-  'sample tag',
-  'sample tag',
-  'sample tag',
-  'sample tag',
-  'sample tag',
-  'sample tag',
-  'sample tag',
-  'sample tag',
-  'sample tag',
-  'sample tag'
-];
-
 export default function ArticlesByTag(props) {
+  let res;
+  const [tags, setTags] = useState([]);
+
+  const getArticles = async tagsArr => {
+    return await connectBackend.postData(config.endpoints.article.getByTags, {
+      tags: tagsArr
+    });
+  };
   useEffect(() => {
-    console.log(sessionStorage.getItem('taglist'));
+    let tagsStr = sessionStorage.getItem('taglist');
+    let tagsArr = JSON.parse(tagsStr).tags;
+    setTags(tagsArr);
+    res = getArticles(tagsArr);
   });
 
   return (
@@ -33,13 +30,24 @@ export default function ArticlesByTag(props) {
           <span class='tag is-black is-large is-rounded'>{item}</span>
         ))}
       </div>
+      {res.map(item => {
+        return (
+          <FeaturedArticles
+            tags={item.tags}
+            title={item.title}
+            author={item.author}
+            time={item.post_time}
+            post_id={item.post_id}
+          />
+        );
+      })}
+      {/* <FeaturedArticles />
       <FeaturedArticles />
       <FeaturedArticles />
       <FeaturedArticles />
       <FeaturedArticles />
       <FeaturedArticles />
-      <FeaturedArticles />
-      <FeaturedArticles />
+      <FeaturedArticles /> */}
     </div>
   );
 }

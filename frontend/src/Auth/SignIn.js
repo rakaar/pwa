@@ -32,7 +32,9 @@ function SignIn(props) {
       email,
       password
     };
-    let res = await connectBackend.postData(config.endpoints.postLogin, data);
+    let res = await connectBackend.postData(config.endpoints.postLogin, {
+      data
+    });
     console.log('res from signin ', res);
 
     if (res.message === 'Already Logged In') SetIsLoggedInAleadyErr(true);

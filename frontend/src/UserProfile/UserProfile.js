@@ -4,9 +4,9 @@ import SavedTags from './SavedTags';
 import connectBackend from '../ConnectBackend/ConnectBackend';
 import config from '../Config';
 import '../Styles/UserProfile.scss';
-import { setInterval } from 'core-js';
 
-export default function UserProfile() {
+export default function UserProfile(props) {
+  let id = props.match.params.id;
   const [userData, setUserData] = useState({
     username: '',
     email: '',
@@ -22,10 +22,12 @@ export default function UserProfile() {
 
   useEffect(() => {
     let id = 1; // id we get from user login
-    let res = connectBackend.getData(config.endpoints.user.getFollowedTags, id);
+    let res = connectBackend.getData(config.endpoints.user.getFollowedTags, {
+      id
+    });
     SetTags(res.data);
 
-    let userRes = connectBackend.getData(config.endpoints.user.getUser, id);
+    let userRes = connectBackend.getData(config.endpoints.user.getUser, { id });
     setUserData({
       username: userRes.data.username,
       email: userRes.data.email,
@@ -38,7 +40,8 @@ export default function UserProfile() {
     });
 
     let savedArticlesRes = connectBackend.getData(
-      config.endpoints.user.getSavedArticles
+      config.endpoints.user.getSavedArticles,
+      { id }
     );
     setSavedArticles(savedArticlesRes.data);
   });
