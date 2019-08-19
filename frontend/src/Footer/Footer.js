@@ -13,10 +13,16 @@ export class Footer extends Component {
                         <p> About </p>
                     </div>
                     <div className="mg-f">
-                        <i class='fa fa-facebook-square fa-2x' aria-hidden='false' />
+                        <a href='https://www.facebook.com/IIT.Technology.Ambit/'>
+                            <i class='fa fa-facebook-square fa-2x' aria-hidden='false' />
+                        </a>
                         <i class='fa fa-instagram fa-2x' aria-hidden='false' />
-                        <i class='fa fa-medium fa-2x' aria-hidden='false' />
-                        <i class='fa fa-github-square fa-2x' aria-hidden='false' />
+                        <a href='https://medium.com/iit-technology-ambit'>
+                            <i class='fa fa-medium fa-2x' aria-hidden='false' />
+                        </a>
+                        <a href='https://github.com/iit-technology-ambit/'>
+                            <i class='fa fa-github-square fa-2x' aria-hidden='false' />
+                        </a>
                     </div>
                     <div className="rg-f"> 
                         <p> IIT Kharagpur </p>
