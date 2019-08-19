@@ -10,16 +10,16 @@ export default function Issues() {
   return (
     <div className='issues-container'>
       <div className='issue-item'>
-        <IssueCard />
+        <IssueCard issue='June 2019'/>
       </div>
       <div className='issue-item'>
-        <IssueCard />
+        <IssueCard issue='May 2019'/>
       </div>
       <div className='issue-item'>
-        <IssueCard />
+        <IssueCard issue='April 2019'/>
       </div>
       <div className='issue-item'>
-        <IssueCard />
+        <IssueCard issue='March 2019'/>
       </div>
     </div>
   );

@@ -3,10 +3,9 @@ import React, { Component } from 'react';
 import '../Styles/IssueCard.scss';
 
 class IssueCard extends Component {
-  state = {
-    issue: 'jun19'
-  }
   render(){
+    const issue = this.props.issue
+    const issueCode = issue.slice(0, 3).toLowerCase() + issue.slice(issue.length - 2, issue.length)
     return (
       <div>
         <div class='container'>
@@ -16,13 +15,13 @@ class IssueCard extends Component {
           />
   
           <div className='middle'>
-            <h1>June 2019</h1>
+            <h1>{this.props.issue}</h1>
             <br />
             <div className="bc-i">
             <a class='button'>
               See Issue
             </a>
-            <a class='button' href={`https://cdn.iit-techambit.in/issue/${this.state.issue}.pdf`}>
+            <a class='button' href={`https://cdn.iit-techambit.in/issue/${issueCode}.pdf`}>
               Download
             </a>
             </div>
