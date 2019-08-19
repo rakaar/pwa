@@ -76,12 +76,12 @@ export default function UserProfile(props) {
               <i
                 class='fa fa-linkedin-square fa-3x'
                 aria-hidden='false'
-                href={'' + userData.linkedin_handle}
+                href={'https://linkedin.com/in/' + userData.linkedin_handle}
               />
               <i
                 class='fa fa-medium fa-3x'
                 aria-hidden='false'
-                href={'' + userData.medium_handle}
+                href={'https://medium.com/' + userData.medium_handle}
               />
             </div>
           </div>
