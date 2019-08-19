@@ -1,5 +1,6 @@
 // const baseurl = 'http://10.145.113.217:3000/';
 const baseurl = 'http://10.145.192.195:3000/';
+const issuecdn = 'https://cdn.iit-techambit.in/issue/';
 const endpoints = {
   user: {
     getFollowedTags: 'user/followedTags',
@@ -37,7 +38,8 @@ const endpoints = {
 
 let config = {
   baseurl,
-  endpoints
+  endpoints,
+  issuecdn
 };
 
 export default config;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import config from '../Config';
 
 import '../Styles/IssueCard.scss';
 
@@ -21,7 +22,7 @@ class IssueCard extends Component {
             <a class='button'>
               See Issue
             </a>
-            <a class='button' href={`https://cdn.iit-techambit.in/issue/${issueCode}.pdf`}>
+            <a class='button' href={`${config.issuecdn}${issueCode}.pdf`}>
               Download
             </a>
             </div>
