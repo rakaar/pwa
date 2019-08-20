@@ -1,30 +1,45 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+
+import connectBackend from '../ConnectBackend/ConnectBackend';
 import config from '../Config';
 
 import '../Styles/IssueCard.scss';
 
 class IssueCard extends Component {
-  render(){
-    const issue = this.props.issue
-    const issueCode = issue.slice(0, 3).toLowerCase() + issue.slice(issue.length - 2, issue.length)
+  constructor(props) {
+    super(props);
+  }
+
+  // get Articles of the issue  by tag
+  getArticlesByIssueTag = async () => {
+    const id = this.props.id;
+    let res = await connectBackend.postData(
+      config.endpoints.article.getByTags,
+      { id }
+    );
+    sessionStorage.setItem('taglist', JSON.stringify({ tags: res.data }));
+    props.history.push('/abt');
+  };
+
+  render() {
     return (
       <div>
         <div class='container'>
-          <img
-            src='https://images.pexels.com/photos/2727736/pexels-photo-2727736.jpeg?cs=srgb&dl=beautiful-brunette-fashion-2727736.jpg&fm=jpg'
-            class='image'
-          />
-  
+          <img src={this.props.cover} class='image' />
+
           <div className='middle'>
-            <h1>{this.props.issue}</h1>
+            <h1>
+              {this.props.month} {this.props.year}
+            </h1>
             <br />
-            <div className="bc-i">
-            <a class='button'>
-              See Issue
-            </a>
-            <a class='button' href={`${config.issuecdn}${issueCode}.pdf`}>
-              Download
-            </a>
+            <div className='bc-i'>
+              <a class='button' onClick={this.getArticlesByIssueTag}>
+                See Issue
+              </a>
+              <a class='button' href={this.props.link}>
+                Download
+              </a>
             </div>
           </div>
         </div>
@@ -33,4 +48,4 @@ class IssueCard extends Component {
   }
 }
 
-export default IssueCard
+export default withRouter(IssueCard);

@@ -7,6 +7,7 @@ import connectBackend from '../ConnectBackend/ConnectBackend';
 import config from '../Config';
 
 import '../Styles/UserSettings/Settings.scss';
+import '../Styles/Snackbar.scss';
 import '../App.css';
 
 export default function Settings() {
@@ -42,6 +43,15 @@ export default function Settings() {
     });
   });
 
+  // snackbar func
+  const showSnackbar = () => {
+    var x = document.getElementById('snackbar');
+    x.className = 'show';
+    setTimeout(function() {
+      x.className = x.className.replace('show', '');
+    }, 5000);
+  };
+
   // when bio is changed
   const onBioChange = newbio => {
     const updatedUserInfo = Object.assign(userData, newbio);
@@ -49,7 +59,7 @@ export default function Settings() {
       config.endpoints.user.postInfoUpdate,
       updatedUserInfo
     );
-    // depending on res show the concerned snackbar
+    if (res === 200) showSnackbar();
   };
 
   // when social media handles are changed
@@ -61,7 +71,7 @@ export default function Settings() {
       config.endpoints.user.postInfoUpdate,
       updatedUserInfo
     );
-    // depending on res show the concerned snackbar
+    if (res === 200) showSnackbar();
   };
   const onTwitterHandleChange = newTwitter_handle => {
     const updatedUserInfo = Object.assign(userData, {
@@ -71,7 +81,7 @@ export default function Settings() {
       config.endpoints.user.postInfoUpdate,
       updatedUserInfo
     );
-    // depending on res show the concerned snackbar
+    if (res === 200) showSnackbar();
   };
   const onMediumHandleChange = newMedium_handle => {
     const updatedUserInfo = Object.assign(userData, {
@@ -81,9 +91,9 @@ export default function Settings() {
       config.endpoints.user.postInfoUpdate,
       updatedUserInfo
     );
-    // depending on res show the concerned snackbar
+    if (res === 200) showSnackbar();
   };
-  const onFbHandleChange = newg_handle => {
+  const onGithubHandleChange = newg_handle => {
     const updatedUserInfo = Object.assign(userData, {
       g_handle: newg_handle
     });
@@ -91,12 +101,12 @@ export default function Settings() {
       config.endpoints.user.postInfoUpdate,
       updatedUserInfo
     );
-    // depending on res show the concerned snackbar
+    if (res === 200) showSnackbar();
   };
   return (
     <div className='settings-page'>
       <h1>Account Settings</h1>
-
+      <div id='snackbar'>Successfully details changed</div>
       <div className='image-uploader'>
         <PropicUploader />
       </div>
