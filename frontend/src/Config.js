@@ -20,6 +20,7 @@ const endpoints = {
   },
   article: {
     getByTags: 'post/by_tags',
+    getAll: 'post/getAll',
     postCreate: 'post/create',
     postRate: 'post/rate',
     postSave: 'post/save',

@@ -11,7 +11,7 @@ export default function FeaturedArticles(props) {
           return <div className='tags-custom'>{item}</div>;
         })}
         <div className='featured-article-image'>
-          <img src='https://images.pexels.com/photos/825258/pexels-photo-825258.jpeg?cs=srgb&dl=circuit-board-circuits-components-825258.jpg&fm=jpg' />
+          <img src={props.imgLinks[0]} />
         </div>
 
         <div className='featured-article-content'>

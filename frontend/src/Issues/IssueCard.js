@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import connectBackend from '../ConnectBackend/ConnectBackend';
-import config from '../Config';
-
 import '../Styles/IssueCard.scss';
 
 class IssueCard extends Component {
@@ -12,13 +9,9 @@ class IssueCard extends Component {
   }
 
   // get Articles of the issue  by tag
-  getArticlesByIssueTag = async () => {
-    const id = this.props.id;
-    let res = await connectBackend.postData(
-      config.endpoints.article.getByTags,
-      { id }
-    );
-    sessionStorage.setItem('taglist', JSON.stringify({ tags: res.data }));
+  getArticlesByIssueTag = () => {
+    let issueTag = props.month.toLowerCase().slice(0, 3) + props.year.slice(2);
+    sessionStorage.setItem('taglist', JSON.stringify({ tags: [issueTag] }));
     props.history.push('/abt');
   };
 
