@@ -6,6 +6,8 @@ import '../Styles/Snackbar.scss';
 export default function EditComp(props) {
   const [autoFocusVal, setAutoFocusVal] = useState(false);
 
+  const [editedInfo, SetEditedInfo] = useState('');
+
   const [backCol, SetBackCol] = useState('blue');
   const [textCol, SetTextCol] = useState('green');
   const [msg, SetMsg] = useState('random text');
@@ -58,6 +60,10 @@ export default function EditComp(props) {
     setAutoFocusVal(true);
     moveCursorToEnd(inputTag[2]);
   };
+  const handleInfoChange = e => {
+    SetEditedInfo(e.target.value);
+    props.onHandleChange(editedInfo);
+  };
 
   const SaveAndEdit = autoFocusVal ? (
     <a className='button  is-success'>
@@ -87,6 +93,7 @@ export default function EditComp(props) {
             type='text'
             defaultValue={props.defaultContent}
             readOnly={!autoFocusVal}
+            onChange={handleInfoChange}
           />
         </div>
       </div>

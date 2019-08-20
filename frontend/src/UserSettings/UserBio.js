@@ -17,9 +17,8 @@ export default function UserBio(props) {
   const handleSave = () => {
     SetBioEditable(true);
     setSavedStatus(true);
-    // need user's currentData for that
-    // either use sessions
-    // use redux or some state management
+    const newbio = { bio: editedBio };
+    props.onBioChange(newbio);
   };
 
   window.onload = () => {

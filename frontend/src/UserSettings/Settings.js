@@ -42,6 +42,57 @@ export default function Settings() {
     });
   });
 
+  // when bio is changed
+  const onBioChange = newbio => {
+    const updatedUserInfo = Object.assign(userData, newbio);
+    let res = connectBackend.postData(
+      config.endpoints.user.postInfoUpdate,
+      updatedUserInfo
+    );
+    // depending on res show the concerned snackbar
+  };
+
+  // when social media handles are changed
+  const onFbHandleChange = newfb_handle => {
+    const updatedUserInfo = Object.assign(userData, {
+      fb_handle: newfb_handle
+    });
+    let res = connectBackend.postData(
+      config.endpoints.user.postInfoUpdate,
+      updatedUserInfo
+    );
+    // depending on res show the concerned snackbar
+  };
+  const onTwitterHandleChange = newTwitter_handle => {
+    const updatedUserInfo = Object.assign(userData, {
+      twitter_handle: newTwitter_handle
+    });
+    let res = connectBackend.postData(
+      config.endpoints.user.postInfoUpdate,
+      updatedUserInfo
+    );
+    // depending on res show the concerned snackbar
+  };
+  const onMediumHandleChange = newMedium_handle => {
+    const updatedUserInfo = Object.assign(userData, {
+      medium_handle: newMedium_handle
+    });
+    let res = connectBackend.postData(
+      config.endpoints.user.postInfoUpdate,
+      updatedUserInfo
+    );
+    // depending on res show the concerned snackbar
+  };
+  const onFbHandleChange = newg_handle => {
+    const updatedUserInfo = Object.assign(userData, {
+      g_handle: newg_handle
+    });
+    let res = connectBackend.postData(
+      config.endpoints.user.postInfoUpdate,
+      updatedUserInfo
+    );
+    // depending on res show the concerned snackbar
+  };
   return (
     <div className='settings-page'>
       <h1>Account Settings</h1>
@@ -94,7 +145,7 @@ export default function Settings() {
           )}
         </div>
 
-        <UserBio bio={userData.bio} />
+        <UserBio bio={userData.bio} onBioChange={onBioChange} />
 
         <div>
           <h2 className='social-settings-t'>Social media handles</h2>
@@ -103,24 +154,28 @@ export default function Settings() {
             handleLogo={fb}
             defaultContent={userData.fb_handle}
             canEdit={true}
+            onHandleChange={onFbHandleChange}
           />
           <EditComp
             title='Twitter Handle'
             handleLogo={twitter}
             defaultContent={userData.twitter_handle}
             canEdit={true}
+            onHandleChange={onTwitterHandleChange}
           />
           <EditComp
             title='Medium Handle'
             handleLogo={medium}
             defaultContent='ragh.kau.3'
             canEdit={true}
+            onHandleChange={onMediumHandleChange}
           />
           <EditComp
             title='Github Handle'
             handleLogo={github}
             defaultContent={userData.g_handle}
             canEdit={true}
+            onHandleChange={onGithubHandleChange}
           />
         </div>
       </div>
