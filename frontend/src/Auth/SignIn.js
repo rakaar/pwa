@@ -8,6 +8,7 @@ import '../Styles/SignIn.scss';
 function SignIn(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
 
   // Errors from backend response
   const [loggedInAlreadyErr, SetIsLoggedInAleadyErr] = useState(false);
@@ -44,6 +45,9 @@ function SignIn(props) {
       SetIsNotMatchErr(true);
     else {
       console.log('successfully logged in'); //dbg st
+      setUsername(res.data.username);
+      localStorage.setItem('loginToken', 'user logged in successfully');
+      localStorage.setItem('username', username);
       props.history.push('/');
       props.closeOnLogin();
     }

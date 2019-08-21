@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import '../Styles/UserDropdown.scss';
 
-export default function UserDropdown() {
+export default function UserDropdown(props) {
   var demoId;
 
   useEffect(() => {
@@ -17,6 +17,11 @@ export default function UserDropdown() {
     });
   });
 
+  const handleLogout = () => {
+    localStorage.removeItem('loginToken');
+    props.onLogout();
+  };
+
   const handleDropdown = () => {
     if (demoId.className.indexOf('w3-show') == -1) {
       demoId.className += ' w3-show';
@@ -29,7 +34,7 @@ export default function UserDropdown() {
     <div>
       <div>
         <h5 className='current-user' onClick={handleDropdown}>
-          Raghav{' '}
+          {props.username}{' '}
         </h5>
         <div
           id='demo'
@@ -41,7 +46,7 @@ export default function UserDropdown() {
           <h6 className='w3-bar-item w3-button'>
             <Link to='/settings'>Settings</Link>
           </h6>
-          <h6 className='w3-bar-item w3-button'>
+          <h6 className='w3-bar-item w3-button' onClick={handleLogout}>
             <Link to='/'>Log Out</Link>
           </h6>
         </div>
