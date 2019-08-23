@@ -26,7 +26,7 @@ export default function Settings() {
   const fb = <i class='fa fa-facebook-square fa-2x' aria-hidden='false' />;
   const twitter = <i class='fa fa-twitter-square fa-2x' aria-hidden='false' />;
   const medium = <i class='fa fa-medium fa-2x' aria-hidden='false' />;
-  const github = <i class='fa fa-github-square fa-2x' aria-hidden='false' />;
+  const google = <i class='fa fa-google fa-2x' aria-hidden='false' />;
 
   useEffect(() => {
     let id = 1; // id we get from user login
@@ -93,7 +93,7 @@ export default function Settings() {
     );
     if (res === 200) showSnackbar();
   };
-  const onGithubHandleChange = newg_handle => {
+  const onGoogleHandleChange = newg_handle => {
     const updatedUserInfo = Object.assign(userData, {
       g_handle: newg_handle
     });
@@ -181,11 +181,11 @@ export default function Settings() {
             onHandleChange={onMediumHandleChange}
           />
           <EditComp
-            title='Github Handle'
-            handleLogo={github}
+            title='Google Handle'
+            handleLogo={google}
             defaultContent={userData.g_handle}
             canEdit={true}
-            onHandleChange={onGithubHandleChange}
+            onHandleChange={onGoogleHandleChange}
           />
         </div>
       </div>
