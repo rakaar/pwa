@@ -14,10 +14,21 @@ const Post = props => {
   const [author, setAuthor] = useState('');
   const [time, setTime] = useState('');
   const [body, setBody] = useState('');
+  const [isPostSaved, setIsPostSaved] = useState(false);
+
+  let saveBtn = document.getElementsByClassName('save-btn');
 
   const saveArticle = () => {
     connectBackend.postData(config.endpoints.article.postSave, { id });
+    if (saveBtn.className.includes('saved-post')) {
+      savedBtn.className.replace('saved-post', '');
+      setIsPostSaved(false);
+    } else {
+      savedBtn.className += 'saved-post';
+      setIsPostSaved(true);
+    }
   };
+
   const getRes = async id => {
     return await connectBackend.getData(config.endpoints.article.getPost, {
       id
@@ -26,11 +37,14 @@ const Post = props => {
 
   useEffect(() => {
     let res = getRes(id);
-
-    setTitle(res.title);
-    setAuthor(res.author);
-    setTime(res.post_time);
-    setBody(res.body);
+    setIsPostSaved(res.data.isSaved);
+    if (isPostSaved === true) {
+      saveBtn.className += 'saved-post';
+    }
+    setTitle(res.data.title);
+    setAuthor(res.data.author);
+    setTime(res.data.post_time);
+    setBody(res.data.body);
   });
   return (
     <div className='main-w'>
@@ -46,7 +60,7 @@ const Post = props => {
         <h2> Liked the article ? </h2>
         <button className='save-btn' onClick={saveArticle}>
           {' '}
-          Save{' '}
+          {isPostSaved ? 'Saved' : 'Save'}{' '}
         </button>
         <button className='save-btn'> Share </button>
       </div>
