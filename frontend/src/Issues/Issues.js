@@ -10,14 +10,13 @@ export default function Issues() {
   // the  array of issues from backend
   const [issuesArr, SetIssuesArr] = useState([]);
 
-  const getIssues = async () => {
-    let res = await connectBackend.getData(config.endpoints.issue.getAll, {});
-    SetIssuesArr(res);
-  };
-
   useEffect(() => {
-    getIssues();
-  });
+    const fetchData = async () => {
+      let res = await connectBackend.getData(config.endpoints.issue.getAll, {});
+      SetIssuesArr(res);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className='issues-container'>

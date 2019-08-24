@@ -21,30 +21,39 @@ export default function UserProfile(props) {
   const [savedArticles, setSavedArticles] = useState([]);
 
   useEffect(() => {
-    let id = 1; // id we get from user login
-    let res = connectBackend.getData(config.endpoints.user.getFollowedTags, {
-      id
-    });
-    SetTags(res.data);
+    const fetchData = async () => {
+      let id = 1; // id we get from user login
+      let tagsRes = await connectBackend.getData(
+        config.endpoints.user.getFollowedTags,
+        {
+          id
+        }
+      );
+      SetTags(tagsRes.data);
 
-    let userRes = connectBackend.getData(config.endpoints.user.getUser, { id });
-    setUserData({
-      username: userRes.data.username,
-      email: userRes.data.email,
-      fb_handle: userRes.data.fb_handle,
-      g_handle: userRes.data.g_handle,
-      medium_handle: userRes.data.medium_handle,
-      twitter_handle: userRes.data.twitter_handle,
-      linkedin_handle: userRes.data.linkedin_handle,
-      bio: userRes.data.bio
-    });
+      let userRes = await connectBackend.getData(
+        config.endpoints.user.getUser,
+        { id }
+      );
+      setUserData({
+        username: userRes.data.username,
+        email: userRes.data.email,
+        fb_handle: userRes.data.fb_handle,
+        g_handle: userRes.data.g_handle,
+        medium_handle: userRes.data.medium_handle,
+        twitter_handle: userRes.data.twitter_handle,
+        linkedin_handle: userRes.data.linkedin_handle,
+        bio: userRes.data.bio
+      });
 
-    let savedArticlesRes = connectBackend.getData(
-      config.endpoints.user.getSavedArticles,
-      { id }
-    );
-    setSavedArticles(savedArticlesRes.data);
-  });
+      let savedArticlesRes = await connectBackend.getData(
+        config.endpoints.user.getSavedArticles,
+        { id }
+      );
+      setSavedArticles(savedArticlesRes.data);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div>

@@ -40,27 +40,30 @@ export default function HomePage() {
 
   const [currentIssue, SetCurrentIssue] = useState({});
 
-  const getArticlesInHome = async () => {
-    let res = await connectBackend.getData(config.endpoints.article.getAll, {
-      num: 6
-    });
-    SetCarouselArts(res.data.slice(0, 3));
-    SetFeaturedArts(res.data.slice(3, 6));
-  };
-
-  const getCurrentIssue = async () => {
-    let res = await connectBackend.getData(config.endpoints.issue.getAll, {});
-    let currentMonth = await getMonth();
-    let currentMonthIssue = res.filter(item => {
-      return item.month === currentMonth.toLowerCase().split(0, 3);
-    });
-    SetCurrentIssue(currentMonthIssue);
-  };
-
   useEffect(() => {
-    getArticlesInHome();
-    getCurrentIssue();
-  });
+    const fetchData = async () => {
+      let articleRes, issueRes, currentMonth, currentMonthIssue;
+      articleRes = await connectBackend.getData(
+        config.endpoints.article.getAll,
+        {
+          num: 6
+        }
+      );
+      articleRes = articleRes.data;
+      SetCarouselArts(articleRes.slice(0, 3));
+      SetFeaturedArts(articleRes.slice(3, 6));
+      issueRes = await connectBackend.getData(
+        config.endpoints.issue.getAll,
+        {}
+      );
+      currentMonth = await getMonth();
+      currentMonthIssue = issueRes.filter(item => {
+        return item.month === currentMonth.toLowerCase().split(0, 3);
+      });
+      SetCurrentIssue(currentMonthIssue);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div>

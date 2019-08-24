@@ -29,23 +29,23 @@ const Post = props => {
     }
   };
 
-  const getRes = async id => {
-    return await connectBackend.getData(config.endpoints.article.getPost, {
-      id
-    });
-  };
-
   useEffect(() => {
-    let res = getRes(id);
-    setIsPostSaved(res.data.isSaved);
-    if (isPostSaved === true) {
-      saveBtn.className += 'saved-post';
-    }
-    setTitle(res.data.title);
-    setAuthor(res.data.author);
-    setTime(res.data.post_time);
-    setBody(res.data.body);
-  });
+    const fetchData = async () => {
+      let res;
+      res = await connectBackend.getData(config.endpoints.article.getPost, {
+        id
+      });
+      res = res.data;
+      setIsPostSaved(res.isSaved);
+      if (isPostSaved) saveBtn.className += 'saved-post';
+      setTitle(res.title);
+      setAuthor(res.author);
+      setTime(res.post_time);
+      setBody(res.body);
+    };
+    fetchData();
+  }, [isPostSaved]);
+
   return (
     <div className='main-w'>
       <SinglePost

@@ -7,20 +7,22 @@ import config from '../Config';
 import '../Styles/ArticlesByTag.scss';
 
 export default function ArticlesByTag(props) {
-  let res;
+  const [res, setRes] = useState([]);
   const [tags, setTags] = useState([]);
 
-  const getArticles = async tagsArr => {
-    return await connectBackend.postData(config.endpoints.article.getByTags, {
-      tags: tagsArr
-    });
-  };
   useEffect(() => {
-    let tagsStr = sessionStorage.getItem('taglist');
-    let tagsArr = JSON.parse(tagsStr).tags;
-    setTags(tagsArr);
-    res = getArticles(tagsArr);
-  });
+    const fetchData = async () => {
+      let tagsStr = sessionStorage.getItem('taglist');
+      let tagsArr = JSON.parse(tagsStr).tags;
+      setTags(tagsArr);
+      let res = await connectBackend.postData(
+        config.endpoints.article.getByTags,
+        { tags: tagsArr }
+      );
+      setRes(res);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div>
