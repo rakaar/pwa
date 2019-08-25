@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import AuthModal from '../Auth/AuthModal';
-// import TagsModal from '../Tags/TagsModal';
 import CustomTagsButton from '../Tags/CustomTagsButton';
 import UserDropdown from '../Auth/UserDropdown';
 import { Link } from 'react-router-dom';

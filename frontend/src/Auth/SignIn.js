@@ -14,6 +14,7 @@ function SignIn(props) {
   const [loggedInAlreadyErr, SetIsLoggedInAleadyErr] = useState(false);
   const [IsMailVerifiedErr, SetIsMailVerifiedErr] = useState(false);
   const [IsNotMatchErr, SetIsNotMatchErr] = useState(false);
+  const [remember, setRemember] = useState('no');
 
   // Error Messages to be shown
   const AlreadyLoggedInMsg = <h4 className='err-msg'>Already Logged In</h4>;
@@ -31,12 +32,18 @@ function SignIn(props) {
   const handleSignIn = async () => {
     let data = {
       email,
-      password
+      password,
+      remember
     };
     let res = await connectBackend.postData(config.endpoints.postLogin, {
       data
     });
     console.log('res from signin ', res);
+
+    handleRemember = () => {
+      let rembMe = document.getElementById('rembMe');
+      if (rembMe.checked === true) setRemember('yes');
+    };
 
     if (res.message === 'Already Logged In') SetIsLoggedInAleadyErr(true);
     else if (res.message === 'Please verify your email before first login')
@@ -85,6 +92,10 @@ function SignIn(props) {
           {' '}
           Forgot Password ?
         </a>
+        <label class='checkbox'>
+          <input type='checkbox' id='rembMe' onClick={handleRemember} />
+          Remember me
+        </label>
         <a class='button is-info is-rounded btn-custom' onClick={handleSignIn}>
           Sign In
         </a>
