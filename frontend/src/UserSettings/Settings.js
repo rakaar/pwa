@@ -114,7 +114,11 @@ export default function Settings() {
       <h1>Account Settings</h1>
       <div id='snackbar'>Successfully details changed</div>
       <div className='image-uploader'>
-        <PropicUploader />
+        <img
+          className='user-image'
+          src='https://cdn.iit-techambit.in/profilePic/default.png'
+        />
+        {/* <PropicUploader /> */}
       </div>
 
       <div className='grid-v-s'>
