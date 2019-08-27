@@ -56,9 +56,16 @@ export default function HomePage() {
         config.endpoints.issue.getAll,
         {}
       );
-      currentMonth = await getMonth();
+      //  Cannot use this currently
+      // currentMonth = await getMonth();
+      // currentMonthIssue = issueRes.filter(item => {
+      //   return item.month === currentMonth.toLowerCase().split(0, 3);
+      // });
+      // SetCurrentIssue(currentMonthIssue);
+
+      // hardcoded since we are not in acc to time
       currentMonthIssue = issueRes.filter(item => {
-        return item.month === currentMonth.toLowerCase().split(0, 3);
+        return item.issue_tag === 'jun19';
       });
       SetCurrentIssue(currentMonthIssue);
     };
