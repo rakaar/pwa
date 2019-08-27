@@ -1,12 +1,23 @@
 import React from 'react';
 
+import connectBackend from '../ConnectBackend/ConnectBackend';
+import config from '../Config';
+
 export class Reactionsbar extends React.Component {
-  state = {
-    isLoading: true,
-    title: '',
-    content: '',
-    author: '',
-    error: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true,
+      title: '',
+      content: '',
+      author: '',
+      error: false
+    };
+  }
+
+  rateArticle = score => {
+    let id = this.props.match.params.id;
+    connectBackend.postData(config.endpoints.article.postRate, { score });
   };
 
   updateLikes = () => {
@@ -21,27 +32,37 @@ export class Reactionsbar extends React.Component {
         <span className='title'>Did you like this post?</span>
 
         <div className='reactions-w'>
-          <button className="rcb">😡</button>
+          <button className='rcb' onClick={this.rateArticle(1)}>
+            😡
+          </button>
           <br />
           <span> 3 </span>
         </div>
         <div className='reactions-w'>
-          <button className="rcb">😞</button>
+          <button className='rcb' onClick={this.rateArticle(2)}>
+            😞
+          </button>
           <br />
           <span> 8 </span>
         </div>
         <div className='reactions-w'>
-          <button className="rcb">😐</button>
+          <button className='rcb' onClick={this.rateArticle(3)}>
+            😐
+          </button>
           <br />
           <span> 10 </span>
         </div>
         <div className='reactions-w'>
-          <button className="rcb">😊</button>
+          <button className='rcb' onClick={this.rateArticle(4)}>
+            😊
+          </button>
           <br />
           <span> 11 </span>
         </div>
         <div className='reactions-w'>
-          <button className="rcb">😍</button>
+          <button className='rcb' onClick={this.rateArticle(5)}>
+            😍
+          </button>
           <br />
           <span> 10 </span>
         </div>

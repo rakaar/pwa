@@ -1,17 +1,24 @@
 import React, { useState } from 'react';
 
+import connectBackend from '../ConnectBackend/ConnectBackend';
+import config from '../Config';
+
 import '../Styles/UserSettings/UserBio.scss';
 
-export default function UserBio() {
+export default function UserBio(props) {
   const [bioEditable, SetBioEditable] = useState(true);
   const [rowsText, SetRowsText] = useState(2);
   const [savedStatus, setSavedStatus] = useState(false);
+
+  const [editedBio, SetEditedBio] = useState('');
 
   const handleEdit = () => SetBioEditable(false);
 
   const handleSave = () => {
     SetBioEditable(true);
     setSavedStatus(true);
+    const newbio = { bio: editedBio };
+    props.onBioChange(newbio);
   };
 
   window.onload = () => {
@@ -23,9 +30,13 @@ export default function UserBio() {
       <h1 className='bio-title'>
         <b>Bio</b>
       </h1>
-      <textarea disabled={bioEditable} cols='50' rows={rowsText}>
-        At w3schools.com you will learn how to make a website. We offer free
-        tutorials in all web development technologies.
+      <textarea
+        disabled={bioEditable}
+        cols='50'
+        rows={rowsText}
+        onChange={e => SetEditedBio(e.target.value)}
+      >
+        {props.bio}
       </textarea>
       {!bioEditable ? (
         <a className='button  is-success'>

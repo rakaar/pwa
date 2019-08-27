@@ -1,14 +1,11 @@
 import React, { useState, Fragment } from 'react';
 
 import '../Styles/UserSettings/EditComp.scss';
-import '../Styles/Snackbar.scss';
 
 export default function EditComp(props) {
   const [autoFocusVal, setAutoFocusVal] = useState(false);
 
-  const [backCol, SetBackCol] = useState('blue');
-  const [textCol, SetTextCol] = useState('green');
-  const [msg, SetMsg] = useState('random text');
+  const [editedInfo, SetEditedInfo] = useState('');
 
   function moveCursorToEnd(el) {
     if (typeof el.selectionStart == 'number') {
@@ -22,41 +19,19 @@ export default function EditComp(props) {
     document.getElementsByClassName('settings-input')[0].click();
   }
 
-  function sleep(time) {
-    return new Promise(resolve => setTimeout(resolve, time));
-  }
-
   let inputTag = document.getElementsByTagName('input');
 
   const handleSave = () => {
     setAutoFocusVal(false);
-    let msgType = 'error';
-    if (msgType === 'error') {
-      SetMsg('error');
-      SetBackCol('red');
-      SetTextCol('white');
-    } else if (msgType === 'warn') {
-      SetMsg('warn');
-      SetBackCol('yellow');
-      SetTextCol('black');
-    } else {
-      SetMsg('Success');
-      SetBackCol('green');
-      SetTextCol('black');
-    }
-    sleep(3000).then(() => {
-      // Do something after the sleep!
-      var x = document.getElementById('snackbar');
-      x.className = 'show';
-      setTimeout(function() {
-        x.className = x.className.replace('show', '');
-      }, 3000);
-    });
   };
 
   const handleEdit = () => {
     setAutoFocusVal(true);
     moveCursorToEnd(inputTag[2]);
+  };
+  const handleInfoChange = e => {
+    SetEditedInfo(e.target.value);
+    props.onHandleChange(editedInfo);
   };
 
   const SaveAndEdit = autoFocusVal ? (
@@ -71,9 +46,6 @@ export default function EditComp(props) {
 
   return (
     <Fragment>
-      <div id='snackbar' style={{ backgroundColor: backCol, color: textCol }}>
-        {msg}
-      </div>
       <div className='editcomp-w'>
         <h1>
           <b>{props.title}</b>
@@ -87,6 +59,7 @@ export default function EditComp(props) {
             type='text'
             defaultValue={props.defaultContent}
             readOnly={!autoFocusVal}
+            onChange={handleInfoChange}
           />
         </div>
       </div>

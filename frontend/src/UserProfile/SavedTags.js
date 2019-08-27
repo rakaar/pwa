@@ -2,20 +2,12 @@ import React from 'react';
 
 import '../Styles/SavedTags.scss';
 
-const ArticleTags = [
-  'blockchain',
-  'ai',
-  'crypto',
-  'innovation',
-  'science'
-];
-
-export default function SavedTag() {
+export default function SavedTag(props) {
   return (
     <div>
       <h1 className='saved-tags-title'>Saved Tags</h1>
       <div class='field is-grouped is-grouped-multiline'>
-        {ArticleTags.map(item => {
+        {props.tags.map(item => {
           return (
             <div class='control'>
               <div class='tags has-addons'>

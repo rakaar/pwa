@@ -1,25 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import '../Styles/IssueCard.scss';
 
-export default function IssueCard() {
-  return (
-    <div>
-      <div class='container'>
-        <img
-          src='https://images.pexels.com/photos/2727736/pexels-photo-2727736.jpeg?cs=srgb&dl=beautiful-brunette-fashion-2727736.jpg&fm=jpg'
-          class='image'
-        />
-        <div class='middle'>
-          <h1>January 2018</h1>
-          <a class='button is-medium is-one-fifths is-outlined is-active'>
-            See Issue
-          </a>
-          <a class='button is-medium is-one-fifths is-outlined is-active'>
-            Download
-          </a>
+class IssueCard extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  // get Articles of the issue  by tag
+  getArticlesByIssueTag = () => {
+    let issueTag = props.month.toLowerCase().slice(0, 3) + props.year.slice(2);
+    sessionStorage.setItem('taglist', JSON.stringify({ tags: [issueTag] }));
+    props.history.push('/abt');
+  };
+
+  render() {
+    return (
+      <div>
+        <div class='container'>
+          <img src={this.props.cover} class='image' />
+
+          <div className='middle'>
+            <h1>
+              {this.props.month} {this.props.year}
+            </h1>
+            <br />
+            <div className='bc-i'>
+              <a class='button' onClick={this.getArticlesByIssueTag}>
+                See Issue
+              </a>
+              <a class='button' href={this.props.link}>
+                Download
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
+
+export default withRouter(IssueCard);

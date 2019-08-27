@@ -7,15 +7,19 @@ import Article from './Article/Article';
 import Settings from './UserSettings/Settings';
 import Issues from './Issues/Issues';
 import ArticleByTag from './ArticlesByTag/ArticlesByTag';
-import Footer from './Footer/Footer'
+import Footer from './Footer/Footer';
 
 import './App.css';
 
-function App() {
+function App(props) {
   return (
     <Router>
       <div>
-        <Route path='/' component={RespNav} />
+        <Route
+          path='/'
+          // component={RespNav}
+          component={() => <RespNav store={props.store} />}
+        />
         <Route exact path='/' component={HomePage} />
         <Route path='/user' component={UserProfile} />
         <Route path='/article/:id' component={Article} />

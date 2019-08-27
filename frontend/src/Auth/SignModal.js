@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import '../Styles/SignModal.scss';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import ForgotPassword from './ForgotPassword';
 
 class SignModal extends Component {
   state = {
-    showSignInForm: true
+    showSignInForm: true,
+    forgotPassword: false
   };
 
   showSignUp = () => {
@@ -14,6 +16,11 @@ class SignModal extends Component {
 
   closeModal = () => {
     this.props.closeClicked();
+    this.setState({ forgotPassword: false });
+  };
+
+  forgotPassHandler = () => {
+    this.setState({ forgotPassword: true });
   };
 
   render() {
@@ -25,15 +32,27 @@ class SignModal extends Component {
         </h2>
         <h4 onClick={this.showSignUp} className='modal-toggle'>
           {' '}
-          or{' '}
-          <a href='#'> {this.state.showSignInForm ? 'Sign Up' : 'Sign In'} </a>
+          or <a> {this.state.showSignInForm ? 'Sign Up' : 'Sign In'} </a>
         </h4>
 
         <i
           class='fa-times fa fa-2x modal-close-btn'
           onClick={this.closeModal}
         />
-        {this.state.showSignInForm ? <SignIn /> : <SignUp />}
+        {this.state.forgotPassword ? <ForgotPassword /> : <></>}
+        {this.state.showSignInForm && !this.state.forgotPassword ? (
+          <SignIn
+            forgotPass={this.forgotPassHandler}
+            closeOnLogin={this.closeModal}
+          />
+        ) : (
+          <></>
+        )}
+        {!this.state.showSignInForm && !this.state.forgotPassword ? (
+          <SignUp />
+        ) : (
+          <></>
+        )}
       </div>
     );
   }

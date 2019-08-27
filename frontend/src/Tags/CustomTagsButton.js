@@ -31,7 +31,10 @@ class CustomTagsButton extends React.Component {
         </h4>
 
         {this.state.showmodals ? (
-          <CustomTagsModal closeClicked={this.closeModal} />
+          <CustomTagsModal
+            store={this.props.store}
+            closeClicked={this.closeModal}
+          />
         ) : (
           <></>
         )}

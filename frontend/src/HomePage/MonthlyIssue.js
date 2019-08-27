@@ -1,23 +1,29 @@
 import React from 'react';
-import '../Styles/MonthlyIssue.scss'
+import '../Styles/MonthlyIssue.scss';
 
 import '../Styles/CustomCard.scss';
 
-export default function CustomCard() {
+export default function CustomCard(props) {
+  const getArticlesOfIssue = () => {
+    let issueTag = props.month.toLowerCase().slice(0, 3) + props.year.slice(2);
+    sessionStorage.setItem('taglist', JSON.stringify({ tags: [issueTag] }));
+    props.history.push('/abt');
+  };
+
   return (
     <div className='monthly-box'>
-      <h2>Issue #18</h2>
-      <h3> August 5, 2019 </h3>
-      <a href="#"> View All </a> <br></br>
-
-      <span className="issue-des">
-          How Does the dev mode work ? | Photoronoi | Adblocking | How about Nah? | Scope in Javascript - HTTP 203
-      </span>
-      <div className="img-cont">
-          <img src="https://images.pexels.com/photos/2727736/pexels-photo-2727736.jpeg?cs=srgb&dl=beautiful-brunette-fashion-2727736.jpg&fm=jpg"></img>
+      {/* <h2>Issue #18</h2> */}
+      <h2>
+        {' '}
+        {props.month}, {props.year}{' '}
+      </h2>
+      <a onClick={getArticlesOfIssue}> View All </a> <br />
+      <span className='issue-des'>{props.description}</span>
+      <div className='img-cont'>
+        <img src={props.cover} />
       </div>
-      <a href="#" className="view-issue-btn">
-        View Issue ➡
+      <a href={props.link} className='view-issue-btn'>
+        Download Issue ➡
       </a>
     </div>
   );

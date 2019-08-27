@@ -1,5 +1,6 @@
-const baseurl = 'http://10.145.113.217:3000/';
-
+// const baseurl = 'http://10.145.113.217:3000/';
+const baseurl = 'http://10.145.192.195:3000/';
+const issuecdn = 'https://cdn.iit-techambit.in/issue/';
 const endpoints = {
   user: {
     getFollowedTags: 'user/followedTags',
@@ -7,7 +8,8 @@ const endpoints = {
     getPayment: 'user/get_payment',
     postPayment: 'user/payment',
     postInfoUpdate: 'user/update',
-    getUser: 'user'
+    getUser: 'user',
+    getSavedArticles: 'user/savedArticles'
   },
 
   auth: {
@@ -18,6 +20,7 @@ const endpoints = {
   },
   article: {
     getByTags: 'post/by_tags',
+    getAll: 'post/getAll',
     postCreate: 'post/create',
     postRate: 'post/rate',
     postSave: 'post/save',
@@ -33,3 +36,11 @@ const endpoints = {
     getAll: 'issue/getAll'
   }
 };
+
+let config = {
+  baseurl,
+  endpoints,
+  issuecdn
+};
+
+export default config;

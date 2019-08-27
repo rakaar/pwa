@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AuthModal from '../Auth/AuthModal';
-// import TagsModal from '../Tags/TagsModal';
 import CustomTagsButton from '../Tags/CustomTagsButton';
 import UserDropdown from '../Auth/UserDropdown';
 import { Link } from 'react-router-dom';
 import '../Styles/RespNav.scss';
 
-const loggedIn = false;
+export default function RespNav(props) {
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
 
-export default function RespNav() {
+  if (localStorage.getItem('loginToken') != null) setUserLoggedIn(true);
+
+  setUsername(localStorage.getItem('username'));
+
+  const onLogout = () => setUserLoggedIn(false);
   document.addEventListener('DOMContentLoaded', () => {
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(
@@ -58,7 +63,7 @@ export default function RespNav() {
           <div className='navbar-end'>
             <div className='navbar-item'>
               {/* <TagsModal /> */}
-              <CustomTagsButton />
+              <CustomTagsButton store={props.store} />
             </div>
             <div className='navbar-item'>
               <h5 className='issues-btn'>
@@ -66,7 +71,11 @@ export default function RespNav() {
               </h5>
             </div>
             <div className='navbar-item'>
-              {loggedIn ? <UserDropdown /> : <AuthModal />}
+              {userLoggedIn ? (
+                <UserDropdown username={username} onLogout={onLogout} />
+              ) : (
+                <AuthModal />
+              )}
             </div>
           </div>
         </div>

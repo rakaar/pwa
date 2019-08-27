@@ -3,7 +3,7 @@ import CustomCard from './CustomCard';
 
 import '../Styles/CustomCarousel.scss';
 
-export default function CustomCarousel() {
+export default function CustomCarousel(props) {
   var slideIndex = 0;
 
   useEffect(() => {
@@ -34,8 +34,20 @@ export default function CustomCarousel() {
   return (
     <div>
       <div class='slideshow-container'>
-        <div class='mySlides fade'>
-          <CustomCard />
+        {props.carouselArts.map(item => {
+          return (
+            <div className='mySlides fade'>
+              <CustomCard
+                title={item.title}
+                body={item.body}
+                post_id={item.post_id}
+                imgLinks={item.imgLinks}
+              />
+            </div>
+          );
+        })}
+        {/* <div class='mySlides fade'>
+          <CustomCard  />
         </div>
 
         <div class='mySlides fade'>
@@ -44,7 +56,7 @@ export default function CustomCarousel() {
 
         <div class='mySlides fade'>
           <CustomCard />
-        </div>
+        </div> */}
       </div>
       <br />
       <div className='the-dots'>
