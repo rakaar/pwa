@@ -32,7 +32,7 @@ const endpoints = {
   },
 
   issue: {
-    getAll: 'issue/getAll'
+    getAll: 'issues/getAll'
   }
 };
 

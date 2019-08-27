@@ -10,20 +10,26 @@ async function getData(endpoint, data) {
       return res;
     })
     .catch(err => {
-      console.log('err in getData is ', err);
-      return 500;
+      console.log('err in getData at endpoint ', endpoint, 'is ', err);
+      window.location.pathname('/404');
+      return err;
     });
 }
 
 async function postData(endpoint, data) {
   return await axios
-    .post(config.baseurl + endpoint, data)
+    .post(config.baseurl + endpoint, data, {
+      headers: {
+        'Content-Type': 'application/json',
+        accept: 'application/json'
+      }
+    })
     .then(res => {
       return res;
     })
     .catch(err => {
-      console.log('err in postData is ', err);
-      return 500;
+      console.log('err in postData at endpoint ', endpoint, 'is ', err);
+      return err.response.status;
     });
 }
 

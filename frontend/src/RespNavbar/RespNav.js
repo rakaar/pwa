@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AuthModal from '../Auth/AuthModal';
 import CustomTagsButton from '../Tags/CustomTagsButton';
 import UserDropdown from '../Auth/UserDropdown';
@@ -7,12 +7,15 @@ import '../Styles/RespNav.scss';
 
 export default function RespNav(props) {
   const [userLoggedIn, setUserLoggedIn] = useState(false);
-  const [username, setUsername] = useState('');
+  // const [usernameOnHome, setUsernameOnHome] = useState('');
 
-  if (localStorage.getItem('loginToken') != null) setUserLoggedIn(true);
+  useEffect(() => {
+    // if (localStorage.getItem('loginToken') != null) setUserLoggedIn(true);
+    console.log(localStorage.getItem('loginToken'), 'heree');
+    if (localStorage.getItem('loginToken') != null) setUserLoggedIn(true);
+  });
 
-  setUsername(localStorage.getItem('username'));
-
+  // setUsernameOnHome(localStorage.getItem('username'));
   const onLogout = () => setUserLoggedIn(false);
   document.addEventListener('DOMContentLoaded', () => {
     // Get all "navbar-burger" elements
@@ -63,7 +66,7 @@ export default function RespNav(props) {
           <div className='navbar-end'>
             <div className='navbar-item'>
               {/* <TagsModal /> */}
-              <CustomTagsButton store={props.store} />
+              <CustomTagsButton />
             </div>
             <div className='navbar-item'>
               <h5 className='issues-btn'>
@@ -72,7 +75,10 @@ export default function RespNav(props) {
             </div>
             <div className='navbar-item'>
               {userLoggedIn ? (
-                <UserDropdown username={username} onLogout={onLogout} />
+                <UserDropdown
+                  username={localStorage.getItem('username')}
+                  onLogout={onLogout}
+                />
               ) : (
                 <AuthModal />
               )}

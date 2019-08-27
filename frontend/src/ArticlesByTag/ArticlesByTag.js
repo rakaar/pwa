@@ -12,13 +12,16 @@ export default function ArticlesByTag(props) {
 
   useEffect(() => {
     const fetchData = async () => {
+      console.log('in abt fetch func');
       let tagsStr = sessionStorage.getItem('taglist');
       let tagsArr = JSON.parse(tagsStr).tags;
       setTags(tagsArr);
+      console.log('sending this ', JSON.stringify({ tags: tagsArr }));
       let res = await connectBackend.postData(
         config.endpoints.article.getByTags,
-        { tags: tagsArr }
+        JSON.stringify({ tags: tagsArr })
       );
+      console.log('res for abt is ', res);
       setRes(res);
     };
     fetchData();
