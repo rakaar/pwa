@@ -21,10 +21,10 @@ const Post = props => {
   const saveArticle = () => {
     connectBackend.postData(config.endpoints.article.postSave, { id });
     if (saveBtn.className.includes('saved-post')) {
-      savedBtn.className.replace('saved-post', '');
+      saveBtn.className.replace('saved-post', '');
       setIsPostSaved(false);
     } else {
-      savedBtn.className += 'saved-post';
+      saveBtn.className += 'saved-post';
       setIsPostSaved(true);
     }
   };

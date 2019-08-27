@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Fuse from 'fuse.js';
 import { withRouter } from 'react-router-dom';
+
+import connectBackend from '../ConnectBackend/ConnectBackend';
+import config from '../Config';
+
 import '../Styles/SignModal.scss';
 
 const ArticleTags = [
@@ -13,36 +17,44 @@ const ArticleTags = [
   'zdd'
 ];
 
-var options = {
-  shouldSort: true,
-  threshold: 0.6,
-  location: 0,
-  distance: 100,
-  maxPatternLength: 32,
-  minMatchCharLength: 1
-};
-var fuse = new Fuse(ArticleTags, options);
-
 class CustomTagsModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
       IsSearching: false,
       searchResults: [],
-      selectedTags: []
+      selectedTags: [],
+      allTags: []
     };
 
     this.handleSearch = this.handleSearch.bind(this);
+
+    this.options = {
+      shouldSort: true,
+      threshold: 0.6,
+      location: 0,
+      distance: 100,
+      maxPatternLength: 32,
+      minMatchCharLength: 1,
+      keys: ['name']
+    };
+    this.fuse = new Fuse(this.state.allTags, this.options);
   }
 
-  handleSearch(e) {
+  async componentDidMount() {
+    let res = await connectBackend.getData(config.endpoints.tag.getAll, {});
+    this.setState({ allTags: res.data });
+    this.fuse = new Fuse(this.state.allTags, this.options);
+  }
+
+  handleSearch = async e => {
+    this.setState({
+      searchResults: this.fuse.search(e.target.value)
+    });
+
     if (e.target.value !== '') this.setState({ IsSearching: true });
     else this.setState({ IsSearching: false });
-
-    this.setState({
-      searchResults: fuse.search(e.target.value)
-    });
-  }
+  };
 
   closeModal = () => {
     this.props.closeClicked();
@@ -91,25 +103,25 @@ class CustomTagsModal extends Component {
                 className='tag is-large is-rounded is-primary'
                 onClick={this.selectTags}
               >
-                {ArticleTags[item]}
+                {item.name}
               </span>
             ))}
           </div>
         ) : (
           <div className='tags'>
-            {ArticleTags.map(item => (
+            {this.state.allTags.map(item => (
               <span
                 className='tag is-large is-rounded is-primary'
                 onClick={this.selectTags}
               >
-                {item}
+                {item.name}
               </span>
             ))}
           </div>
         )}
-        <button onClick={this.getArticles}>
+        <a className='button' onClick={this.getArticles}>
           Get Articles by Selected Tags
-        </button>
+        </a>
       </div>
     );
   }

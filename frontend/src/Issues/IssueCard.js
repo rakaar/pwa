@@ -10,9 +10,10 @@ class IssueCard extends Component {
 
   // get Articles of the issue  by tag
   getArticlesByIssueTag = () => {
-    let issueTag = props.month.toLowerCase().slice(0, 3) + props.year.slice(2);
+    let issueTag =
+      this.props.month.toLowerCase().slice(0, 3) + this.props.year.slice(2);
     sessionStorage.setItem('taglist', JSON.stringify({ tags: [issueTag] }));
-    props.history.push('/abt');
+    this.props.history.push('/abt');
   };
 
   render() {

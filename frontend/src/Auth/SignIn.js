@@ -29,6 +29,11 @@ function SignIn(props) {
     // handle forgetPassword
     props.forgotPass();
   };
+  const handleRememberMe = () => {
+    let rembMe = document.getElementById('rembMe');
+    if (rembMe.checked === true) setRemember('yes');
+  };
+
   const handleSignIn = async () => {
     let data = {
       email,
@@ -39,11 +44,6 @@ function SignIn(props) {
       data
     });
     console.log('res from signin ', res);
-
-    handleRemember = () => {
-      let rembMe = document.getElementById('rembMe');
-      if (rembMe.checked === true) setRemember('yes');
-    };
 
     if (res.message === 'Already Logged In') SetIsLoggedInAleadyErr(true);
     else if (res.message === 'Please verify your email before first login')
@@ -93,7 +93,7 @@ function SignIn(props) {
           Forgot Password ?
         </a>
         <label class='checkbox'>
-          <input type='checkbox' id='rembMe' onClick={handleRemember} />
+          <input type='checkbox' id='rembMe' onClick={handleRememberMe} />
           Remember me
         </label>
         <a class='button is-info is-rounded btn-custom' onClick={handleSignIn}>

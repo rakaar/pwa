@@ -11,7 +11,7 @@ export default function RespNav(props) {
 
   if (localStorage.getItem('loginToken') != null) setUserLoggedIn(true);
 
-  setUsername(localStorage.getItem('username'));
+  // setUsername(localStorage.getItem('username'));
 
   const onLogout = () => setUserLoggedIn(false);
   document.addEventListener('DOMContentLoaded', () => {
@@ -63,7 +63,7 @@ export default function RespNav(props) {
           <div className='navbar-end'>
             <div className='navbar-item'>
               {/* <TagsModal /> */}
-              <CustomTagsButton store={props.store} />
+              <CustomTagsButton />
             </div>
             <div className='navbar-item'>
               <h5 className='issues-btn'>
