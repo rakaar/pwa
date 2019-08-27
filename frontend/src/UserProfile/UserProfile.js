@@ -61,7 +61,7 @@ export default function UserProfile(props) {
         <div className='name-sec'>
           <img
             className='user-image'
-            src='https://homepages.cae.wisc.edu/~ece533/images/airplane.png'
+            src='https://cdn.iit-techambit.in/profilePic/default.png'
           />
           <div className='name-r'>
             <h2 className='username'>{userData.username}</h2>
