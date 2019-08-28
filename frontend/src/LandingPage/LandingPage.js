@@ -1,9 +1,10 @@
 import React from 'react';
 import Card from './Card';
 import Workflow from './Workflow'
-import Footer from '../Footer/Footer'
+import Team from './Team'
 
 import '../Styles/Card.scss';
+
 
 export default function LandingPage() {
     return(
@@ -75,6 +76,7 @@ export default function LandingPage() {
         
     </div>
     <Workflow />
+    <Team />
   
 
 
