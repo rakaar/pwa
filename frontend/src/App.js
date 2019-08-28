@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import LandingPage from './LandingPage/LandingPage';
 import HomePage from './HomePage/HomePage';
 import RespNav from './RespNavbar/RespNav';
 import UserProfile from './UserProfile/UserProfile';
@@ -17,15 +18,16 @@ function App() {
     <Router>
       <div>
         <Route path='/' component={RespNav} />
-        <Route exact path='/' component={HomePage} />
-        <Route path='/abt' component={ArticleByTag} />
-        <Route path='/article/:id' component={Article} />
+        <Route exact path='/home' component={HomePage} />
+        <Route exact path='/' component={LandingPage} />
+        <Route exact path='/abt' component={ArticleByTag} />
+        <Route exact path='/article/:id' component={Article} />
         {/* <Route exact path='/' component={HomePage} />
         <Route path='/user' component={UserProfile} />
 
         <Route path='/settings' component={Settings} /> */}
-        <Route path='/issues' component={Issues} />
-        <Route path='/abt' component={ArticleByTag} />
+        <Route exact path='/issues' component={Issues} />
+        <Route exact path='/abt' component={ArticleByTag} />
         {/* <Route exact path='/404' component={ErrorPage} /> */}
         {/* <Route path='/abt' component={ArticleByTag} />
         <Route path='/' component={Footer} /> */}
