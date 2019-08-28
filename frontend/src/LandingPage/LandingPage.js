@@ -1,5 +1,10 @@
 import React from 'react';
 import Card from './Card';
+import Workflow from './Workflow'
+import Footer from '../Footer/Footer'
+
+import '../Styles/Card.scss';
+
 export default function LandingPage() {
     return(
         <div>
@@ -52,17 +57,28 @@ export default function LandingPage() {
                     </div>
                 </div>
                 <div className='cards'>
-                    <Card />
-                    <Card />
-                    <Card />
+                  <div className='columns'>
+                    <div className='column'>
+                      <Card num='1' description='yeha'/>
+                      </div>
+                      <div className='column'>
+                      <Card num='1' description='yeha'/>
+                      </div>
+                      <div className='column'>
+                      <Card num='1' description='yeha'/>
+                      </div>
+                  </div>
+                    
+                
                 </div>
         </div>
         
     </div>
+    <Workflow />
+  
 
 
 </div>
-   
         </div>
     )
 }
