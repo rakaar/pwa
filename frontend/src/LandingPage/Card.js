@@ -1,9 +1,9 @@
 import React from 'react'
+import '../Styles/Card.scss';
 
-
-export default function(props) {
+export default function Card(props) {
     return(
-        <div className='statcard'>
+        <div className='card'>
             <h1>{props.num}</h1>
             <h3>{props.description}</h3>
         </div>

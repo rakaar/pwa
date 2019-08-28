@@ -6,7 +6,7 @@ export class Footer extends Component {
     return (
       <div className='footer-w'>
         <div className='lined-t'>
-          <h2 className='lft'>IIT Technology Ambit</h2>
+          <h2 className='lft'>IIT Tech Ambit</h2>
         </div>
         <div className='fg-w'>
           <div className='lg-f'>
