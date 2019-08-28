@@ -30,7 +30,8 @@ function App() {
         <Route exact path='/abt' component={ArticleByTag} />
         {/* <Route exact path='/404' component={ErrorPage} /> */}
         {/* <Route path='/abt' component={ArticleByTag} />
-        <Route path='/' component={Footer} /> */}
+         */}
+         <Route path='/' component={Footer} />
       </div>
     </Router>
   );

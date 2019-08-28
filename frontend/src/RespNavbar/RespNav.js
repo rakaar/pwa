@@ -46,7 +46,7 @@ export default function RespNav(props) {
       <nav class='navbar' role='navigation' aria-label='main navigation'>
         <div className='navbar-brand'>
           <a href='/' style={{ color: 'black' }}>
-            <h2>IIT Tech Ambit</h2>
+            <h3>IIT Tech Ambit</h3>
           </a>
 
           <a
@@ -64,16 +64,16 @@ export default function RespNav(props) {
 
         <div id='navbarBasicExample' class='navbar-menu'>
           <div className='navbar-end'>
-            <div className='navbar-item'>
-              {/* <TagsModal /> */}
+            {/* <div className='navbar-item'>
+              { <TagsModal /> }
               <CustomTagsButton />
-            </div>
+            </div> */}
             <div className='navbar-item'>
               <h5 className='issues-btn'>
                 <Link to='/issues'>ISSUES</Link>
               </h5>
             </div>
-            <div className='navbar-item'>
+            {/* <div className='navbar-item'>
               {userLoggedIn ? (
                 <UserDropdown
                   username={localStorage.getItem('username')}
@@ -82,7 +82,7 @@ export default function RespNav(props) {
               ) : (
                 <AuthModal />
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       </nav>

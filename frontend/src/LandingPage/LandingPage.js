@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Card from './Card';
 export default function LandingPage() {
     return(
         <div>
@@ -9,7 +9,7 @@ export default function LandingPage() {
     <div class="section section-header">
         <div class="parallax filter filter-color-red">
             <div class="image"
-                style={{backgroundImage: 'assets/img/header-1.jpeg'}}>
+                style={{backgroundImage: `url('https://cdn.iit-techambit.in/websiteAssets/front.jpg')`}}>
             </div>
             <div class="container">
                 <div class="content">
@@ -24,7 +24,7 @@ export default function LandingPage() {
                         <a href="http://www.creative-tim.com/product/gaia-bootstrap-template" target="_blank" class="btn btn-white btn-fill btn-lg ">
                             About us
                         </a>
-                        <a href="http://www.creative-tim.com/product/gaia-bootstrap-template" target="_blank" class="btn btn-white btn-fill btn-lg ">
+                        <a href="/issues" class="btn btn-white btn-fill btn-lg ">
                             Start Reading
                         </a>
                         <a href="http://www.creative-tim.com/product/gaia-bootstrap-template" target="_blank" class="btn btn-white btn-fill btn-lg ">
@@ -44,35 +44,22 @@ export default function LandingPage() {
                 <div class="title-area">
                     <h2>IIT Kharagpur invests in IIT Tech Ambit</h2>
                     <div class="separator separator-danger">✻</div>
-                    <p class="description">We promise you a new look and more importantly, a new attitude. We build that by getting to know you, your needs and creating the best looking clothes.</p>
+                    <p class="description">We'd like to announce that IIT Kharagpur has made an investment in Tech Ambit, which will help us further our efforts in our mission of making research and tech innovations accessible to India as a whole. Funding amount to be set at 1.2 million rupees.
+</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="info-icon">
-                        <div class="icon text-danger">
-                            <i class="pe-7s-graph1"></i>
+            <div class="cardlist">
+                <div class="cards">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <Card num="50+" description="Articles"/> 
                         </div>
-                        <h3>Sales</h3>
-                        <p class="description">We make our design perfect for you. Our adjustment turn our clothes into your clothes.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="info-icon">
-                        <div class="icon text-danger">
-                            <i class="pe-7s-note2"></i>
+                        <div class="col-md-4">
+                            <Card num={"10+"} description="Issues"/>
                         </div>
-                        <h3>Content</h3>
-                        <p class="description">We create a persona regarding the multiple wardrobe accessories that we provide..</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="info-icon">
-                        <div class="icon text-danger">
-                            <i class="pe-7s-music"></i>
+                        <div class="col-md-4">
+                            <Card num="50+" description="Articles"/>                   
                         </div>
-                        <h3>Music</h3>
-                        <p class="description">We like to present the world with our work, so we make sure we spread the word regarding our clothes.</p>
                     </div>
                 </div>
             </div>
@@ -205,7 +192,7 @@ export default function LandingPage() {
     </div>
 
 
-    <div class="section section-small section-get-started">
+    {/* <div class="section section-small section-get-started">
         <div class="parallax filter">
             <div class="image"
                 style={{backgroundImage: 'assets/img/office-1.jpeg'}}>
@@ -222,7 +209,9 @@ export default function LandingPage() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
+
+
    
         </div>
     )
