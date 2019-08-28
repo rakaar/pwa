@@ -64,7 +64,7 @@ export default function HomePage() {
       // SetCurrentIssue(currentMonthIssue);
 
       // hardcoded since we are not in acc to time
-      currentMonthIssue = issueRes.filter(item => {
+      currentMonthIssue = issueRes.data.resource.filter(item => {
         return item.issue_tag === 'jun19';
       });
       SetCurrentIssue(currentMonthIssue);
@@ -98,7 +98,7 @@ export default function HomePage() {
           <MonthlyIssue
             month={getMonth()}
             year={getYear()}
-            cover={currentIssue.cover}
+            cover={currentIssue.cover_link}
             link={currentIssue.link}
             description={currentIssue.description}
             id={currentIssue.id}

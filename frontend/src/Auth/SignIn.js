@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 
 import connectBackend from '../ConnectBackend/ConnectBackend';
@@ -29,33 +29,33 @@ function SignIn(props) {
     // handle forgetPassword
     props.forgotPass();
   };
+  const handleRememberMe = () => {
+    let rembMe = document.getElementById('rembMe');
+    if (rembMe.checked === true) setRemember('yes');
+  };
+
   const handleSignIn = async () => {
     let data = {
-      email,
-      password,
-      remember
+      email: email,
+      password: password,
+      remember: remember
     };
-    let res = await connectBackend.postData(config.endpoints.postLogin, {
-      data
-    });
-    console.log('res from signin ', res);
-
-    handleRemember = () => {
-      let rembMe = document.getElementById('rembMe');
-      if (rembMe.checked === true) setRemember('yes');
-    };
-
+    console.log(JSON.stringify(data));
+    let res = await connectBackend.postData(
+      config.endpoints.auth.postLogin,
+      JSON.stringify(data)
+    );
+    console.log('res is ', res);
     if (res.message === 'Already Logged In') SetIsLoggedInAleadyErr(true);
     else if (res.message === 'Please verify your email before first login')
       SetIsMailVerifiedErr(true);
     else if (res.message === 'email or password does not match.')
       SetIsNotMatchErr(true);
     else {
-      console.log('successfully logged in'); //dbg st
       setUsername(res.data.username);
       localStorage.setItem('loginToken', 'user logged in successfully');
-      localStorage.setItem('username', username);
-      props.history.push('/');
+      localStorage.setItem('username', res.data.username);
+      // props.history.push('/');
       props.closeOnLogin();
     }
   };
@@ -85,15 +85,15 @@ function SignIn(props) {
             />
           </div>
         </div>
-        {loggedInAlreadyErr ? '' : AlreadyLoggedInMsg}
-        {IsMailVerifiedErr ? '' : MailNotVerifiedMsg}
-        {IsNotMatchErr ? '' : NotMatchMsg}
+        {loggedInAlreadyErr ? AlreadyLoggedInMsg : ''}
+        {IsMailVerifiedErr ? MailNotVerifiedMsg : ''}
+        {IsNotMatchErr ? NotMatchMsg : ''}
         <a className='fp-b' onClick={forgotPassHandle}>
           {' '}
           Forgot Password ?
         </a>
         <label class='checkbox'>
-          <input type='checkbox' id='rembMe' onClick={handleRemember} />
+          <input type='checkbox' id='rembMe' onClick={handleRememberMe} />
           Remember me
         </label>
         <a class='button is-info is-rounded btn-custom' onClick={handleSignIn}>

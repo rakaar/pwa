@@ -13,7 +13,9 @@ export default function Issues() {
   useEffect(() => {
     const fetchData = async () => {
       let res = await connectBackend.getData(config.endpoints.issue.getAll, {});
-      SetIssuesArr(res);
+      console.log('res.data is ', res.data.resource);
+      SetIssuesArr(res.data.resource);
+      console.log('issuesArr is ', issuesArr);
     };
     fetchData();
   }, []);
@@ -24,7 +26,7 @@ export default function Issues() {
         return (
           <div className='issue-item'>
             <IssueCard
-              cover={item.cover}
+              cover={item.cover_link}
               id={item.id}
               month={item.month}
               year={item.year}
