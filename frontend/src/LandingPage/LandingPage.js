@@ -4,10 +4,45 @@ import Workflow from './Workflow';
 import Team from './Team';
 
 import '../Styles/Card.scss';
+import '../Styles/LandingPage/LandingPage.scss';
 
 export default function LandingPage() {
+  const showModal = () => {
+    document.getElementById('id01').style.display = 'block';
+  };
+
+  const closeModal = () => {
+    document.getElementById('id01').style.display = 'none';
+  };
   return (
     <div>
+      <div id='id01' class='w3-modal'>
+        <div class='w3-modal-content w3-animate-top w3-card-4'>
+          <header class='w3-container w3-black'>
+            <span
+              onClick={closeModal}
+              className='w3-button w3-display-topright'
+            >
+              X
+            </span>
+            <h2>Support Us</h2>
+          </header>
+          <div class='w3-container'>
+            <h2>Donate</h2>
+            <h3>
+              Donate will have a description, “For donations please reach out to
+              us at abhijeet@vgsom.iitkgp.ac.in”
+            </h3>
+            <h2>Contribute</h2>
+            <h3>
+              Contribute will have the description, “Want us to cover your
+              research? Have an article to contribute? Don’t think! Reach us now
+              at connect@iit-techambit.in”
+            </h3>
+          </div>
+        </div>
+      </div>
+
       <div class='section section-header'>
         <div class='parallax filter filter-color-white'>
           <div
@@ -18,8 +53,7 @@ export default function LandingPage() {
           ></div>
           <div class='container'>
             <div class='content'>
-              <div class='title-area'>
-                <p>Beta</p>
+              <div class='title-area has-text-centered'>
                 <h1 class='title-modern'>IIT Tech Ambit</h1>
                 <h2>
                   Subscribe for free to read about research and technology
@@ -40,7 +74,7 @@ export default function LandingPage() {
                   Start Reading
                 </a>
                 <a
-                  href='http://www.creative-tim.com/product/gaia-bootstrap-template'
+                  onClick={showModal}
                   target='_blank'
                   class='btn btn-white btn-fill btn-lg '
                 >
@@ -77,13 +111,16 @@ export default function LandingPage() {
             <div className='cards'>
               <div className='columns'>
                 <div className='column'>
-                  <Card num='1' description='yeha' />
+                  <Card num='10+' description='issues' />
                 </div>
                 <div className='column'>
-                  <Card num='1' description='yeha' />
+                  <Card num='50+' description='articles' />
                 </div>
                 <div className='column'>
-                  <Card num='1' description='yeha' />
+                  <Card
+                    num='10+'
+                    description='distinguished guest interviews'
+                  />
                 </div>
               </div>
             </div>

@@ -114,7 +114,7 @@ export default function RespNav(props) {
                   <Link to='/issues'>ISSUES</Link>
                 </h5>
               </div>
-              <div className='navbar-item'>
+              {/* <div className='navbar-item'>
                 {userLoggedIn ? (
                   <UserDropdown
                     username={localStorage.getItem('username')}
@@ -123,7 +123,7 @@ export default function RespNav(props) {
                 ) : (
                   <AuthModal />
                 )}
-              </div>
+              </div> */}
             </div>
           </div>
         </nav>
