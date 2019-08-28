@@ -1,0 +1,29 @@
+.card {
+    width: calc((1200px - 15%)/3);
+  padding: 5% 5% 10%;
+  background: "card-stat.svg";
+  background-size: cover;
+  border-radius: 2rem;
+  box-shadow: 0px 10px 20px rgba(0, 52, 129, 0.2);
+  margin: 0;
+  color: rgb(73, 128, 173);
+  margin-bottom: 0;
+  color: rgb(83, 83, 83);
+
+}
+
+.cards {
+    // display: flex;
+    // justify-content: space-between;
+    // flex-wrap: wrap;
+    // width: calc((1200px - 15%)/3);
+//   padding: 5% 5% 10%;
+//   background-size: cover;
+  border-radius: 2rem;
+  
+  box-shadow: 0px 10px 20px rgba(0, 52, 129, 0.2);
+//   margin: 0;
+  color: rgb(73, 128, 173);
+  margin-bottom: 0;
+  color: rgb(83, 83, 83);
+}

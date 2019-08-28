@@ -49,6 +49,8 @@ export default function HomePage() {
           num: 6
         }
       );
+
+      console.log('get ALl articles respone is ', articleRes);
       articleRes = articleRes.data;
       SetCarouselArts(articleRes.slice(0, 3));
       SetFeaturedArts(articleRes.slice(3, 6));
@@ -67,6 +69,7 @@ export default function HomePage() {
       currentMonthIssue = issueRes.data.resource.filter(item => {
         return item.issue_tag === 'jun19';
       });
+      console.log('current month issue is', currentMonthIssue);
       SetCurrentIssue(currentMonthIssue);
     };
     fetchData();

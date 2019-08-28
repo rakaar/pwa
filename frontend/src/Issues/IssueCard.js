@@ -13,6 +13,10 @@ class IssueCard extends Component {
     let issueTag =
       this.props.month.toLowerCase().slice(6, 11) + this.props.year.slice(2);
     sessionStorage.setItem('taglist', JSON.stringify({ tags: [issueTag] }));
+    console.log(
+      'to get issuearts by tag',
+      JSON.stringify({ tags: [issueTag] })
+    );
     this.props.history.push('/abt');
   };
 
@@ -34,9 +38,9 @@ class IssueCard extends Component {
             </h1>
             <br />
             <div className='bc-i'>
-              <a class='button is-large' onClick={this.getArticlesByIssueTag}>
+              {/* <a class='button is-large' onClick={this.getArticlesByIssueTag}>
                 See Issue
-              </a>
+              </a> */}
               <a class='button is-large' href={this.props.link}>
                 Download
               </a>

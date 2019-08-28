@@ -7,7 +7,7 @@ html{
 }
 
 body{
-  width:75%;
+  width:100%;
   position: relative;
   left:50%;
   transform:translateX(-50%); 

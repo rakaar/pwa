@@ -20,7 +20,7 @@ export default function CustomCard(props) {
       <a onClick={getArticlesOfIssue}> View All </a> <br />
       <span className='issue-des'>{props.description}</span>
       <div className='img-cont'>
-        <img src={props.cover} />
+        <img src='https://cdn.iit-techambit.in/cover/jun19.jpg' />
       </div>
       <a href={props.link} className='view-issue-btn'>
         Download Issue ➡
