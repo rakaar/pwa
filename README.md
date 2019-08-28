@@ -1,5 +1,5 @@
-# pwa
-Repository to store ReactJS frontend of TechAmbit
+# Apsara
+Repository to store ReactJS frontend (Progressive Web App) of TechAmbit
 
 # set up
 - Change to frontend directory
