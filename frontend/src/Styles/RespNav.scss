@@ -13,13 +13,17 @@ a {
   padding: 0;
   background: transparent;
   font-weight: 500;
-  font-size: 1.2em;
-  columns: #4a4a4a;
   border-bottom: 2px solid transparent;
   transition: all ease-in 200ms;
   cursor: pointer;
 }
 
-.issues-btn:hover {
+// .issues-btn:hover {
+//   border-bottom: 2px solid #2196f3;
+// }
+.navbar-item:hover {
   border-bottom: 2px solid #2196f3;
+  font-size: 1.2em;
+  columns: #4a4a4a;
+  cursor: pointer;
 }
