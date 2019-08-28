@@ -49,6 +49,8 @@ export default function HomePage() {
           num: 6
         }
       );
+
+      console.log('get ALl articles respone is ', articleRes);
       articleRes = articleRes.data;
       SetCarouselArts(articleRes.slice(0, 3));
       SetFeaturedArts(articleRes.slice(3, 6));

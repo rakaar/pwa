@@ -11,7 +11,6 @@ async function getData(endpoint, data) {
     })
     .catch(err => {
       console.log('err in getData at endpoint ', endpoint, 'is ', err);
-      window.location.pathname('/404');
       return err;
     });
 }
@@ -29,7 +28,7 @@ async function postData(endpoint, data) {
     })
     .catch(err => {
       console.log('err in postData at endpoint ', endpoint, 'is ', err);
-      return err.response.status;
+      return err;
     });
 }
 

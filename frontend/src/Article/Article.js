@@ -7,9 +7,7 @@ import config from '../Config';
 
 import '../Styles/Article.scss';
 
-const Post = props => {
-  const id = props.match.params.id;
-
+function Post(props) {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [time, setTime] = useState('');
@@ -19,6 +17,7 @@ const Post = props => {
   let saveBtn = document.getElementsByClassName('save-btn');
 
   const saveArticle = () => {
+    let id = props.match.params.id;
     connectBackend.postData(config.endpoints.article.postSave, { id });
     if (saveBtn.className.includes('saved-post')) {
       saveBtn.className.replace('saved-post', '');
@@ -31,10 +30,14 @@ const Post = props => {
 
   useEffect(() => {
     const fetchData = async () => {
+      console.log('paramsi is', props);
+      let id = props.match.params.id;
+      console.log('id is ', id); // dbg st
       let res;
       res = await connectBackend.getData(config.endpoints.article.getPost, {
         id
       });
+      console.log('indiv article by id is', res);
       res = res.data;
       setIsPostSaved(res.isSaved);
       if (isPostSaved) saveBtn.className += 'saved-post';
@@ -44,7 +47,7 @@ const Post = props => {
       setBody(res.body);
     };
     fetchData();
-  }, [isPostSaved]);
+  }, []);
 
   return (
     <div className='main-w'>
@@ -76,6 +79,6 @@ const Post = props => {
       </style>
     </div>
   );
-};
+}
 
 export default Post;

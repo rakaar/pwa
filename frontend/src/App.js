@@ -17,9 +17,12 @@ function App() {
     <Router>
       <div>
         <Route path='/' component={RespNav} />
+        <Route exact path='/' component={HomePage} />
+        <Route path='/abt' component={ArticleByTag} />
+        <Route path='/article/:id' component={Article} />
         {/* <Route exact path='/' component={HomePage} />
         <Route path='/user' component={UserProfile} />
-        <Route path='/article/:id' component={Article} />
+
         <Route path='/settings' component={Settings} /> */}
         <Route path='/issues' component={Issues} />
         <Route path='/abt' component={ArticleByTag} />
