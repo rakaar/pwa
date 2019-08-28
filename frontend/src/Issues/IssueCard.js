@@ -38,9 +38,9 @@ class IssueCard extends Component {
             </h1>
             <br />
             <div className='bc-i'>
-              <a class='button is-large' onClick={this.getArticlesByIssueTag}>
+              {/* <a class='button is-large' onClick={this.getArticlesByIssueTag}>
                 See Issue
-              </a>
+              </a> */}
               <a class='button is-large' href={this.props.link}>
                 Download
               </a>

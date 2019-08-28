@@ -35,7 +35,7 @@ function Post(props) {
       console.log('id is ', id); // dbg st
       let res;
       res = await connectBackend.getData(config.endpoints.article.getPost, {
-        id
+        post_id: id
       });
       console.log('indiv article by id is', res);
       res = res.data;

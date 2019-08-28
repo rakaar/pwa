@@ -69,6 +69,7 @@ export default function HomePage() {
       currentMonthIssue = issueRes.data.resource.filter(item => {
         return item.issue_tag === 'jun19';
       });
+      console.log('current month issue is', currentMonthIssue);
       SetCurrentIssue(currentMonthIssue);
     };
     fetchData();
