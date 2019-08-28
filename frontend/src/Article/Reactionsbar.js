@@ -16,8 +16,8 @@ export class Reactionsbar extends React.Component {
   }
 
   rateArticle = score => {
-    let id = this.props.match.params.id;
-    connectBackend.postData(config.endpoints.article.postRate, { score });
+    // let id = this.props.match.params.id;
+    // connectBackend.postData(config.endpoints.article.postRate, { score });
   };
 
   updateLikes = () => {
