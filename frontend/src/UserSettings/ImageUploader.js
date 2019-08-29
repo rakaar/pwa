@@ -7,7 +7,7 @@ export default class MyUploader extends Component {
   render() {
     return (
       <ImagesUploader
-        url='http://localhost:9090/notmultiple'
+        url='https://localhost:9090/notmultiple'
         optimisticPreviews
         multiple={false}
         onLoadEnd={err => {
