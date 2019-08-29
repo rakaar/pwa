@@ -1,12 +1,13 @@
 .container {
   position: relative;
-  width: 100%;
+  width: 70%;
+  background: #ddd;
 }
 
 .image {
   opacity: 1;
   display: block;
-  width: 80%;
+  width: 100%;
   // height: 20%;
   transition: 0.5s ease;
   backface-visibility: hidden;
@@ -19,12 +20,13 @@
   opacity: 0;
   position: absolute;
   top: 50%;
-  left: 40%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background: transparent;
   text-align: center !important;
-  font-size: 5rem !important;
+  font-size: 2rem !important;
   h1 {
+    font-family: 'Poppins' !important;
     transform: translateY(-65%);
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     -webkit-background-clip: text;
@@ -40,7 +42,7 @@
 }
 
 .container:hover .image {
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 .container:hover .middle {
@@ -56,7 +58,7 @@
   font-weight: 1100 !important;
   margin: -30% 10px;
   color: #fff !important;
-  font-size: 5rem !important;
+  font-size: 2rem !important;
   background: #000428; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to top,

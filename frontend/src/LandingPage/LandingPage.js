@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Card from './Card';
 import Workflow from './Workflow';
 import Team from './Team';
@@ -9,7 +10,7 @@ import '../Styles/LandingPage/LandingPage.scss';
 export default function LandingPage() {
   const showModal = () => {
     document.getElementById('id01').style.display = 'block';
-    document.getElementById('overlay-blur').style.display = 'block'
+    document.getElementById('overlay-blur').style.display = 'block';
   };
 
   const closeModal = () => {
@@ -18,7 +19,7 @@ export default function LandingPage() {
   };
   return (
     <div>
-    <div id="overlay-blur"></div>
+      <div id='overlay-blur'></div>
       <div id='id01' class='w3-modal'>
         <div class='w3-modal-content w3-animate-top w3-card-4'>
           <header class='w3-container w3-black'>
@@ -30,37 +31,39 @@ export default function LandingPage() {
             </span>
             <h2> &nbsp; </h2>
           </header>
-          
-          <div className="support-model">
-          
-            <h1>Thank you for your consideration!</h1>
-            <div class="separator line-separator">♦</div>
-          <div className="sm-f">
-          <div className="l">
-          <h2>Donate</h2>
-          <h3>
-            For donations please reach out to
-            us at <a href="mailto:abhijeet@vgsom.iitkgp.ac.in" target="blank">abhijeet@vgsom.iitkgp.ac.in</a>
-          </h3>
-          </div>
-          <div className="r">
-          <h2>Contribute</h2>
-          <h3>
-            Want us to cover your
-            research? Have an article to contribute? Don’t think! Reach us now
-            at <a href="mailto:connect@iit-texhambit.in" target="blank">connect@iit-techambit.in</a>
-          </h3>
-          </div>
-        </div>
-      </div>
 
+          <div className='support-model'>
+            <h1>Thank you for your consideration!</h1>
+            <div class='separator line-separator'>♦</div>
+            <div className='sm-f'>
+              <div className='l'>
+                <h2>Donate</h2>
+                <h3>
+                  For donations please reach out to us at{' '}
+                  <a href='mailto:abhijeet@vgsom.iitkgp.ac.in' target='blank'>
+                    abhijeet@vgsom.iitkgp.ac.in
+                  </a>
+                </h3>
+              </div>
+              <div className='r'>
+                <h2>Contribute</h2>
+                <h3>
+                  Want us to cover your research? Have an article to contribute?
+                  Don’t think! Reach us now at{' '}
+                  <a href='mailto:connect@iit-texhambit.in' target='blank'>
+                    connect@iit-techambit.in
+                  </a>
+                </h3>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class='section section-header'>
         <div class='parallax filter filter-color-white'>
           <div
-            class='image'
+            class='limage image'
             style={{
               backgroundImage: `url('https://cdn.iit-techambit.in/websiteAssets/front.jpg')`
             }}
@@ -69,7 +72,7 @@ export default function LandingPage() {
             <div class='content'>
               <div class=''>
                 <h1 className='title-modern-main'>IIT Tech Ambit</h1>
-                <h2 className="des-main-ff">
+                <h2 className='des-main-ff'>
                   Subscribe for free to read about research and technology
                   breakthroughs happenings in the IIT ecosystem
                 </h2>
@@ -77,14 +80,11 @@ export default function LandingPage() {
               </div>
 
               <div class='button-get-started'>
-                <a
-                  href='#about_us'
-                  class='btn btn-white btn-fill btn-lg '
-                >
+                <a href='#about_us' class='btn btn-white btn-fill btn-lg '>
                   About us
                 </a>
                 <a href='/issues' class='btn btn-white btn-fill btn-lg '>
-                  Start Reading
+                  <Link to='/issues'> Start Reading</Link>
                 </a>
                 <a
                   onClick={showModal}
@@ -102,7 +102,7 @@ export default function LandingPage() {
       <div className='section section-header skgpb'>
         <div class='parallax filter filter-color-white'>
           <div
-            class='image'
+            class='limage image'
             style={{
               backgroundImage: `url('https://cdn.iit-techambit.in/websiteAssets/iitkgp.jpg')`
             }}
@@ -130,20 +130,19 @@ export default function LandingPage() {
                   <Card num='50+' description='articles' />
                 </div>
                 <div className='column'>
-                  <Card
-                    num='15+'
-                    description='guest interviews'
-                  />
+                  <Card num='15+' description='guest interviews' />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div id="what_we_do">
-        <Workflow />
+      </div>
+      <div className='section'>
+        <div id='what_we_do'>
+          <Workflow />
         </div>
-        <div id="about_us">
-        <Team />
+        <div id='about_us'>
+          <Team />
         </div>
       </div>
     </div>

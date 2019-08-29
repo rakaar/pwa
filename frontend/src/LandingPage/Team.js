@@ -11,11 +11,9 @@ export default function Team(){
                 <h2> Who Are We ?</h2>
                 <div className='separator separator-danger'>✻</div>
                 <p className='description'>
-                  We'd like to announce that IIT Kharagpur has made an
-                  investment in Tech Ambit, which will help us further our
-                  efforts in our mission of making research and tech innovations
-                  accessible to India as a whole. Funding amount to be set at
-                  1.2 million rupees.
+                We are a bunch (a little larger one, maybe) of KGPians from different backgrounds and with diverse passion 
+                who have come together to solve modern problems requiring fast-moving people and "KISS" solutions; our aim is to
+                make the pool of innovations and research at IITs accessible and understandable to everyone; from students to scientists... <br/><br/>and EVERYONE between.
                 </p>
             </div>
         </div>

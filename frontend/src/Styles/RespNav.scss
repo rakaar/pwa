@@ -8,6 +8,10 @@
   margin-top: 2em;
 }
 
+.logo {
+  width: 40%;
+}
+
 #id03 {
   z-index: 999;
 }
@@ -19,6 +23,9 @@
   border-radius: 6px;
   transition: all ease 100ms;
   padding: 0 !important;
+  .issues-btn {
+    color: #111 !important;
+  }
   h5,
   h5 .nh2 {
     padding: 0.4em 1em !important;
@@ -87,8 +94,4 @@ a {
   font-size: 1.2em;
   columns: #4a4a4a;
   cursor: pointer;
-}
-
-.logo {
-  width: 40%;
 }

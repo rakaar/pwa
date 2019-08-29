@@ -19,6 +19,8 @@ export default function RespNav(props) {
 
   const closeModal = () => {
     document.getElementById('id01').style.display = 'none';
+  };
+  const closeHiringModal = () => {
     document.getElementById('id03').style.display = 'none';
   };
   useEffect(() => {
@@ -86,7 +88,7 @@ export default function RespNav(props) {
         <div class='w3-modal-content w3-animate-top w3-card-4'>
           <header class='w3-container w3-black'>
             <span
-              onClick={closeModal}
+              onClick={closeHiringModal}
               className='w3-button w3-display-topright ccmcb'
             >
               X
