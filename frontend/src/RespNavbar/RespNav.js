@@ -19,8 +19,10 @@ export default function RespNav(props) {
 
   const closeModal = () => {
     document.getElementById('id01').style.display = 'none';
+  }
+  const closeHiringModal = () => {
     document.getElementById('id03').style.display = 'none';
-  };
+  }
   useEffect(() => {
     // if (localStorage.getItem('loginToken') != null) setUserLoggedIn(true);
     console.log(localStorage.getItem('loginToken'), 'heree');
@@ -87,7 +89,7 @@ export default function RespNav(props) {
         <div class='w3-modal-content w3-animate-top w3-card-4'>
           <header class='w3-container w3-black'>
             <span
-              onClick={closeModal}
+              onClick={closeHiringModal}
               className='w3-button w3-display-topright ccmcb'
             >
               X
@@ -132,7 +134,9 @@ export default function RespNav(props) {
         <nav class='navbar' role='navigation' aria-label='main navigation'>
           <div className='navbar-brand'>
             <a href='/' style={{ color: 'black' }}>
-              <h2 className="nav-lt">IIT Tech Ambit</h2>
+            <img src="https://cdn.iit-techambit.in/websiteAssets/logo.png" className="logo" /> 
+            <h2 className="nav-lt">
+              </h2>
             </a>
 
             <a

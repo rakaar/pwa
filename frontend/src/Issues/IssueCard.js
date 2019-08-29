@@ -41,7 +41,7 @@ class IssueCard extends Component {
               {/* <a class='button is-large' onClick={this.getArticlesByIssueTag}>
                 See Issue
               </a> */}
-              <a class='button is-large' href={this.props.link}>
+              <a class='button is-large' href={this.props.link} target="blank">
                 Download
               </a>
             </div>

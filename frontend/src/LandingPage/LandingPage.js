@@ -60,7 +60,7 @@ export default function LandingPage() {
       <div class='section section-header'>
         <div class='parallax filter filter-color-white'>
           <div
-            class='image'
+            class='limage image'
             style={{
               backgroundImage: `url('https://cdn.iit-techambit.in/websiteAssets/front.jpg')`
             }}
@@ -102,7 +102,7 @@ export default function LandingPage() {
       <div className='section section-header skgpb'>
         <div class='parallax filter filter-color-white'>
           <div
-            class='image'
+            class='limage image'
             style={{
               backgroundImage: `url('https://cdn.iit-techambit.in/websiteAssets/iitkgp.jpg')`
             }}
@@ -139,7 +139,10 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-        <div id="what_we_do">
+        
+      </div>
+      <div className="section">
+      <div id="what_we_do">
         <Workflow />
         </div>
         <div id="about_us">

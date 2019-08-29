@@ -31,7 +31,7 @@ export class Footer extends Component {
             <p> Kharagpur, 721302 </p>
             <p> wb, india </p>
             <p> +91-8969169656 </p>
-            <p className='mail-ft'> devops@iit-techambit.in </p>
+            <p className='mail-ft'><a href="mailto:devops@iit-techambit.in" target="blank">devops@iit-techambit.in</a></p>
           </div>
         </div>
         <div className='vl-f'>
