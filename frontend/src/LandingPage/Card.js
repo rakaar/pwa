@@ -3,7 +3,7 @@ import '../Styles/Card.scss';
 
 export default function Card(props) {
     return(
-        <div className='card'>
+        <div className='cad'>
             <h1>{props.num}</h1>
             <h3>{props.description}</h3>
         </div>
