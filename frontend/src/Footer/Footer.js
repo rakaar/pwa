@@ -10,8 +10,8 @@ export class Footer extends Component {
         </div>
         <div className='fg-w'>
           <div className='lg-f'>
-            <p> <a href="https://cdn.iit-techambit.in/generalAssets/privacy_policy.txt" target="blank">Privacy Policy</a></p>
-            <p> <a href="https://cdn.iit-techambit.in/generalAssets/tnc.txt" target="blank">Terms and Conditions</a></p>
+            <p> <a href="https://cdn.iit-techambit.in/generalAssets/privacy_policy.html" target="blank">Privacy Policy</a></p>
+            <p> <a href="https://cdn.iit-techambit.in/generalAssets/tnc.html" target="blank">Terms and Conditions</a></p>
             <p><a href="https://iit-techambit.in/#what_we_do"> About </a></p>
           </div>
           <div className='mg-f'>
