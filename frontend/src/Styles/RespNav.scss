@@ -8,23 +8,24 @@
   margin-top: 2em;
 }
 
-#id03{
+#id03 {
   z-index: 999;
 }
 
-.navbar-item{
+.navbar-item {
   margin-top: 2em;
   border: 2px solid transparent !important;
   margin: 2em 1em 0 1em;
   border-radius: 6px;
   transition: all ease 100ms;
   padding: 0 !important;
-  h5, h5 .nh2{
+  h5,
+  h5 .nh2 {
     padding: 0.4em 1em !important;
     font-family: 'Poppins';
     color: #111 !important;
   }
-  &:hover{
+  &:hover {
     border: 2px solid #eee !important;
     background: #eee;
     transform: scale(1) !important;
@@ -32,34 +33,34 @@
   }
 }
 
-.hiring-anim{
+.hiring-anim {
   animation: ha 1s ease infinite;
   font-size: 1em;
   padding: 0 2em !important;
   background: pink;
   cursor: pointer;
-  &:hover{
+  &:hover {
     font-size: 1em !important;
     background: pink;
   }
 }
 
-@keyframes ha{
-  0%{
+@keyframes ha {
+  0% {
     opacity: 1;
     transform: translateY(-2px);
   }
-  50%{
+  50% {
     opacity: 0.9;
     transform: translateY(1px);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translateY(-2px);
   }
 }
 
-.nav-lt{
+.nav-lt {
   font-family: 'Poppins' !important;
   font-weight: 500;
 }
@@ -86,4 +87,8 @@ a {
   font-size: 1.2em;
   columns: #4a4a4a;
   cursor: pointer;
+}
+
+.logo {
+  width: 40%;
 }

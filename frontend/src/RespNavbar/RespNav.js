@@ -14,8 +14,8 @@ export default function RespNav(props) {
   };
 
   const showHiringModal = () => {
-    document.getElementById('id03').style.display = 'block'
-  }
+    document.getElementById('id03').style.display = 'block';
+  };
 
   const closeModal = () => {
     document.getElementById('id01').style.display = 'none';
@@ -82,7 +82,6 @@ export default function RespNav(props) {
         </div>
       </div>
 
-      
       <div id='id03' class='w3-modal'>
         <div class='w3-modal-content w3-animate-top w3-card-4'>
           <header class='w3-container w3-black'>
@@ -94,45 +93,61 @@ export default function RespNav(props) {
             </span>
             <h2> &nbsp; </h2>
           </header>
-          
-          <div className="support-model">
-          
+
+          <div className='support-model'>
             <h1>We love talented people like you</h1>
-            <div class="separator line-separator">♦</div>
-          <div className="sm-f">
-          <div className="l">
-          <h2>Product</h2>
-          <h3>
-            We are always looking out for motivated individuals to expand our products; reach out to
-            us at <a href="mailto:utkarsh.sinha@iit-techambit.in" target="blank">utkarsh.sinha@iit-techambit.in</a>
-          </h3>
-          </div>
-          <div className="r">
-          <h2>Editorial</h2>
-          <h3>
-             We love our pen-knights more than our products; to get some of that love, contact us
-            at <a href="mailto:suraj.iyyengar@iit-techambit.in" target="blank">suraj.iyyengar@iit-techambit.in</a>
-          </h3>
-          </div>
-          <div className="b">
-          <h2>Technology</h2>
-          <h3>
-            If you love solving challenging technical problems reach out to
-            us at <a href="mailto:shivam.jha@iit-techambit.in" target="blank">shivam.jha@iit-techambit.in</a>
-          </h3>
+            <div class='separator line-separator'>♦</div>
+            <div className='sm-f'>
+              <div className='l'>
+                <h2>Product</h2>
+                <h3>
+                  We are always looking out for motivated individuals to expand
+                  our products; reach out to us at{' '}
+                  <a
+                    href='mailto:utkarsh.sinha@iit-techambit.in'
+                    target='blank'
+                  >
+                    utkarsh.sinha@iit-techambit.in
+                  </a>
+                </h3>
+              </div>
+              <div className='r'>
+                <h2>Editorial</h2>
+                <h3>
+                  We love our pen-knights more than our products; to get some of
+                  that love, contact us at{' '}
+                  <a
+                    href='mailto:suraj.iyyengar@iit-techambit.in'
+                    target='blank'
+                  >
+                    suraj.iyyengar@iit-techambit.in
+                  </a>
+                </h3>
+              </div>
+              <div className='b'>
+                <h2>Technology</h2>
+                <h3>
+                  If you love solving challenging technical problems reach out
+                  to us at{' '}
+                  <a href='mailto:shivam.jha@iit-techambit.in' target='blank'>
+                    shivam.jha@iit-techambit.in
+                  </a>
+                </h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-        </div>
-      </div>
-
 
       <div className='res-nav'>
         <nav class='navbar' role='navigation' aria-label='main navigation'>
           <div className='navbar-brand'>
             <a href='/' style={{ color: 'black' }}>
-              <h2 className="nav-lt">IIT Tech Ambit</h2>
+              <img
+                src='https://cdn.iit-techambit.in/websiteAssets/logo.png'
+                className='logo'
+              />
+              <h2 className='nav-lt'></h2>
             </a>
 
             <a
@@ -150,7 +165,10 @@ export default function RespNav(props) {
 
           <div id='navbarBasicExample' class='navbar-menu'>
             <div className='navbar-end'>
-              <div className='navbar-item hiring-anim' onClick={showHiringModal}>
+              <div
+                className='navbar-item hiring-anim'
+                onClick={showHiringModal}
+              >
                 <h5>WE ARE HIRING</h5>
               </div>
               <div className='navbar-item' onClick={showModal}>
@@ -162,7 +180,9 @@ export default function RespNav(props) {
               {/* </div> */}
               <div className='navbar-item'>
                 <h5 className='issues-btn'>
-                  <Link className="nh2" to='/issues'>ISSUES</Link>
+                  <Link className='nh2' to='/issues'>
+                    ISSUES
+                  </Link>
                 </h5>
               </div>
               {/* <div className='navbar-item'>
