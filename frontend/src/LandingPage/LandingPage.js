@@ -83,13 +83,13 @@ export default function LandingPage() {
                 <a href='#about_us' class='btn btn-white btn-fill btn-lg '>
                   About us
                 </a>
-                <a
-                  href='/issues'
+                <Link
+                  to='/issues'
                   class='btn btn-white btn-fill btn-lg'
                   id='start-reading'
                 >
-                  <Link to='/issues'> Start Reading</Link>
-                </a>
+                  Start Reading
+                </Link>
                 <a
                   onClick={showModal}
                   target='_blank'
