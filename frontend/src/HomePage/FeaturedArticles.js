@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import '../Styles/FeaturedArticle.scss';
 
+/*eslint-disable*/
 export default function FeaturedArticles(props) {
   return (
     <div className='box'>
@@ -11,7 +12,7 @@ export default function FeaturedArticles(props) {
           return <div className='tags-custom'>{item}</div>;
         })}
         <div className='featured-article-image'>
-          <img src={props.imgLinks[0]} />
+          <img alt='feature article pic' src={props.imgLinks[0]} />
         </div>
 
         <div className='featured-article-content'>

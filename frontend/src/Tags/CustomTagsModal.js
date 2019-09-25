@@ -7,16 +7,6 @@ import config from '../Config';
 
 import '../Styles/SignModal.scss';
 
-const ArticleTags = [
-  'wyyy',
-  'wyyy',
-  'wyyy',
-  'sample tag',
-  'sample tag',
-  'dzzz',
-  'zdd'
-];
-
 class CustomTagsModal extends Component {
   constructor(props) {
     super(props);
@@ -119,6 +109,7 @@ class CustomTagsModal extends Component {
             ))}
           </div>
         )}
+        {/* eslint-disable-next-line */}
         <a className='button' onClick={this.getArticles}>
           Get Articles by Selected Tags
         </a>

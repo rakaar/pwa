@@ -6,7 +6,6 @@ import config from '../Config';
 import '../Styles/UserProfile.scss';
 
 export default function UserProfile(props) {
-  let id = props.match.params.id;
   const [userData, setUserData] = useState({
     username: '',
     email: '',
@@ -60,6 +59,7 @@ export default function UserProfile(props) {
       <div className='profile'>
         <div className='name-sec'>
           <img
+            alt='Your Profile Pic'
             className='user-image'
             src='https://cdn.iit-techambit.in/profilePic/default.png'
           />

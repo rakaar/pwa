@@ -1,8 +1,5 @@
 import React from 'react';
 
-import connectBackend from '../ConnectBackend/ConnectBackend';
-import config from '../Config';
-
 export class Reactionsbar extends React.Component {
   constructor(props) {
     super(props);
@@ -33,35 +30,45 @@ export class Reactionsbar extends React.Component {
 
         <div className='reactions-w'>
           <button className='rcb' onClick={this.rateArticle(1)}>
-            😡
+            <span role='img' aria-label='rate by emoticon'>
+              😡
+            </span>
           </button>
           <br />
           <span> 3 </span>
         </div>
         <div className='reactions-w'>
           <button className='rcb' onClick={this.rateArticle(2)}>
-            😞
+            <span role='img' aria-label='rate by emoticon'>
+              😞
+            </span>
           </button>
           <br />
           <span> 8 </span>
         </div>
         <div className='reactions-w'>
           <button className='rcb' onClick={this.rateArticle(3)}>
-            😐
+            <span role='img' aria-label='rate by emoticon'>
+              😐
+            </span>
           </button>
           <br />
           <span> 10 </span>
         </div>
         <div className='reactions-w'>
           <button className='rcb' onClick={this.rateArticle(4)}>
-            😊
+            <span role='img' aria-label='rate by emoticon'>
+              😊
+            </span>
           </button>
           <br />
           <span> 11 </span>
         </div>
         <div className='reactions-w'>
           <button className='rcb' onClick={this.rateArticle(5)}>
-            😍
+            <span role='img' aria-label='rate by emoticon'>
+              😍
+            </span>
           </button>
           <br />
           <span> 10 </span>

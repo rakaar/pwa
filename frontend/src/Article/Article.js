@@ -7,6 +7,7 @@ import config from '../Config';
 
 import '../Styles/Article.scss';
 
+/*eslint-disable*/
 function Post(props) {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');

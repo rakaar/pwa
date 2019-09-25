@@ -7,6 +7,7 @@ import Team from './Team';
 import '../Styles/Card.scss';
 import '../Styles/LandingPage/LandingPage.scss';
 
+/*eslint-disable*/
 export default function LandingPage() {
   const showModal = () => {
     document.getElementById('id01').style.display = 'block';

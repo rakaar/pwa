@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropicUploader from './ImageUploader';
 import EditComp from './EditComp';
 import UserBio from './UserBio';
 
@@ -10,6 +9,7 @@ import '../Styles/UserSettings/Settings.scss';
 import '../Styles/Snackbar.scss';
 import '../App.css';
 
+/*eslint-disable*/
 export default function Settings() {
   const [userData, setUserData] = useState({
     username: '',
@@ -115,6 +115,7 @@ export default function Settings() {
       <div id='snackbar'>Successfully details changed</div>
       <div className='image-uploader'>
         <img
+          alt=' Your Profile Pic'
           className='user-image'
           src='https://cdn.iit-techambit.in/profilePic/default.png'
         />
