@@ -2,6 +2,7 @@ import React from 'react';
 import Newsletter from './Newsletter';
 import Reactionsbar from './Reactionsbar';
 
+/*eslint-disable*/
 export class PostRef extends React.Component {
   render() {
     return (
@@ -15,7 +16,12 @@ export class PostRef extends React.Component {
 
         <Newsletter />
 
-        <span className='thankyou'>Thank you for being here 😄</span>
+        <span className='thankyou'>
+          Thank you for being here{' '}
+          <span role='img' aria-label='Grinning Face With Smiling Eyes'>
+            😄
+          </span>
+        </span>
 
         <style jsx>
           {`

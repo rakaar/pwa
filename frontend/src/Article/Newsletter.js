@@ -102,9 +102,15 @@ export class Newsletter extends React.Component {
       return (
         <div className='main-w-nls'>
           <span className='title-nls'>
-            <b>🎉</b>
+            <b>
+              <span role='img' aria-label='Party Popper'>
+                🎉
+              </span>
+            </b>
           </span>
-          <span className='info-nls'>You have been successfully subscribed.</span>
+          <span className='info-nls'>
+            You have been successfully subscribed.
+          </span>
 
           <style jsx>
             {`

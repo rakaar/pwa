@@ -126,6 +126,7 @@ export default function SignUp() {
       </div>
       {passErr ? passErrMsg : ''}
       {pwdLong ? '' : passShort}
+      {/* eslint-disable-next-line*/}
       <a class='button is-info is-rounded btn-custom' onClick={handleSignUp}>
         Sign Up
       </a>
@@ -133,24 +134,3 @@ export default function SignUp() {
     </div>
   );
 }
-
-// <div className="signup-wrap" >
-//                 <h2 className="modal-title"> Sign Up </h2>
-//                 <h4 className="modal-toggle"> or <a href="#"> Sign In</a></h4>
-
-//                 <div className="signin-form">
-//                     <div class='field'>
-//                         <label class='label'>Username</label>
-//                         <div class='control'>
-//                         <input class='input' type='text' placeholder='Username' />
-//                         </div>
-//                     </div>
-//                     <div class='field'>
-//                         <label class='label'>Password</label>
-//                         <div class='control'>
-//                         <input class='input' type='text' placeholder='Password' />
-//                         </div>
-//                     </div>
-//                     <a class='button is-info is-rounded btn-custom'>Sign Up</a>
-//                 </div>
-//                 </div>

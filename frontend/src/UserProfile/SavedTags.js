@@ -1,7 +1,7 @@
 import React from 'react';
-
 import '../Styles/SavedTags.scss';
 
+/*eslint-disable*/
 export default function SavedTag(props) {
   return (
     <div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Styles/SavedArticle.scss';
 
+/*eslint-disable*/
 export default function SavedArticle(props) {
   return (
     <div className='saved-a-w'>

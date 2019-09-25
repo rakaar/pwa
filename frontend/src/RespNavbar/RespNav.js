@@ -1,13 +1,9 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import AuthModal from '../Auth/AuthModal';
-import CustomTagsButton from '../Tags/CustomTagsButton';
-import UserDropdown from '../Auth/UserDropdown';
 import { Link } from 'react-router-dom';
 import '../Styles/RespNav.scss';
 
 export default function RespNav(props) {
   const [userLoggedIn, setUserLoggedIn] = useState(false);
-  // const [usernameOnHome, setUsernameOnHome] = useState('');
 
   const showModal = () => {
     document.getElementById('id01').style.display = 'block';
@@ -32,22 +28,17 @@ export default function RespNav(props) {
   // setUsernameOnHome(localStorage.getItem('username'));
   const onLogout = () => setUserLoggedIn(false);
   document.addEventListener('DOMContentLoaded', () => {
-    // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(
       document.querySelectorAll('.navbar-burger'),
       0
     );
 
-    // Check if there are any navbar burgers
     if ($navbarBurgers.length > 0) {
-      // Add a click event on each of them
       $navbarBurgers.forEach(el => {
         el.addEventListener('click', () => {
-          // Get the target from the "data-target" attribute
           const target = el.dataset.target;
           const $target = document.getElementById(target);
 
-          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
           el.classList.toggle('is-active');
           $target.classList.toggle('is-active');
         });
@@ -146,6 +137,7 @@ export default function RespNav(props) {
           <div className='navbar-brand'>
             <a href='/' style={{ color: 'black' }}>
               <img
+                alt='IIT Tech Ambit Logo'
                 src='https://cdn.iit-techambit.in/websiteAssets/logo.png'
                 className='logo'
               />
