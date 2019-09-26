@@ -4,10 +4,6 @@ import { withRouter } from 'react-router-dom';
 import '../Styles/IssueCard.scss';
 
 class IssueCard extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   // get Articles of the issue  by tag
   getArticlesByIssueTag = () => {
     let issueTag =
@@ -30,7 +26,7 @@ class IssueCard extends Component {
     return (
       <div>
         <div class='container'>
-          <img src={this.props.cover} class='image' />
+          <img alt='issue cover' src={this.props.cover} class='image' />
 
           <div className='middle'>
             <h1>
@@ -41,7 +37,7 @@ class IssueCard extends Component {
               {/* <a class='button is-large' onClick={this.getArticlesByIssueTag}>
                 See Issue
               </a> */}
-              <a class='button is-large' href={this.props.link} target="blank">
+              <a class='button is-large' href={this.props.link} target='blank'>
                 Download
               </a>
             </div>

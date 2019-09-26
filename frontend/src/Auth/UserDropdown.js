@@ -23,7 +23,7 @@ export default function UserDropdown(props) {
   };
 
   const handleDropdown = () => {
-    if (demoId.className.indexOf('w3-show') == -1) {
+    if (demoId.className.indexOf('w3-show') === -1) {
       demoId.className += ' w3-show';
     } else {
       demoId.className = demoId.className.replace(' w3-show', '');

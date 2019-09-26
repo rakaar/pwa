@@ -2,6 +2,7 @@ import React, { useState, Fragment } from 'react';
 
 import '../Styles/UserSettings/EditComp.scss';
 
+/*eslint-disable*/
 export default function EditComp(props) {
   const [autoFocusVal, setAutoFocusVal] = useState(false);
 

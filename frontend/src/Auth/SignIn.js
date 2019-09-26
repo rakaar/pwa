@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 
 import connectBackend from '../ConnectBackend/ConnectBackend';
@@ -54,7 +54,7 @@ function SignIn(props) {
     else {
       setUsername(res.data.username);
       localStorage.setItem('loginToken', 'user logged in successfully');
-      localStorage.setItem('username', res.data.username);
+      localStorage.setItem('username', username);
       // props.history.push('/');
       props.closeOnLogin();
     }

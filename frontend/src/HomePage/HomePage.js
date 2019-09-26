@@ -9,7 +9,7 @@ import config from '../Config';
 import '../Styles/HomePage.scss';
 
 const getMonth = () => {
-  var month = new Array();
+  var month = [];
   month[0] = 'January';
   month[1] = 'February';
   month[2] = 'March';
@@ -42,7 +42,7 @@ export default function HomePage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      let articleRes, issueRes, currentMonth, currentMonthIssue;
+      let articleRes, issueRes, currentMonthIssue;
       articleRes = await connectBackend.getData(
         config.endpoints.article.getAll,
         {
@@ -58,14 +58,7 @@ export default function HomePage() {
         config.endpoints.issue.getAll,
         {}
       );
-      //  Cannot use this currently
-      // currentMonth = await getMonth();
-      // currentMonthIssue = issueRes.filter(item => {
-      //   return item.month === currentMonth.toLowerCase().split(0, 3);
-      // });
-      // SetCurrentIssue(currentMonthIssue);
 
-      // hardcoded since we are not in acc to time
       currentMonthIssue = issueRes.data.resource.filter(item => {
         return item.issue_tag === 'jun19';
       });
@@ -80,7 +73,12 @@ export default function HomePage() {
       <CustomCarousel carouselArts={carouselArts} />
       <div className='grid-v'>
         <div className='left-gw'>
-          <span className='section-title'>Popular Posts ✨</span>
+          <span className='section-title'>
+            Popular Posts{' '}
+            <span role='img' aria-label='stars'>
+              ✨
+            </span>
+          </span>
           {featuredArts.map(item => {
             return (
               <FeaturedArticle

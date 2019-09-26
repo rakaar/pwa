@@ -3,13 +3,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import LandingPage from './LandingPage/LandingPage';
 import HomePage from './HomePage/HomePage';
 import RespNav from './RespNavbar/RespNav';
-import UserProfile from './UserProfile/UserProfile';
 import Article from './Article/Article';
-import Settings from './UserSettings/Settings';
 import Issues from './Issues/Issues';
 import ArticleByTag from './ArticlesByTag/ArticlesByTag';
 import Footer from './Footer/Footer';
-import ErrorPage from './Error/Error';
 
 import './App.css';
 
@@ -31,7 +28,7 @@ function App() {
         {/* <Route exact path='/404' component={ErrorPage} /> */}
         {/* <Route path='/abt' component={ArticleByTag} />
          */}
-         <Route path='/' component={Footer} />
+        <Route path='/' component={Footer} />
       </div>
     </Router>
   );

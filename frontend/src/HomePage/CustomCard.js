@@ -10,7 +10,7 @@ export default function CustomCard(props) {
       <Link to={`/article/${props.post_id}`}>
         <div className='top-article'>
           <div className='top-article-image'>
-            <img src={props.imgLinks[0]} />
+            <img alt='article title pic' src={props.imgLinks[0]} />
           </div>
           <div className='top-article-meta'>
             <h3>{props.title}</h3>
