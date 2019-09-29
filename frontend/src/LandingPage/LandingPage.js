@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Card from './Card';
 import Workflow from './Workflow';
 import Team from './Team';
+import Subscribe from './Subscribe';
 
 import '../Styles/Card.scss';
 import '../Styles/LandingPage/LandingPage.scss';
@@ -61,7 +62,7 @@ export default function LandingPage() {
         </div>
       </div>
 
-      <div class='section section-header'>
+      <div class='section section-header intro'>
         <div class='parallax filter filter-color-white'>
           <div
             class='limage image'
@@ -77,27 +78,6 @@ export default function LandingPage() {
                   Subscribe for free to read about research and technology
                   breakthroughs happenings in the IIT ecosystem
                 </h2>
-                <div class='separator line-separator'>♦</div>
-              </div>
-
-              <div class='button-get-started'>
-                <a href='#about_us' class='btn btn-white btn-fill btn-lg '>
-                  About us
-                </a>
-                <Link
-                  to='/issues'
-                  class='btn btn-white btn-fill btn-lg'
-                  id='start-reading'
-                >
-                  Start Reading
-                </Link>
-                <a
-                  onClick={showModal}
-                  target='_blank'
-                  class='btn btn-white btn-fill btn-lg '
-                >
-                  Support Us
-                </a>
               </div>
             </div>
           </div>
@@ -105,6 +85,8 @@ export default function LandingPage() {
       </div>
 
       <div className='section section-header skgpb'>
+        <Subscribe />
+
         <div class='parallax filter filter-color-white'>
           <div
             class='limage image'
@@ -142,6 +124,7 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
+
       <div className='section'>
         <div id='what_we_do'>
           <Workflow />
