@@ -35,7 +35,7 @@ export class Footer extends Component {
           </div>
         </div>
         <div className='vl-f'>
-          <p className='cs-f'> Subscription Coming soon </p>
+          <p className='cs-f'> <a href="/">Subscribe To Newsletter</a> </p>
         </div>
         <div className='crt-f'> © IIT Technology Ambit 2019 </div>
       </div>
