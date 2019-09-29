@@ -3,9 +3,7 @@ import config from '../Config';
 import connectBackend from '../ConnectBackend/ConnectBackend';
 
 import '../Styles/Card.scss';
-// import '../Styles/LandingPage/LandingPage.scss';
 import '../Styles/LandingPage/TempSub.scss';
-import '../Styles/LandingPage/Subscribe.scss';
 
 export default function TempSub() {
   const [mail, setMail] = useState('');

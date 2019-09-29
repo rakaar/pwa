@@ -1,6 +1,27 @@
 #id01 {
   z-index: 999999;
 }
+.sub {
+  position: relative;
+  background: transparent;
+  padding: 0em 5em;
+  top: -3em;
+  .field {
+    position: relative;
+    top: -2em;
+    button {
+      background: #209cee !important;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-weight: 700;
+      padding: 0 !important;
+      transition: all ease 0.2s;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}
 .tscs {
   position: relative;
   h1 {
@@ -261,4 +282,52 @@ body {
   margin-top: 1%;
   width: 50%;
   float: right;
+}
+
+@media only screen and (max-width: 968px) {
+  /* For mobile phones: */
+  .support-model {
+    .sm-f {
+      grid-template-columns: 1fr !important;
+      .b {
+        grid-column: 1/2;
+      }
+    }
+  }
+  .sm-f {
+    grid-template-columns: 1fr !important;
+    grid-gap: 1em;
+  }
+  .intro {
+    margin: 0;
+    width: 100%;
+  }
+  .title-modern-main {
+    margin: 0 !important;
+    margin-top: 1.6em !important;
+    line-height: 1em !important;
+  }
+  .sub {
+    .sub-txt {
+      font-size: 2.8em !important;
+    }
+    display: flex;
+    height: max-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    padding: 0em 1em 6em 0;
+    position: relative;
+    top: 3em !important;
+    .field {
+      button {
+        position: relative;
+        width: max-content;
+        top: 3.5em;
+        padding: 0 1em !important;
+        font-size: 1.4em !important;
+      }
+    }
+  }
 }

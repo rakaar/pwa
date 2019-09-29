@@ -18,6 +18,7 @@ function App() {
         <Route path='/' component={RespNav} />
         {/* <Route exact path='/home' component={HomePage} /> */}
         {/* <Route exact path='/' component={LandingPage} /> */}
+        <Route exact path='/' component={TempSub} />
         <Route exact path='/abt' component={ArticleByTag} />
         <Route exact path='/article/:id' component={Article} />
         {/* <Route exact path='/' component={HomePage} />
@@ -25,11 +26,12 @@ function App() {
 
         <Route path='/settings' component={Settings} /> */}
         <Route exact path='/issues' component={Issues} />
+
         <Route exact path='/abt' component={ArticleByTag} />
         {/* <Route exact path='/404' component={ErrorPage} /> */}
         {/* <Route path='/abt' component={ArticleByTag} />
          */}
-        <Route path='/' component={TempSub} />
+
         <Route path='/' component={Footer} />
       </div>
     </Router>

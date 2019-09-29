@@ -1,4 +1,4 @@
-const baseurl = 'http://10.145.157.148:3000/';
+const baseurl = 'https://api.iit-techambit.in/';
 const issuecdn = 'https://cdn.iit-techambit.in/issue/';
 const endpoints = {
   user: {
