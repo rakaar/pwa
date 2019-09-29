@@ -24,7 +24,8 @@ const endpoints = {
     postRate: 'post/rate',
     postSave: 'post/save',
     postuploadImg: 'post/uploadImg',
-    getPost: 'post'
+    getPost: 'post',
+    subscribe: 'post/subscribe'
   },
   tag: {
     getAll: 'tag/getAll',

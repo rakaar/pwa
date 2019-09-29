@@ -1,75 +1,87 @@
-.footer-w{
-    height: 100px;
-    width:100%;
-    background: transparent;
-    text-align: center;
-    .lined-t{
-        display: block;
-        border-bottom: 1px solid #434343;
-        .lft{
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 1.6em;
-            letter-spacing: 2px;
-            position: relative;
-            top:30px;
-            color: #222;
-            display: inline-block;
-            background: #fff;
-            padding: 0 4em;
-        }
+.footer-w {
+  height: 100px;
+  width: 100%;
+  background: transparent;
+  text-align: center;
+  .lined-t {
+    display: block;
+    border-bottom: 1px solid #434343;
+    .lft {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 1.6em;
+      letter-spacing: 2px;
+      position: relative;
+      top: 30px;
+      color: #222;
+      display: inline-block;
+      background: #fff;
+      padding: 0 4em;
     }
-    .crt-f{
-        font-weight: 400;
+  }
+  .crt-f {
+    font-weight: 400;
+    color: #222;
+    padding: 0 0 2em 0;
+    margin-top: -20px;
+  }
+  .vl-f {
+    height: 70px;
+    width: 2px;
+    background: #999;
+    position: relative;
+    left: 50%;
+    top: -50%;
+    .cs-f {
+      position: relative;
+      display: inline-block;
+      background: #fff;
+      padding: 0.5em 1em;
+      width: 500px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #222;
+      transform: translate(-50%, 0);
+    }
+  }
+  .fg-w {
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    padding: 5em 0 2em 0;
+
+    .mg-f {
+      i {
+        padding: 0 0.8em;
         color: #222;
-        padding: 0 0 2em 0;
-        margin-top:-20px;
+        font-size: 2em;
+      }
     }
-    .vl-f{
-        height: 70px;
-        width: 2px;
-        background: #999;
-        position: relative;
-        left: 50%;
-        top:-50%;
-        .cs-f{
-            position: relative;
-            display: inline-block;
-            background: #fff;
-            padding: 0.5em 1em;
-            width:500px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #222;
-            transform: translate(-50%, 0);
-        }
-    }
-    .fg-w{
-        display: grid;
-        grid-template-columns: 2fr 3fr 2fr;
-        padding: 5em 0 2em 0;
 
-        .mg-f{
-            i{
-                padding: 0 0.8em;
-                color: #222;
-                font-size: 2em;
-            }
-        }
-        
-        .mail-ft{
-            text-transform: lowercase;
-            letter-spacing: 0.5px;
-            color: #222;
-            font-size: 0.9em;
-        }
-
-        p{
-            line-height: 0.8em;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 600;
-            font-size: 0.8em;
-        }
+    .mail-ft {
+      text-transform: lowercase;
+      letter-spacing: 0.5px;
+      color: #222;
+      font-size: 0.9em;
     }
+
+    p {
+      line-height: 0.8em;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 0.8em;
+    }
+  }
+}
+
+@media only screen and (max-width: 968px) {
+  .cs-f {
+    background: #f9f9f9 !important;
+    margin-top: 1em !important;
+  }
+  p {
+    a {
+      line-height: 1em;
+    }
+  }
 }

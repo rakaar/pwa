@@ -1,15 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Card from './Card';
-import Workflow from './Workflow';
-import Team from './Team';
-import Subscribe from './Subscribe';
+import React, { useState } from 'react';
+import config from '../Config';
+import connectBackend from '../ConnectBackend/ConnectBackend';
 
 import '../Styles/Card.scss';
-import '../Styles/LandingPage/LandingPage.scss';
+import '../Styles/LandingPage/TempSub.scss';
 
-/*eslint-disable*/
-export default function LandingPage() {
+export default function TempSub() {
+  const [mail, setMail] = useState('');
+
+  const sendMailToBackend = () => {
+    connectBackend.postData(config.endpoints.article.subscribe, {
+      email: mail
+    });
+  };
+
   const showModal = () => {
     document.getElementById('id01').style.display = 'block';
     document.getElementById('overlay-blur').style.display = 'block';
@@ -19,6 +23,7 @@ export default function LandingPage() {
     document.getElementById('id01').style.display = 'none';
     document.getElementById('overlay-blur').style.display = 'none';
   };
+
   return (
     <div>
       <div id='overlay-blur'></div>
@@ -85,52 +90,26 @@ export default function LandingPage() {
       </div>
 
       <div className='section section-header skgpb'>
-        <Subscribe />
-
-        <div class='parallax filter filter-color-white'>
-          <div
-            class='limage image'
-            style={{
-              backgroundImage: `url('https://cdn.iit-techambit.in/websiteAssets/iitkgp.jpg')`
-            }}
-          ></div>
-          <div className='container'>
-            <div className='row'>
-              <div className='title-area'>
-                <h2>IIT Kharagpur Invests In IIT Tech Ambit</h2>
-                <div className='separator separator-danger'>✻</div>
-                <p className='description'>
-                  We'd like to announce that IIT Kharagpur has made an
-                  investment in Tech Ambit, which will help us further our
-                  efforts in our mission of making research and tech innovations
-                  accessible to India as a whole. Funding amount to be set at
-                  1.2 million rupees.
-                </p>
-              </div>
-            </div>
-            <div className='cards'>
-              <div className='columns'>
-                <div className='column'>
-                  <Card num='10+' description='issues' />
-                </div>
-                <div className='column'>
-                  <Card num='50+' description='articles' />
-                </div>
-                <div className='column'>
-                  <Card num='15+' description='guest interviews' />
-                </div>
-              </div>
+        <div>
+          <div className='sub'>
+            <h1 className='sub-txt'>Subscribe</h1>
+            <input
+              className='input is-rounded is-info is-large column is-two-fifths'
+              type='email'
+              placeholder='Enter email'
+              onChange={e => setMail(e.target.value)}
+            />
+            <div class='field'>
+              <p class='control'>
+                <button
+                  class='button is-rounded is-primary'
+                  onClick={sendMailToBackend}
+                >
+                  Try It
+                </button>
+              </p>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className='section'>
-        <div id='what_we_do'>
-          <Workflow />
-        </div>
-        <div id='about_us'>
-          <Team />
         </div>
       </div>
     </div>
