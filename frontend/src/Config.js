@@ -1,4 +1,4 @@
-const baseurl = 'https://api.iit-techambit.in/';
+const baseurl = 'http://10.145.157.148:3000/';
 const issuecdn = 'https://cdn.iit-techambit.in/issue/';
 const endpoints = {
   user: {
@@ -24,7 +24,8 @@ const endpoints = {
     postRate: 'post/rate',
     postSave: 'post/save',
     postuploadImg: 'post/uploadImg',
-    getPost: 'post'
+    getPost: 'post',
+    subscribe: 'post/subscribe'
   },
   tag: {
     getAll: 'tag/getAll',

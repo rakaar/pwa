@@ -7,6 +7,7 @@ import Article from './Article/Article';
 import Issues from './Issues/Issues';
 import ArticleByTag from './ArticlesByTag/ArticlesByTag';
 import Footer from './Footer/Footer';
+import TempSub from './LandingPage/TempSub';
 
 import './App.css';
 
@@ -15,8 +16,8 @@ function App() {
     <Router>
       <div>
         <Route path='/' component={RespNav} />
-        <Route exact path='/home' component={HomePage} />
-        <Route exact path='/' component={LandingPage} />
+        {/* <Route exact path='/home' component={HomePage} /> */}
+        {/* <Route exact path='/' component={LandingPage} /> */}
         <Route exact path='/abt' component={ArticleByTag} />
         <Route exact path='/article/:id' component={Article} />
         {/* <Route exact path='/' component={HomePage} />
@@ -28,6 +29,7 @@ function App() {
         {/* <Route exact path='/404' component={ErrorPage} /> */}
         {/* <Route path='/abt' component={ArticleByTag} />
          */}
+        <Route path='/' component={TempSub} />
         <Route path='/' component={Footer} />
       </div>
     </Router>
