@@ -2,6 +2,31 @@
 
 @import '~bulma/sass/elements/tag.sass';
 
-h5{
-    cursor: pointer;
+h5 {
+  cursor: pointer;
+}
+
+.close-tags-modal {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+
+.tags-title {
+  text-align: center;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  cursor: pointer;
+  width: 100%;
+  justify-content: center;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#search-tags {
+  margin-left: 40%;
 }

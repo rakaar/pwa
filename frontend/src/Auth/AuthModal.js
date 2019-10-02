@@ -1,41 +1,43 @@
 import React from 'react';
-import SignModal from './SignModal'
+import SignModal from './SignModal';
 
 import '../Styles/AuthModal.scss';
 
-class ExampleApp extends React.Component {
-
-  constructor() {
-    super()
+class AuthModal extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
       showmodals: false
-    }
+    };
   }
 
   handleSignModal = () => {
     this.setState({
       showmodals: true
-    })
-  }
+    });
+  };
 
-  closeModalF = () => {
+  closeModal = () => {
     this.setState({
-      showmodals: false 
-    })
-  }
+      showmodals: false
+    });
+  };
 
   render() {
     return (
       <div>
-        <h5 className="log-in-btn" onClick={this.handleSignModal}>Log In</h5>
-        
-        {
-          this.state.showmodals ? <SignModal/> : <></>
-        }
+        <h5 className='log-in-btn' onClick={this.handleSignModal}>
+          Sign In
+        </h5>
 
+        {this.state.showmodals ? (
+          <SignModal closeClicked={this.closeModal} />
+        ) : (
+          <></>
+        )}
       </div>
     );
   }
 }
 
-export default ExampleApp;
+export default AuthModal;

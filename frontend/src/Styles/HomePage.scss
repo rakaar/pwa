@@ -1,0 +1,14 @@
+.grid-v {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background: transparent;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .grid-v {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+  }
+}

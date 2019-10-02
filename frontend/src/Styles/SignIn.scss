@@ -1,40 +1,58 @@
-
-.login-wrap{
-    position: relative;
-    left:25%;
+.login-wrap {
+  position: relative;
+  left: 25%;
+}
+.fp-b {
+  position: relative;
+  top: 2em;
+  font-size: 1.1em;
+  color: #222 !important;
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
-.signin-form{
-    margin: 30px 0;
-    width: 50%;
+.signin-form {
+  margin: 30px 0;
+  width: 50%;
 }
 
-.signup-form{
-    width: 50%;
+.signup-form {
+  width: 50%;
 }
 
-.input{
-    box-sizing: border-box !important;
-    outline: none !important;
-    border: 0px solid #f6f6f6 !important;
-    border-radius: 4px !important;
-    background:#f6f6f6 !important;
+.input {
+  box-sizing: border-box !important;
+  outline: none !important;
+  border: 0px solid #f6f6f6 !important;
+  border-radius: 4px !important;
+  background: #f6f6f6 !important;
 }
 
-.field{
-    margin-top: 1.5em;
+.field {
+  margin-top: 1.5em;
 }
 
-.btn-custom{
-    border: 0;
-    margin-top: 1.2em;
-    font-size: 1.2em !important;
-    border-radius: 16px !important;
-    text-transform: uppercase;
-    font-weight: 600;
+.btn-custom {
+  border: 0;
+  margin-top: 1.2em;
+  font-size: 1.2em !important;
+  border-radius: 16px !important;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
-.input:focus{
-    outline: none !important;
-    border: none !important;
+.input:focus {
+  outline: none !important;
+  border: none !important;
+}
+
+.btn-custom {
+  border: 0;
+  margin-top: 1.2em;
+  font-size: 1.2em !important;
+  border-radius: 16px !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff !important;
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import '../Styles/SignIn.scss';
 
-export default function SignIn() {
   return (
     <div className='login-wrap'>
       <div className='signin-form'>
@@ -22,3 +21,5 @@ export default function SignIn() {
     </div>
   );
 }
+
+export default withRouter(SignIn);

@@ -1,13 +1,127 @@
 .user-image {
   border-radius: 50%;
   width: 15%;
+  float: left;
+  position: relative;
+  left: 5em;
+  top: 2em;
+}
+
+.saved-cards-w {
+  padding: 2em 0;
+  h2 {
+    font-weight: 700;
+    color: #333;
+  }
+  .saved-cards-g {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+  }
 }
 
 .profile {
-  margin-top: 1%;
+  top: 4em;
+  height: 240px;
+  margin-top: 4em;
+  // background: #eee;
+  border-radius: 10px;
+  margin-bottom: 4%;
+}
+
+.name-sec {
+  text-align: left;
+  .name-r {
+    position: relative;
+    left: 8em;
+    top: 3.4em;
+    .edit-profile {
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.8em;
+      padding: 0.1em 0.8em;
+      background: #464646;
+      border-radius: 6px;
+      margin: 0 1em;
+    }
+    h2 {
+      display: inline;
+      font-size: 3.3em;
+      font-weight: 700;
+      line-height: 60px;
+      color: #222;
+    }
+    h3 {
+      color: #666;
+      font-weight: 600;
+      font-size: 1.2em;
+    }
+  }
+}
+
+.icons {
+  color: #222;
+  font-size: 0.5em;
+  i {
+    padding: 0.5em 0.2em;
+    &:first-child {
+      padding: 0.5em 0.2em 0.5em 0;
+    }
+  }
+}
+
+.profile {
   text-align: center;
 }
 
 i {
   margin: 0.5%;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+
+  body {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .saved-tags {
+    position: relative;
+    left: 15%;
+  }
+
+  .profile {
+    margin-top: 5%;
+  }
+
+  .user-image {
+    width: 30%;
+    position: relative;
+    top: -30%;
+  }
+
+  .name-r {
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative !important ;
+    top: 100px !important;
+    left: -45px !important;
+    margin-bottom: 10%;
+  }
+
+  .icons {
+    margin-left: 30px;
+  }
+
+  .username {
+    margin-bottom: -18px !important;
+  }
+
+  .saved-cards-g {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 4px;
+  }
 }

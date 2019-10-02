@@ -4,6 +4,35 @@
 
 @import '~bulma/sass/form/tools.sass';
 
-i {
-  margin-left: 1%;
+.current-user{
+  padding: 0.4em 1em;
+  font-size: 1em;
+  background: #ddd;
+  border-radius: 10px;
+  letter-spacing: 0.6px;
+  opacity: 0.9;
+  &:hover{
+    opacity: 1;
+  }
 }
+
+#demo{
+  background: #fff;
+  border-radius: 10px;
+  .w3-button{
+    background: #fff;
+    padding: 0.6em 1em;
+    margin: 0;
+    &:first-child{
+      border-radius: 10px 10px 0 0;
+    }
+    &:last-child{
+      border-radius: 0 0 10px 10px;
+    }
+    &:hover{
+      background: #f6f6f6 !important;
+    }
+  }
+}
+
+

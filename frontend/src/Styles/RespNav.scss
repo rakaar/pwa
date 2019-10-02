@@ -1,4 +1,121 @@
-.res-nav, .navbar{
-    background: transparent !important;
-    margin-top: 2em;
+.res-nav,
+.navbar {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 0% !important  ;
+  margin-bottom: -1% !important;
+  background: transparent !important;
+  margin-top: 2em;
+}
+
+.logo {
+  width: 40%;
+}
+
+#id03 {
+  z-index: 999;
+}
+
+.navbar-item {
+  margin-top: 2em;
+  border: 2px solid transparent !important;
+  margin: 2em 1em 0 1em;
+  border-radius: 6px;
+  transition: all ease 100ms;
+  padding: 0 !important;
+  .issues-btn {
+    color: #111 !important;
+  }
+  h5,
+  h5 .nh2 {
+    padding: 0.4em 1em !important;
+    font-family: 'Poppins';
+    color: #111 !important;
+  }
+  &:hover {
+    border: 2px solid #eee !important;
+    background: #eee;
+    transform: scale(1) !important;
+    font-size: initial !important;
+  }
+}
+
+.hiring-anim {
+  animation: ha 1s ease infinite;
+  font-size: 1em;
+  padding: 0 2em !important;
+  background: pink;
+  cursor: pointer;
+  &:hover {
+    font-size: 1em !important;
+    background: pink;
+  }
+}
+
+@keyframes ha {
+  0% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+.nav-lt {
+  font-family: 'Poppins' !important;
+  font-weight: 500;
+}
+
+a {
+  color: black !important;
+}
+
+.issues-btn {
+  text-transform: uppercase;
+  padding: 0;
+  background: transparent;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: all ease-in 200ms;
+  cursor: pointer;
+}
+
+// .issues-btn:hover {
+//   border-bottom: 2px solid #2196f3;
+// }
+.navbar-item:hover {
+  border-bottom: 2px solid #2196f3;
+  font-size: 1.2em;
+  columns: #4a4a4a;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 968px) {
+  .navbar-end {
+    box-sizing: border-box !important;
+    position: absolute;
+    right: -4em;
+    top: 0;
+    background: #fff;
+    width: 100vw !important;
+    margin-top: 6em !important;
+  }
+  .navbar-brand {
+    a {
+      position: relative;
+      top: -1em;
+      right: -2em;
+      img {
+        position: relative;
+        top: 0;
+        left: -4em;
+      }
+    }
+  }
 }

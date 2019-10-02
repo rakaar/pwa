@@ -1,0 +1,77 @@
+.image-uploader {
+  margin-left: 60%;
+  transform: translateX(-50%);
+}
+
+.cpf-w{
+
+  .cpi{
+    margin: 10px 0;
+    font-size: 1.1em;
+    display: block;
+    padding: 0.2em 0.8em;
+    width: 70%;
+    background: #eee;
+    border-radius: 8px;
+  }
+
+  .cp-a{
+    padding: 0.5em 0.9em;
+    background: #333;
+    border-radius: 10px;
+    color: #fff !important;
+    position: relative;
+    top: 15px;
+    transition: all ease 0.2s;
+    &:hover{
+      opacity: 0.9;
+    }
+  }
+}
+
+.cps-w{
+  h3{
+    font-weight: 700;
+    font-size: 1.6em;
+  }
+  .cp-l{
+    display: block;
+    font-size: 1.4em;
+    text-decoration: underline;
+    margin: 10px 0 0 0;
+  }
+}
+
+.grid-v-s {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3em;
+}
+
+h3 {
+  display: inline;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.social-settings-t {
+  font-weight: 600;
+  display: block;
+  border-bottom: 2px solid #222;
+  color: #222;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+
+  body {
+    max-width: 100%;
+  }
+  .grid-v-s {
+    display: flex;
+    flex-direction: column;
+  }
+}
